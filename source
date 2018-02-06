@@ -23,6 +23,16 @@ Instead of abooting:
 
 startroom is a room.
 
+After printing the banner text:
+	say "Update 0.1 [b]Jasmine[/b][p]";
+
+[
+UPDATE 0.1: JASMINE:
+	* added basic, entirely-random resonances
+	* added very specific menu-based choice
+	* hunted out a bug that sometimes added scents to the notelist, and thus to options, without them appearing in the perfume description
+]
+
 Volume - I Can't Belive It's Not Tracery
 
 [
@@ -335,11 +345,11 @@ Spring is a theme. The twist of spring is {"clean", "crisp", "effervescent", "fr
 The composite of spring is {"blooms alongside", "brightened by"}.
 The phantpre of spring is {"breeze", "brook", "creek", "dawn", "dew", "foam", "may", "sweet"}.
 
-Summer is a theme. The twist of summer is {"fiery", "golden", "green", "glowing", "languid", "mild", "jack", "juicy", "ripe", "scorching", "torrid", "warm"}.
+Summer is a theme. The twist of summer is {"fiery", "golden", "green", "glowing", "languid", "mild", "juicy", "ripe", "scorching", "torrid", "warm"}.
 The composite of summer is {"bursting with", "grows alongside", "swelling with", "warmed by", "shines on", "shines through", "shimmering with"}.
 The phantpre of summer is {"butter", "fox", "honey", "milk", "pepper", "sun"}.
 
-Fall is a theme. The twist of fall is {"brown", "cool", "earthy", "crisp", "forlorn", "golden", "melancholy", "mellow",  "mottled","rich", "ripe", "red", "russet"}.
+Fall is a theme. The twist of fall is {"brown", "cool", "earthy", "forlorn", "golden", "melancholy", "mellow",  "mottled","rich", "ripe", "red", "russet"}.
 The composite of fall is {"lingering on", "drifts through"}.
 The phantpre of fall is {"burn", "cloud", "dusk", "fog", "rain", "spring", "wind"}.
 
@@ -400,6 +410,10 @@ To decide whether shit is off-brand:
 	if scent-themed is true, no;
 	if a random chance of 1 in 3 succeeds, no;
 	yes.
+	
+[Scentpop and notepop are similar, except that scentpop adds thematic adjectives.
+
+The trick here is that scentpop/notepop cannot be self-referential, or weird shit starts to happen - a scentpop can include other kinds of pops, but not scentpops. Failing to observe this will mess with the notelist.]
 
 To say scentpop (N - a list of texts):
 	now scent-themed is false;
@@ -799,9 +813,9 @@ multinotes is a list of texts that varies. multinotes is {"amber", "balsam", "ci
 multiadjs is a list of texts that varies. multiadjs is {"aged", "black", "blackened", "bitter", "bittersweet", "blood", "dark", "fire", "forbidden", "golden", "green", "light", "pale", "pink", "raw", "red", "silver", "smoked", "sweet", "white"}.
 
 multiphrases is a list of texts that varies. multiphrases is {"[one of]three[or]four[or]five[purely at random] kinds of [notepop multinotes]",
-"[notepop multix]"}.
+"[noreppop multix]"}.
 
-multix is a list of texts that varies. multix is {"[pop multiadjs] [pop multinotes]"}.
+multix is a list of texts that varies. multix is {"[pop multiadjs] [notepop multinotes]"}.
 
 allscents is a list of texts that varies. allscents is {
 "[pop topnotes]",
@@ -866,8 +880,8 @@ scenttops is {
 "[scentpop topnotes], ",
 "[scentpop topnotes], ",
 "[scentpop topnotes], ",
-"[noreppop multiphrases], ", 
-"[noreppop multiphrases], [scentpop topnotes], ",
+"[pop multiphrases], ", 
+"[pop multiphrases], [scentpop topnotes], ",
 "[scentpop topnotes], [scentpop topnotes], ",
 "[scentpop topnotes], [scentpop topnotes], [scentpop topnotes], "
 }.
@@ -878,8 +892,8 @@ scenthearts is {
 "[scentpop heartnotes], ",
 "[scentpop heartnotes], ",
 "[scentpop heartnotes], ",
-"[noreppop multiphrases], ", 
-"[noreppop multiphrases], [scentpop heartnotes], ",
+"[pop multiphrases], ", 
+"[pop multiphrases], [scentpop heartnotes], ",
 "[scentpop heartnotes], [scentpop heartnotes], "
 }.
 
@@ -889,7 +903,7 @@ scentbases is {"base notes of [scentpop basenotes] and [scentpop basenotes]",
 "[scentpop basenotes], [scentpop basenotes] and [scentpop basenotes]",
 "and [scentpop basenotes]",
 "and [scentpop basenotes]",
-"[noreppop multiphrases]", 
+"[pop multiphrases]", 
 "[scentpop basenotes]"
 }.
 
@@ -907,16 +921,230 @@ To say m (N - a list of texts):
 	let Z be the substituted form of "[pop N]";
 	add Z to assoc-list, if absent;
 	
-The assoc-list is a list of texts that varies. The assoc-list is {}.
+assoc-list is a list of texts that varies. The assoc-list is {}.
 
-Book - Kinds of Memory
+Book - Kinds of Resonance
 
 Chapter - Big Mood
 
-sorrows is a list of texts that varies. sorrows is {}.
+res-sad is a list of texts that varies. res-sad is {}.
+
+res-love is a list of texts that varies. res-love is {}.
+
+[brainstorming:
+
+arrogance
+overambition
+hidden weakness
+death
+decay
+
+strength
+
+decisiveness
+resolve
+integrity
+consistency
+patience
+perserverance
+impending disaster
+premature starts
+looming unavoidable disaster
+the impossibility of achieving everything at once
+recovery after disaster
+endurance
+suffering
+solitude
+discretion
+sincerity
+respect
+gratitude
+hesitation and hindrance
+difficulty
+difficult beginnings
+foolishness
+inexperience
+blameless mistakes
+dignity
+shameful foolishness
+unseriousness
+discipline
+timely withdrawal
+depression
+confusion
+anguish
+
+receptivity
+unexpected opportunity
+reserve and restraint
+acceptance
+
+kindness
+
+nostalgia
+self-indulgence
+joy
+
+creative activity
+subtlety
+concealed strength
+hidden strength
+concealing one's abilities
+
+worry
+
+time of transition
+]
+
+rand-res is a list of texts that varies. rand-res is {
+"[pop base-res]",
+"[pop mod-res] [pop base-res]",
+"[pop specific-res]",
+"[noreppop res-acts] [pop act-connect] [noreppop res-acts]",
+"[pop act-mods] [pop res-acts]",
+"[pop micro-res]"
+}.
+
+base-res is a list of texts that varies. base-res is {
+"acceptance", "admiration", "affection", "ambition", "anger", "anguish", "annoyance", "apathy", "arousal", "assurance", "awe", "beauty", "boredom", "bravery", "care", "catharsis", "certainty", "compassion", "confidence", "confusion", "competence", "contentment", "cruelty", "curiosity", "decisions", "delight", "desire", "despair", "dignity", "discomfort", "disdain", "disgust", "doubt", "elegance", "ennui", "enthusiasm", "experience", "failure", "fascination", "fatigue", "fear", "fondness", "fury", "frustration", "generosity", "grief", "grace", "gratitude", "haste", "hate", "hesitation", "honour", "hope", "influence", "inspiration", "joy", "kindness", "laughter", "levity", "loneliness", "longing", "love", "loyalty", "lust", "melancholy", "need", "nostalgia", "observation", "obsession", "outrage", "perseverance", "pleasure", "power", "pride", "rage", "regret", "reserve", "restraint", "restlessness", "revulsion", "satisfaction", "serenity", "sorrow", "strength", "success", "sympathy", "surprise", "trepidation", "trust", "understanding", "weakness", "wit", "wonder", "worry", "vulnerability"
+}.
+
+mod-res is a list of texts that varies. mod-res is {
+"abiding", "active", "acute", "affected", "anguished", "anxious", "ambiguous", "ambivalent", "awkward", "balanced", "blameless", "calm", "cautious", "complicated", "conflicted", "comfortable", "debauched", "decadent", "deceptive", "deliberate", "delicate", "deserved", "desparate", "difficult", "diligent", "distressing", "doomed", "dull", "equivocal", "false", "familiar", "feigned", "fervent", "fierce", "fleeting", "flirtatious", "foolish", "futile", "gentle", "glorious", "guilty", "habitual", "heavy", "highly specific", "hopeful", "hopeless",  "hypothetical", "idle", "improper", "innocent", "intellectual", "intense", "immoderate", "inappropriate", "inconsequential", "ingenuous", "instinctive", "intellectual", "intentional", "intuitive", "irrational", "lewd", "light", "lonely", "mannered", "mature", "mindful", "misplaced", "muted", "naive", "naked", "nebulous", "overwhelming", "painful", "passive", "performative", "playful", "polite", "precise", "private", "radiant", "radical", "rational", "raw", "reflexive", "reluctant", "resolute", "rhetorical", "righteous", "romantic", "secret", "sensual", "selfish", "self-indulgent", "serious", "shameful", "sharp", "sickening", "simple", "sincere", "sleepy", "spiritual", "strained", "stagnant", "studied", "subtle", "sudden", "suppressed", "tentative", "timely", "tranquil", "transient", "unattainable","uncomfortable", "undeserved", "undirected", "unesasy", "unfamiliar", "unfortunate", "untimely", "veiled", "vexatious", "violent", "virtuous", "visceral", "weary", "wilful", "winsome"
+}
+
+res-acts is a list of texts that varies. res-acts is {"action", "advancement", "agency", "agreement", "alliance", "balance", "beginnings", "calamity", "chaos", "collapse", "community", "concealment", "conclusion", "conflict", "confluence", "conformity", "courtship", "craft", "crisis", "danger", "death", "disappointment", "decay", "decision", "defeat", "dependence", "desolation", "destruction", "difficulties", "disagreement", "disaster", "discovery", "display", "distraction", "disunity", "divergence", "division", "error", "exhaustion", "expansion", "experiment", "failure", "fame", "friendship", "growth", "harmony", "imitation", "intimacy", "justice", "malaise", "mistakes", "movement", "mutuality", "impasse", "independence", "interdependence", "isolation", "neglect", "notoreity", "obscurity", "observation", "opportunity", "organisation", "peace", "performance", "privation", "progress", "recognition", "recovery", "respect", "revelation", "revolution", "ridicule", "rivalry", "silence", "stagnation", "study", "struggle", "success", "synthesis", "thought", "transformation", "transgression", "travel", "turmoil", "threats", "trial", "triumph", "union", "unity", "victory", "withdrawal", "work", "[pop base-res]"}.
+
+act-mods is a list of texts that varies. act-mods is {"abiding", "accepted", "brief", "brilliant", "catastrophic", "complete", "contingent", "dangerous", "difficult", "distant", "easy", "enthusiastic", "erotic", "false", "foolish", "fundamental", "gradual", "hazardous", "hidden", "ideal", "inexorable", "necessary", "perfect", "personal", "practical", "pragmatic", "professional", "prolonged", "rapid", "refused", "romantic", "squandered", "unnecessary", "reluctant", "secret", "spiritual", "unattainable", "unreliable", "unresolved", "[pop mod-res]"}.
+
+act-connect is a list of texts that varies. act-connect is {"leading to", "turning to", "transformed into", "despite", "that causes", "curtailed by", "interrupted by", "that becomes", "fostering", "that causes", "in tension with"}.
+
+micro-res is a list of texts that varies. micro-res is {
+"the [pop base-res] of [pop res-acts]",
+"[pop base-res] for [pop res-acts]",
+"the [pop mod-res] [pop base-res] of [pop res-acts]",
+"[pop res-acts] motivated by [pop base-res]",
+"[one of][pop mod-res][or][pop act-mods][purely at random] [one of]things[or]matters[purely at random]",
+"things [one of][pop mod-res][or][pop act-mods][purely at random]"
+}
 
 Chapter - Weirdly Specific Mood
 
+specific-res is a list of texts that varies. specific-res is {"ambiguphobia", "Arcadian idyll", "cathexis", "dépaysement", "fear of missing out", "hygge", "impostor syndrome", "nostalgia for the present", "rapture", "saudade", "schaudenfreude", "sensitivity to ephemera", "the feeling of having left the gas on", "the teeming sensation of possibility", "the foundations of things", "transcendent moments"}.
+	
+Book - Basic Choice Menus
+
+[This is borrowed from other projects, mostly quality-based narrative stuff where nodes need to be treated with rather more sophistication than is required here.]
+
+Table of Present Options
+note	meaning	menu-text
+some text	some text	some text
+with 10 blank rows
+
+After reading a command:
+	if the player's command matches "[number]" begin;
+		try selecting the number understood;
+		reject the player's command;
+	end if;
+
+Understand "select [any number]" as selecting. 
+
+Selecting is an action applying to one number. 
+
+Check selecting: 
+	if the number understood is greater than the number of filled rows in the Table of Present Options or the number understood is less than one begin;
+	  say "[The number understood] is not a valid option. "; 
+	offer choices instead;
+	end if;
+	
+Carry out selecting:
+	let N be the number understood;
+	choose row N in the Table of Present Options;
+	if the note entry is "RETRY" begin;
+		increment try-counter;
+		suggest semantics;
+		offer choices;
+	otherwise if the note entry is "FAIL";
+		say "The memory doesn't mean what it used to. Perfumes fade, and must be turned over. You set it aside.";
+		now try-counter is 0;
+	otherwise;
+		let P be note entry;
+		let Q be the meaning entry;
+		say "[P in sentence case] for [Q]. Yes, that will serve.";
+		now try-counter is 0;
+		choose a blank row in the Table of Enduring Symbols;
+		now the note entry is P;
+		now the meaning entry is Q;
+		[possibly BAN THIS SCENT FROM BEING IN MEANINGS AGAIN?]
+	end if;
+
+To offer choices:
+	[remove the element called "choicelist";]
+	let N be 1; 
+	[if Vorple is supported, say "[p]";]
+[	open HTML tag "ul" called "choicelist";]
+	repeat through the Table of Present Options begin;
+		[open HTML tag "li" called "choiceopt";
+		if Vorple is not supported, say "[br][N]. ";]
+		[place a link to command "[N]" reading "[menu-text entry]", without showing the command;
+		close HTML tag;]
+		say "[br][N]: [menu-text entry]";
+		increment N;
+	end repeat;
+	[close HTML tag;
+	scroll to the end of the page;]
+
+Part - Special Commands
+
+The try-counter is a number that varies. The try-counter is 0.
+
+To add refresh:
+	choose a blank row in the Table of Present Options;
+	now the menu-text entry is "None of these feel right. Reconsider.";
+	now the note entry is "RETRY";
+	
+To add failure:
+	choose a blank row in the Table of Present Options;
+	now the menu-text entry is "This perfume isn't worth keeping.";
+	now the note entry is "FAIL";
+
+Part - The Ontologies of Babylon
+
+The meaning-store is a list of texts that varies.
+
+[Temp-associate is a quick place-holder that will get supplemented by better things.]
+
+To temp-associate:
+	now the meaning-store is {};
+	while the number of entries in the meaning-store < 4 begin;
+		let K be the substituted form of "[noreppop rand-res]";
+		add K to the meaning-store;
+	end while;
+	
+Implications is a list of texts that varies. Implications is {"could [pop suggestive]", "feels like", "might [pop suggestive]", "is suggestive of"}.
+suggestive is a list of texts that varies. suggestive is {"mean", "imply", "stand for", "suggest"}.
+	
+To suggest semantics:
+	blank out the whole of the Table of Present Options;
+	temp-associate;
+	let Q be the meaning-store;
+	sort Q in random order;
+	truncate Q to 4 entries;
+	repeat with N running through Q begin;
+		let F be the substituted form of "[pop notelist]";
+		choose a blank row in the Table of Present Options;
+		now the note entry is F;
+		now the meaning entry is N;
+		now the menu-text entry is the substituted form of "[F] [pop implications] [N]";
+	end repeat;
+	if try-counter < 3, add refresh;
+	if try-counter > 0, add failure;
+	
+Table of Enduring Symbols
+note	meaning
+some text	some text
+with 20 blank rows
+	
 Volume - Memory
 
 memories is a list of texts that varies. 
@@ -1787,20 +2015,23 @@ This is the full-scent rule:
 	[while X < 20 begin;]
 	themepick;
 	say "[pop structures]. [pop memories].[p]";
-	say "[notelist]";
-	now notalone is false;
+	say "[notelist][p]";
+	suggest semantics;
+	offer choices;
+	[now notalone is false;
 	now clique is {};
 	now the assoc-list is {};
 	now poplist is {};
 	now notelist is {};
-	now X is X + 1;
+	now X is X + 1;]
 	[end while;]
+	
 
 Instead of jumping:
 	let X be 0;
 	while X < 20 begin;
 		themepick;
-		say "[pop handsfrag][br]";
+		say "[pop rand-res][br]";
 		[say "[friendpop NPCnames] [one of]wore it[or]was wearing it[or]smelled of it[purely at random] [pop temporalic][br]";]
 		[say "You first smelled this in passing, [one of]on[or]worn by[purely at random] [one of][*a][pop modelshapes] [pop thegenders][or][*a][pop thegenders][purely at random] [one of][pop namedplace][or][pop duringevent][purely at random], and [pop knowstory] before realizing that [pop knowconclusion].";]
 		[now poplist is {};
