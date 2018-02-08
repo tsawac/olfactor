@@ -2043,7 +2043,8 @@ groupmainact is a list of texts that varies. groupmainact is {
 }
 
 groupdetails is a list of texts that varies. groupdetails is {
-"made filthy jokes about [pop convtopics]",
+"talked [one of]earnestly[or]endlessly[or]excitedly[purely at random] about [pop convtopics]",
+"made [one of]filthy[or]obscure[purely at random] jokes about [pop convtopics]",
 "drank [one of]wine[or][pop oddbooze][or][pop redwines][purely at random][one of] that neither of you properly appreciated[or] that neither of you could really afford[or][purely at random]"
 }.
 
@@ -2096,6 +2097,8 @@ perfumetexts is a list of texts that varies. perfumetexts is {"[i]De Materia Med
 [Locating events in time, either by absolute time (boring, maybe cut) or by contemporaneous events (better!)]
 
 eraphrase is a list of texts that varies. eraphrase is {"[one of]seven[or]ten[or]a dozen[or]fifteen[or]twenty[or]twenty-five[or]thirty[or]too many[purely at random] years ago, [waybackwhen]"}.
+
+[There are four possibilities at the moment for decribing a time period: contemphrase names something that happened in society, pubphrased names something that was published/revealed, simplegovphrase names a government or governmental occurrence, and govphrase (this was the original) lists two goverments or governmental occurrences.]
 
 waybackwhen is a list of texts that varies. waybackwhen is {"[one of][contemphrase][or][pubphrased][or][simplegovphrase][or][govphrase][purely at random]"}
 
