@@ -2097,16 +2097,16 @@ perfumetexts is a list of texts that varies. perfumetexts is {"[i]De Materia Med
 
 eraphrase is a list of texts that varies. eraphrase is {"[one of]seven[or]ten[or]a dozen[or]fifteen[or]twenty[or]twenty-five[or]thirty[or]too many[purely at random] years ago, [waybackwhen]"}.
 
-waybackwhen is a list of texts that varies. waybackwhen is {"[one of][govphrase][or][contemphrase][as decreasingly likely outcomes]"}
+waybackwhen is a list of texts that varies. waybackwhen is {"[one of][govphrase][or][contemphrase][purely at random]"}
 
 contemphrase is a list of texts that varies. contemphrase is {"[one of][one of]around the time of[or]just before[or]just after[purely at random] [socialhappenings][or]around the time [controversalpubs][one of] published[or] brought to light[or] made public[purely at random][as decreasingly likely outcomes]"}.
 
-socialhappenings is a list of texts that varies. socialhappenings is {"[one of]the [pop histnames] Exhibition[or]the [pop histnames] Scandal[or]the [pop histnames] Controversy[or]the [pop majorloc] Crisis[or][pop histnames]'s [pop majorloc] Address[or]the [noreppop histnames]-[noreppop histnames] Debate[or]the [pop histnames] Hoax[or]the [one of][pop histnames][or][pop majorloc][purely at random] Affair[or]the [pop histnames] Incident[purely at random]"}.
+socialhappenings is a list of texts that varies. socialhappenings is {"[one of]the [pop histnames] Exhibition[or]the [pop histnames] Scandal[or]the [pop histnames] Controversy[or]the [pop majorloc] Crisis[or][pop histnames]'s [pop majorloc] Address[or]the [noreppop histnames]-[noreppop histnames] Debate[or]the St. [pop saintnames]'s Day [one of]Protests[or]Demonstration[or]Protest[or]Uprising[or]Riot[or]Riots[or]Occupation[or]Strike[purely at random][or][pop histnames]'s St. [pop saintnames]'s Day [one of]Speech[or]Address[or]Sermon[or]Oration[purely at random][or]the [pop histnames] Hoax[or]the [one of][pop histnames][or][pop majorloc][purely at random] Affair[or]the [one of][pop histnames][or][pop saintnames][purely at random] Incident[purely at random]"}.
 
-controversalpubs is a list of texts that varies. controversalpubs is {"[one of]the [pop histnames] Letter was[or]the [pop histnames] Letters were[or]the [pop histnames] Memorandum was[or]the [pop histnames] Paper was[or]the [pop histnames] Memoirs were[or]the [pop histnames] Diary was[or]the [pop histnames] Papers were[or]the Anti-[pop histnames] Papers were[or]the [pop histnames] Opinion was[purely at random]"}.
+controversalpubs is a list of texts that varies. controversalpubs is {"[one of]the [pop histnames] Letter was[or]the [pop histnames] Letters were[or]the [pop histnames] Petition was[or]the [pop histnames] Memorandum was[or]the [pop histnames] Paper was[or]the [pop histnames] Memoirs were[or]the [pop histnames] Diary was[or]the [pop histnames] Papers were[or]the Anti-[pop histnames] Papers were[or]the [pop histnames] Opinion was[purely at random]"}.
 
 govphrase is a list of texts that varies. govphrase is {"back in[one of][or] the [pop govfelt]days of[purely at random] [pop eraname]",
-"[one of][pop suberas] [pop eraname][or][contemphrase][purely at random]"}
+"[pop suberas] [pop eraname]"}
 
 eraname is a list of texts that varies. eraname is {"the [pop gubberments]"}.
 
@@ -2389,4 +2389,4 @@ To run cleanup:
 		now the assoc-list is {};
 		now poplist is {};
 		now notelist is {};
-		now NPC-gender is 0;
+now NPC-gender is 0;
