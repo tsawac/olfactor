@@ -2043,7 +2043,8 @@ groupmainact is a list of texts that varies. groupmainact is {
 }
 
 groupdetails is a list of texts that varies. groupdetails is {
-"made filthy jokes about [pop convtopics]",
+"talked [one of]earnestly[or]endlessly[or]excitedly[purely at random] about [pop convtopics]",
+"made [one of]filthy[or]obscure[purely at random] jokes about [pop convtopics]",
 "drank [one of]wine[or][pop oddbooze][or][pop redwines][purely at random][one of] that neither of you properly appreciated[or] that neither of you could really afford[or][purely at random]"
 }.
 
@@ -2095,15 +2096,30 @@ perfumetexts is a list of texts that varies. perfumetexts is {"[i]De Materia Med
 
 [Locating events in time, either by absolute time (boring, maybe cut) or by contemporaneous events (better!)]
 
-eraphrase is a list of texts that varies. eraphrase is {"[one of]seven[or]ten[or]a dozen[or]fifteen[or]twenty[or]twenty-five[or]thirty[or]too many[purely at random] years ago",
-"back in the[one of][or] [pop govfelt]days of[purely at random] [pop eraname]",
-"[pop suberas] [pop eraname]"}.
+eraphrase is a list of texts that varies. eraphrase is {"[one of]seven[or]ten[or]a dozen[or]fifteen[or]twenty[or]twenty-five[or]thirty[or]too many[purely at random] years ago, [waybackwhen]"}.
+
+[There are four possibilities at the moment for decribing a time period: contemphrase names something that happened in society, pubphrased names something that was published/revealed, simplegovphrase names a government or governmental occurrence, and govphrase (this was the original) lists two goverments or governmental occurrences.]
+
+waybackwhen is a list of texts that varies. waybackwhen is {"[one of][contemphrase][or][pubphrased][or][simplegovphrase][or][govphrase][purely at random]"}
+
+contemphrase is a list of texts that varies. contemphrase is {"[one of]around the time of[or]just before[or]just after[purely at random] [socialhappenings]"}.
+
+pubphrased is a list of texts that varies. pubphrased is {"around the time [controversalpubs][one of] published[or] brought to light[or] made public[purely at random]"}
+
+socialhappenings is a list of texts that varies. socialhappenings is {"[one of]the [pop histnames] Exhibition[or]the [pop histnames] Scandal[or]the [pop histnames] Controversy[or]the [pop majorloc] Crisis[or][pop histnames]'s [pop majorloc] Address[or]the [noreppop histnames]-[noreppop histnames] Debate[or]the St. [pop saintnames]'s Day [one of]Protests[or]Demonstration[or]Protest[or]Uprising[or]Riot[or]Riots[or]Occupation[or]Strike[purely at random][or][pop histnames]'s St. [pop saintnames]'s Day [one of]Speech[or]Address[or]Sermon[or]Oration[purely at random][or]the [pop histnames] Hoax[or]the [one of][pop histnames][or][pop majorloc][purely at random] Affair[or]the [one of][pop histnames][or][pop saintnames][purely at random] Incident[purely at random]"}.
+
+controversalpubs is a list of texts that varies. controversalpubs is {"[one of]the [pop histnames] Letter was[or]the [pop histnames] Letters were[or]the [pop histnames] Petition was[or]the [pop histnames] Memorandum was[or]the [pop histnames] Paper was[or]the [pop histnames] Memoirs were[or]the [pop histnames] Diary was[or]the [pop histnames] Papers were[or]the Anti-[pop histnames] Papers were[or]the [pop histnames] Opinion was[purely at random]"}.
+
+simplegovphrase is a list of texts that varies. simplegovphrase is {"back in[one of][or] the [pop govfelt]days of[purely at random] [pop eraname]"}
+
+govphrase is a list of texts that varies. govphrase is {"back in[one of][or] the [pop govfelt]days of[purely at random] [pop eraname]",
+"[pop suberas] [pop eraname]"}
 
 eraname is a list of texts that varies. eraname is {"the [pop gubberments]"}.
 
-gubberments is a list of texts that varies. gubberments is {"[pop histnames] administration", "[pop histnames] Cabinet", "Committee", "Commune", "[pop histnames] Compromise", "[pop histnames] Crisis", "Interregnum", "Pretendership", "Realignment", "[pop histnames] Regency", "[pop histnames] Republic", "Revanche", "Turmoil", "Triumvirate", "[pop histnames] Uprising"}.
+gubberments is a list of texts that varies. gubberments is {"[noreppop histnames] administration", "[noreppop histnames] Cabinet", "Committee", "Commune", "[noreppop histnames] Compromise", "[noreppop histnames] Crisis", "Interregnum", "Pretendership", "Realignment", "[noreppop histnames] Regency", "[pop histnames] Republic", "Revanche", "Turmoil", "Triumvirate", "[noreppop histnames] Uprising"}.
 
-govfelt is a list of texts that varies. govfelt is {"", "[pop govfeels] "}.
+govfelt is a list of texts that varies. govfelt is {"", "[noreppop govfeels] "}.
 
 govfeels is a list of texts that varies. govfeels is {"anxious", "apocalyptic", "banal", "cataclysmic", "confusing", "desperate", "doom-laden", "electrifying", "frantic", "golden", "[one of]in[or][purely at random]glorious", "heady", "mad", "miserable", "paranoid", "quiet", "terrible", "tragic", "transformative", "traumatic"}.
 
@@ -2278,6 +2294,57 @@ labellist is a list of texts that varies. labellist is {
 
 Volume - Testing Verbs
 
+Understand "era" as erring.
+
+Erring is an action applying to nothing. Understand "e" as erring. Carry out erring: follow the erring rule.
+
+This is the erring rule:
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	say the eraphrase;
+	say line break;
+	
+Understand "contemp" as contemping.
+
+Contemping is an action applying to nothing. Understand "c" as contemping. Carry out contemping: follow the contemping rule.
+
+This is the contemping rule:
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+	say line break;
+	say the contemphrase;
+
 Understand "j" as jumping.
 
 Kyping is an action applying to nothing. Understand "k" as kyping. Carry out kyping: follow the full-scent rule.
@@ -2329,5 +2396,4 @@ To run cleanup:
 		now the assoc-list is {};
 		now poplist is {};
 		now notelist is {};
-		now NPC-gender is 0;
-	
+now NPC-gender is 0;
