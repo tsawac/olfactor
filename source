@@ -2210,7 +2210,7 @@ festofsub is a list of texts that varies. festofsub is {
 [subfest is for things that follow the pattern "Whatever Festival".]
 
 subfest is a list of texts that varies. subfest is {
-"Accordion", "Apple", "Art", "Baroque", "Beer", "Blues", "Burlesque", "Candle", "Cheese", "Chess", "Coffee", "Costume", "Dance", "Drama", "Fashion", "Fireworks", "Flavour", "Folk", "[one of]Folk [or]Chamber [or]Country [at random]Music", "Food and Drink", "Fireworks", "Fringe", "Grape", "Heritage", "Hip Hop", "Incunabula", "Jazz", "Kite", "[one of]Lit[or]Literature[at random]", "Mask", "Opera", "Rose", "Pastry", "Pickle", "Pie", "Poetry", "Puzzle", "Reggae", "Rock", "Rose", "Salsa", "Spice", "Techno", "Technology", "Tree", "Tulip", "[one of]Underground [or]Silent [or]Animated [or][at random]Film", "Vegan", "Wine"
+"Accordion", "Apple", "Art", "Baroque", "Beer", "Blues", "Burlesque", "Candle", "Cheese", "Chess", "Coffee", "Costume", "Dance", "Drama", "Fashion", "Fireworks", "Flavour", "Folk", "[one of]Folk [or]Chamber [or]Country [or][purely at random]Music", "Food and Drink", "Fireworks", "Fringe", "Grape", "Heritage", "Hip Hop", "Incunabula", "Jazz", "Kite", "[one of]Lit[or]Literature[purely at random]", "Mask", "Opera", "Rose", "Pastry", "Pickle", "Pie", "Poetry", "Puzzle", "Reggae", "Rock", "Rose", "Salsa", "Spice", "Techno", "Technology", "Tree", "Tulip", "[one of]Underground [or]Silent [or]Animated [or][purely at random]Film", "Vegan", "Wine"
 }
 
 [subexpo is for things that follow the pattern "Whatever Expo".]
