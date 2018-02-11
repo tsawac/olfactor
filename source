@@ -2147,7 +2147,8 @@ contemphrase is a list of texts that varies. contemphrase is {"[one of]around th
 
 pubphrased is a list of texts that varies. pubphrased is {"around the time [controversalpubs][one of] published[or] brought to light[or] made public[purely at random]"}
 
-socialhappenings is a list of texts that varies. socialhappenings is -socialhappenings is a list of texts that varies. socialhappenings is {"[one of]the [pop histnames] Exhibition[or]the [pop histnames] Scandal[or]the [pop histnames] Controversy[or]the [pop majorloc] Crisis[or][pop histnames]'s [pop majorloc] Address[or]the [noreppop histnames]-[noreppop histnames] Debate[or]the St. [pop saintnames]'s Day [one of]Protests[or]Demonstration[or]Protest[or]Uprising[or]Riot[or]Riots[or]Occupation[or]Strike[purely at random][or]that [one of]famous[or]infamous[or]interminable[purely at random] St. [pop saintnames]'s Day [one of]speech[or]address[or]sermon[or]oration[purely at random][or]the [pop histnames] Hoax[or]the [one of][pop histnames][or][pop majorloc][purely at random] Affair[or]the [one of][pop histnames][or][pop saintnames][purely at random] Incident[purely at random]"}.
+socialhappenings is a list of texts that varies.  socialhappenings is {"[one of]the [pop histnames] Exhibition[or]the [pop histnames] Scandal[or]the [pop histnames] Controversy[or]the [pop majorloc] Crisis[or][pop histnames]'s [pop majorloc] Address[or]the [noreppop histnames]-[noreppop histnames] Debate[or]the St. [pop saintnames]'s Day [one of]Protests[or]Demonstration[or]Protest[or]Uprising[or]Riot[or]Riots[or]Occupation[or]Strike[purely at random][or]that [one of]famous[or]infamous[or]interminable[purely at random] St. [pop saintnames]'s Day [one of]speech[or]address[or]sermon[or]oration[purely at random][or]the [pop histnames] Hoax[or]the [one of][pop histnames][or][pop majorloc][purely at random] Affair[or]the [one of][pop histnames][or][pop saintnames][purely at random] Incident[purely at random]"}.
+
 controversalpubs is a list of texts that varies. controversalpubs is {"[one of]the [pop histnames] Letter was[or]the [pop histnames] Letters were[or]the [pop histnames] Petition was[or]the [pop histnames] Memorandum was[or]the [pop histnames] Paper was[or]the [pop histnames] Memoirs were[or]the [pop histnames] Diary was[or]the [pop histnames] Papers were[or]the Anti-[pop histnames] Papers were[or]the [pop histnames] Opinion was[purely at random]"}.
 
 simplegovphrase is a list of texts that varies. simplegovphrase is {"back in[one of][or] the [pop govfelt]days of[purely at random] [pop eraname]"}
@@ -2213,55 +2214,56 @@ suitorstyles is a list of texts that varies. suitorstyles is {
 "[pop modelshapes]"
 }
 
-[Festivals to attend]	
--	
--festival is a list of texts that varies. festival is {	
--"the [one of]Celebration[or]Day[or]Feast[or]Festival[or]Night[purely at random] of [pop oddfest]", 	
--"the [pop majorloc] Festival of [pop festofsub]", 	
--"the [pop majorloc] [pop subfest] Festival", 	
--"the [pop majorloc] [pop festadj] Festival of [pop festofsub]", 	
--"[pop majorloc] [one of]Fest[or]Illuminations[or]Lights[or]Days[or]Nights[at random]", 	
--"the [pop majorloc] [pop festadj] [pop subfest] Festival", 	
--"the [pop majorloc] [pop subexpo] [one of]Expo[or]Exposition[or]Showcase[at random]", 	
--"the [pop festadj] [pop majorloc] [pop subexpo] [one of]Expo[or]Exposition[or]Showcase[purely at random]", 	
--"[pop subfest] Fest [pop majorloc]", 	
--"the Festival of St. [pop saintnames]", 	
--"the [one of]Celebration[or]Festival[purely at random] of [pop histnames]'s [one of]Eye[or]Nose[or]Finger[or]Tongue[or]Ear[or]Defeat[or]Demise[or]Despair[or]Delight[or]Mistake[or]Wonder[or]Victory[purely at random]"	
--}.	
--	
--	
--[	
--	
--"the Festival of St. [pop saintnames]",	
--"the [one of]Celebration[or]Day[or]Feast[or]Festival[or]Night[purely at random] of [pop oddfest]",	
--]	
--	
--festadj is a list of texts that varies. festadj is {	
--"International", "National", "Annual", "Biennial"	
--}	
--	
--[festofsub is for things that follow the pattern "Festival of Whatever". ]	
--	
--festofsub is a list of texts that varies. festofsub is {	
--"Apples", "Art", "Boardgames", "Beer", "Blues", "Boardgames", "Burlesque", "Candles", "Cheese", "Chess", "Clowns", "Coffee", "Costumes", "Dance", "Fashion", "Fireworks", "Flavours", "[one of]Baroque [or]Folk [or]Chamber [or]Country [or][purely at random]Music", "Food and Drink", "Grapes", "Heritage", "Hip Hop", "Incunabula", "Jazz", "Kites", "Knitting", "Literature", "Masks", "Opera", "Roses", "Pastry", "Pickles", "Pie", "Poetry", "Puzzles", "Reggae", "Rock", "Roses", "Salsa", "Spices", "Techno", "Technology", "the Bizarre", "Trees", "Tulips", "[one of]Underground [or]Silent [or]Animated [or][purely at random]Film", "Wine"	
--}.	
--	
--[subfest is for things that follow the pattern "Whatever Festival".]	
--	
--subfest is a list of texts that varies. subfest is {	
--"Accordion", "Apple", "Art", "Baroque", "Beer", "Blues", "Burlesque", "Candle", "Cheese", "Chess", "Coffee", "Costume", "Dance", "Drama", "Fashion", "Fireworks", "Flavour", "Folk", "[one of]Folk [or]Chamber [or]Country [or][purely at random]Music", "Food and Drink", "Fireworks", "Fringe", "Grape", "Heritage", "Hip Hop", "Incunabula", "Jazz", "Kite", "[one of]Lit[or]Literature[purely at random]", "Mask", "Opera", "Rose", "Pastry", "Pickle", "Pie", "Poetry", "Puzzle", "Reggae", "Rock", "Rose", "Salsa", "Spice", "Techno", "Technology", "Tree", "Tulip", "[one of]Underground [or]Silent [or]Animated [or][purely at random]Film", "Vegan", "Wine"	
--}	
--	
--[subexpo is for things that follow the pattern "Whatever Expo".]	
--	
--subexpo is a list of texts that varies. subexpo is {	
--"Agriculture", "Art", "Beef", "Beer", "Book", "Builders", "Calligraphy", "Cheese", "Coffee", "Culinary", "Cultural", "Design", "Fabric", "Fashion", "Flower", "Food and Drink", "Furniture", "Grape", "Industry", "Lace", "Literature", "Ribbon", "Rose", "Paper", "Pastry", "Pie", "Rose", "Shoe", "Spice", "Taxidermy", "Topiary", "Tech", "Technology", "Textile", "Tulip", "Wine"	
--}	
--	
--[oddfest is for peculiar or esoteric festivals.]	
--	
--oddfest is a list of texts that varies. oddfest is {	
--"Awe", "Bats", "Conjunction", "Crystals", "Dreams", "Emancipation", "Fermentation", "Frogs", "Glory", "Joy", "Laughter", "Minnows", "Moles", "Occlusion", "Passion","Sadness", "Saturation", "Snakes", "Sublimation", "Stars", "Transmutation", "Unbelievers", "Weeping", "Winnowing"
+[Festivals to attend]
+
+festival is a list of texts that varies. festival is {
+"the [one of]Celebration[or]Day[or]Feast[or]Festival[or]Night[purely at random] of [pop oddfest]", 
+"the [pop majorloc] Festival of [pop festofsub]", 
+"the [pop majorloc] [pop subfest] Festival", 
+"the [pop majorloc] [pop festadj] Festival of [pop festofsub]", 
+"[pop majorloc] [one of]Fest[or]Illuminations[or]Lights[or]Days[or]Nights[at random]", 
+"the [pop majorloc] [pop festadj] [pop subfest] Festival", 
+"the [pop majorloc] [pop subexpo] [one of]Expo[or]Exposition[or]Showcase[at random]", 
+"the [pop festadj] [pop majorloc] [pop subexpo] [one of]Expo[or]Exposition[or]Showcase[purely at random]", 
+"[pop subfest] Fest [pop majorloc]", 
+"the Festival of St. [pop saintnames]", 
+"the [one of]Celebration[or]Festival[purely at random] of [pop histnames]'s [one of]Eye[or]Nose[or]Finger[or]Tongue[or]Ear[or]Defeat[or]Demise[or]Despair[or]Delight[or]Mistake[or]Wonder[or]Victory[purely at random]"
+}.
+
+
+[
+
+"the Festival of St. [pop saintnames]",
+"the [one of]Celebration[or]Day[or]Feast[or]Festival[or]Night[purely at random] of [pop oddfest]",
+]
+
+festadj is a list of texts that varies. festadj is {
+"International", "National", "Annual", "Biennial"
+}
+
+[festofsub is for things that follow the pattern "Festival of Whatever". ]
+
+festofsub is a list of texts that varies. festofsub is {
+"Apples", "Art", "Boardgames", "Beer", "Blues", "Boardgames", "Burlesque", "Candles", "Cheese", "Chess", "Clowns", "Coffee", "Costumes", "Dance", "Fashion", "Fireworks", "Flavours", "[one of]Baroque [or]Folk [or]Chamber [or]Country [or][purely at random]Music", "Food and Drink", "Grapes", "Heritage", "Hip Hop", "Incunabula", "Jazz", "Kites", "Knitting", "Literature", "Masks", "Opera", "Roses", "Pastry", "Pickles", "Pie", "Poetry", "Puzzles", "Reggae", "Rock", "Roses", "Salsa", "Spices", "Techno", "Technology", "the Bizarre", "Trees", "Tulips", "[one of]Underground [or]Silent [or]Animated [or][purely at random]Film", "Wine"
+}.
+
+[subfest is for things that follow the pattern "Whatever Festival".]
+
+subfest is a list of texts that varies. subfest is {
+"Accordion", "Apple", "Art", "Baroque", "Beer", "Blues", "Burlesque", "Candle", "Cheese", "Chess", "Coffee", "Costume", "Dance", "Drama", "Fashion", "Fireworks", "Flavour", "Folk", "[one of]Folk [or]Chamber [or]Country [or][purely at random]Music", "Food and Drink", "Fireworks", "Fringe", "Grape", "Heritage", "Hip Hop", "Incunabula", "Jazz", "Kite", "[one of]Lit[or]Literature[purely at random]", "Mask", "Opera", "Rose", "Pastry", "Pickle", "Pie", "Poetry", "Puzzle", "Reggae", "Rock", "Rose", "Salsa", "Spice", "Techno", "Technology", "Tree", "Tulip", "[one of]Underground [or]Silent [or]Animated [or][purely at random]Film", "Vegan", "Wine"
+}
+
+[subexpo is for things that follow the pattern "Whatever Expo".]
+
+subexpo is a list of texts that varies. subexpo is {
+"Agriculture", "Art", "Beef", "Beer", "Book", "Builders", "Calligraphy", "Cheese", "Coffee", "Culinary", "Cultural", "Design", "Fabric", "Fashion", "Flower", "Food and Drink", "Furniture", "Grape", "Industry", "Lace", "Literature", "Ribbon", "Rose", "Paper", "Pastry", "Pie", "Rose", "Shoe", "Spice", "Taxidermy", "Topiary", "Tech", "Technology", "Textile", "Tulip", "Wine"
+}
+
+[oddfest is for peculiar or esoteric festivals.]
+
+oddfest is a list of texts that varies. oddfest is {
+"Awe", "Bats", "Conjunction", "Crystals", "Dreams", "Emancipation", "Fermentation", "Frogs", "Glory", "Joy", "Laughter", "Minnows", "Moles", "Occlusion", "Passion","Sadness", "Saturation", "Snakes", "Sublimation", "Stars", "Transmutation", "Unbelievers", "Weeping", "Winnowing"
+}
 
 [yes obviously we need more kinds of boyfriend]
 
@@ -2384,32 +2386,32 @@ labellist is a list of texts that varies. labellist is {
 
 Volume - Testing Verbs
 
-understand "fest" as festing.	
--	
--festing is an action applying to nothing. understand "f" as festing. carry out festing: follow the festing rule.	
--	
--This is the festing rule:	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;	
--	say "[pop festival]";	
--	say line break;
+understand "fest" as festing.
 
+festing is an action applying to nothing. understand "f" as festing. carry out festing: follow the festing rule.
+
+This is the festing rule:
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	say "[pop festival]";
+	say line break;
+	
 Understand "era" as erring.
 
 Erring is an action applying to nothing. Understand "e" as erring. Carry out erring: follow the erring rule.
