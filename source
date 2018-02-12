@@ -351,45 +351,45 @@ A theme has a list of texts called the composite.
 A theme has a list of texts called phantpre.
 
 Goth is a theme. The twist of goth is {"astringent","attenuated", "bitter", "black", "bleak", "blood", "crimson", "dark", "desolate", "ethereal", "forbidden", "funereal", "grim", "lachrymose", "midnight", "mournful", "nocturnal", "pale", "purple", "red", "sanguine", "scarlet", "serpentine", "shadowy", "sinister", "spectral", "tragic", "vermillion", "white", "wispy"}.
-The composite of goth is {"haunting", "lingering over", "shrouded by", "deepened by", "darkened with", "enshrouded in"}.
-The phantpre of goth is {"bane", "bleak", "bone", "corpse", "crow", "dark", "grave", "grief", "heart", "hurt", "pale", "poison", "raven", "rib", "rose", "shadow", "skull", "sorrow", "spine", "tomb","witch"}.
+The composite of goth is {"haunting", "lingering over", "shrouded by", "deepened by", "darkened with", "enshrouded in", "fading into"}.
+The phantpre of goth is {"bane", "bleak", "bone", "corpse", "crow", "dagger", "dark", "grave", "grief", "heart", "hurt", "pale", "poison", "raven", "rib", "rose", "shadow", "skull", "sorrow", "spine", "tomb","witch"}.
 
 Mystic is a theme. The twist of mystic is {"devotional", "forbidden", "heady", "luminous", "narcotic", "opalescent", "pagan", "pellucid", "potent", "pungent", "radiant", "sacred", "sacramental", "sacrificial", "scorched", "smoky", "transcendent"}.
-The composite of mystic is {"graced with", "illuminates", "is born from"}.
-The phantpre of mystic is {"altar", "angel", "candle", "curse", "devil", "monk", "omen", "rood", "saint", "shrine", "smoke", "soul", "temple", "way", "witch"}.
+The composite of mystic is {"graced with", "illuminates", "is born from", "bright with", "clarified by"}.
+The phantpre of mystic is {"altar", "angel", "candle", "chant", "curse", "devil", "hymn", "monk", "omen", "prayer", "rood", "saint", "shrine", "smoke", "soul", "star", "temple", "way", "witch"}.
 
-Woodland is a theme. The twist of woodland is {"dank", "dirty",  "feral", "fire", "forest", "earthy", "green", "mouldering", "murky","organic", "prickly", "tranquil", "vegetal","verdant", "wild", "woody"}.
-The composite of woodland is {"growing amongst", "intertwines with", "tangled with"}.
-The phantpre of woodland is {"bear", "boar","bird", "bog", "brush", "buck","deer", "duck", "elf", "fox", "glade", "goose", "hog", "marsh", "mire", "moss",  "oak", "shade", "stink", "tangle", "wolf"}.
+Woodland is a theme. The twist of woodland is {"dank", "dirty",  "feral", "fire", "forest", "earthy", "green", "mouldering", "murky","organic", "prickly", "tranquil", "vegetal", "verdant", "wild", "woody"}.
+The composite of woodland is {"growing amongst", "intertwines with", "tangled with", "rich with"}.
+The phantpre of woodland is {"bear", "boar", "bird", "bog", "brush", "buck", "deer", "duck", "elf", "fae", "fox", "glade", "goose", "hog", "marsh", "mire", "moss",  "oak", "rain", "shade", "stink", "tangle", "wolf"}.
 
-Glam is a theme. The twist of glam is {"bold", "brilliant", "clean", "complicated", "dry", "flawless", "glamorous", "gleaming", "glorious", "glowing", "velvety", "luxurious", "piquant", "purple", "radiant",  "sleek", "silky", "smooth", "slick", "sumptuous", "velvety"}.
-The composite of glam is {"illuminates", "shines through", "gilded by", "pierces through", "thrust into"}.
-The phantpre of glam is {"cut", "fire", "foam", "glass", "jewel", "silver", "tiger"}.
+Glam is a theme. The twist of glam is {"bold", "brilliant", "clean", "complicated", "dry", "flawless", "glamorous", "gleaming", "glorious", "glowing", "velvety", "luxurious", "piquant", "purple", "radiant", "regal",  "sleek", "silky", "smooth", "slick", "sumptuous", "velvety"}.
+The composite of glam is {"illuminates", "shines through", "gilded by", "pierces through", "thrust into", "refracted through", "cascading into"}.
+The phantpre of glam is {"cut", "facet", "fire", "foam", "glass", "gold", "glitter", "jewel", "metal", "mirror", "silver", "tiger"}.
 
 [Lewd is probably better thought of as Decadent, but 'lewd' is shorter.] 
-Lewd is a theme. The twist of lewd is {"bawdy", "beguiling", "carnal", "decadent", "dirty", "fiery",  "filthy","fire", "firm", "hot", "intense", "juicy", "languid", "louche", "magnetic", "passionate", "playful", "potent", "rough", "seductive", "sensual", "sinful", "smouldering", "silky", "soft", "supple", "sultry", "sweet", "tender", "torrid","urgent", "voluptuous"}.
-The composite of lewd is {"caresses", "caressed by", "embraces", "embraced by", "entangled with", "pays court to", "seduces", "is seduced by", "swelling with", "tainted with", "glistening with"}.
-The phantpre of lewd is {"bind", "choke", "dream", "finger", "honey", "horn", "love", "maiden", "musk", "smoke"}.
+Lewd is a theme. The twist of lewd is {"bawdy", "beguiling", "carnal", "decadent", "dirty", "fiery",  "filthy","fire", "firm", "hot", "intense", "juicy", "languid", "louche", "magnetic", "passionate", "playful", "potent", "rough", "seductive", "sensual", "sinful", "smouldering", "silky", "soft", "supple", "sultry", "sweet", "tender", "torrid", "urgent", "voluptuous"}.
+The composite of lewd is {"caresses", "caressed by", "embraces", "embraced by", "entangled with", "pays court to", "seduces", "is seduced by", "swelling with", "tainted with", "glistening with", "kissed by"}.
+The phantpre of lewd is {"bind", "choke", "dream", "finger", "honey", "horn", "love", "maiden", "musk", "nectar", "sleep", "smoke"}.
 
 Ancient is a theme. The twist of ancient is {"ancient", "aged", "blood", "classic", "desert", "forbidden", "legacy", "majestic", "mysterious", "noble", "obscure", "portentous", "timeless"}.
-The composite of ancient is {"graces", "in concert with", "entombed with", "emblazoned on"}.
-The phantpre of ancient is {"kings", "march", "paper", "pillar", "queens", "rook", "ruin", "script", "spear"}.
+The composite of ancient is {"graces", "in concert with", "entombed with", "emblazoned on", "limned by", "rich with", "forms a tapestry with", "crumbles into"}.
+The phantpre of ancient is {"blade", "chalice", "kings", "march", "paper", "pillar", "queens", "rook", "ruin", "script", "spear", "tower", "trove"}.
 
-Spring is a theme. The twist of spring is {"clean", "crisp", "effervescent", "fresh", "green", "light", "pink", "piquant", "refreshing",  "sweet", "vibrant", "young"}.
-The composite of spring is {"blooms alongside", "brightened by"}.
-The phantpre of spring is {"breeze", "brook", "creek", "dawn", "dew", "foam", "may", "spring", "sweet"}.
+Spring is a theme. The twist of spring is {"budding", "clean", "crisp", "effervescent", "fresh", "green", "light", "pink", "piquant", "refreshing",  "sweet", "tender", "verdant", "vibrant", "young"}.
+The composite of spring is {"blooms alongside", "blushes with", "breathes with", "brightened by", "enlivens", "hints at", "is kissed by", "swirls with", "yields to"}.
+The phantpre of spring is {"breeze", "brook", "child", "creek", "dawn", "dew", "foam", "glow", "may", "spring", "sweet", "youth"}.
 
 Summer is a theme. The twist of summer is {"fiery", "golden", "green", "glowing", "languid", "mild", "juicy", "ripe", "scorching", "torrid", "warm"}.
-The composite of summer is {"bursting with", "grows alongside", "swelling with", "warmed by", "shines on", "shines through", "shimmering with"}.
-The phantpre of summer is {"butter", "fox", "honey", "milk", "pepper", "summer", "sun"}.
+The composite of summer is {"bursting with", "grows alongside", "pregnant with", "rich with", "swelling with", "warmed by", "shines on", "shines through", "shimmering with"}.
+The phantpre of summer is {"butter", "fox", "honey", "lion", "milk", "pepper", "summer", "sun", "wine"}.
 
-Fall is a theme. The twist of fall is {"autumnal", "brown", "cool", "earthy", "forlorn", "golden", "melancholy", "mellow",  "mottled","rich", "ripe", "red", "russet"}.
-The composite of fall is {"lingering on", "drifts through"}.
-The phantpre of fall is {"autumn", "burn", "cloud", "dusk", "fog", "rain", "spring", "wind"}.
+Fall is a theme. The twist of fall is {"autumnal", "brown", "cool", "earthy", "forlorn", "golden", "melancholy", "mellow", "mottled", "rich", "ripe", "red", "russet"}.
+The composite of fall is {"lingering on", "drifts through", "smoky with", "decaying into", "gives way to"}.
+The phantpre of fall is {"apple", "autumn", "burn", "cloud", "dusk", "ember", "fog", "harvest", "phoenix", "rain", "spring", "wind"}.
 
-Winter is a theme. The twist of winter is {"austere", "barren", "bitter", "black", "bracing", "brisk", "chilly", "dark", "fire", "grim", "harsh", "metallic", "midnight", "nocturnal","pale",  "severe", "sharp","somber", "white"}.
-The composite of winter is {"resting upon", "sinks into", "slumbers on"}.
-The phantpre of winter is {"bitter", "flint", "frost", "grim", "ice", "iron", "knife", "pale", "snow", "stone", "winter", "wolf"}.
+Winter is a theme. The twist of winter is {"austere", "barren", "bitter", "black", "bracing", "brisk", "chilly", "dark", "fire", "grim", "harsh", "metallic", "midnight", "nocturnal", "pale", "severe", "sharp", "somber", "white"}.
+The composite of winter is {"resting upon", "sinks into", "slumbers on", "fades into", "whispers of"}.
+The phantpre of winter is {"bitter", "flint", "frost", "grim", "ice", "iron", "knife", "pale", "snow", "stone", "thorn", "winter", "wolf"}.
 
 The generic composite list is a list of texts that varies. The generic composite list is {"complemented by", "complements", "layered over", "lifts up", "suffused with", "shot through with", "softened with", "thickened with", "mingling with", "with", "and"}.
 
