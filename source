@@ -2171,7 +2171,7 @@ situationmemory is a list of texts that varies. situationmemory is {"when you [o
 "when you visited [assoc majorloc] for [one of]a few days[or]a week[or]a month[or]a weekend[purely at random]",
 "when you were in [assoc majorloc] for a [one of]conference[or]symposium[or]client meeting[or]consultancy gig[purely at random]"}.
 
-houseadjs is a list of texts that varies. houseadjs is {"[one of]adorable[or]weird[or]strange[or]quaint[purely at random] little", "awful", "charming", "claustrophobic", "cramped", "creepy", "damp", "[one of]ghastly[or]nasty[purely at random] little", "dilapidated", "historic",  "moldy", "overpriced", "picturesque", "terrible", "unfurnished"}.
+houseadjs is a list of texts that varies. houseadjs is {"[one of]adorable[or]weird[or]strange[or]quaint[purely at random] little", "awful", "bare", "charming", "claustrophobic", "cramped", "creepy", "damp", "[one of]ghastly[or]nasty[purely at random] little", "cozy", "comfortable", "decorated", "dilapidated", "elegant", "grim", "gloomy," "haunted", "historic",  "light-filled", "modest", "moldy", "overpriced", "plain", "picturesque", "spacious", "sparse", "terrible", "unfurnished"}.
 
 housetypes is a list of texts that varies. housetypes is {"flat", "apartment", "atelier", "basement", "bedsit", "studio", "room", "loft", "townhouse"}.
 
