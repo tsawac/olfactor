@@ -1,0 +1,76 @@
+
+CHEAT SHEET
+
+[p] : paragraph break. (More efficient than I7's native [paragraph break].
+[br]: line break.
+
+
+POPS
+[pop N]: pick a random member from list N, and say it.
+[uppop N]: pop, but capitalises the first letter.
+[downpop N]: pop, but all lowercase.
+[titlepop N]: pop, but with all words capitalised.
+[noreppop N]: pop, but rejects a result if it has been noreppop'd before on this turn
+[friendpop N]: for major NPCs, adding them to special lists. Mostly it'll be [friendpop NPCnames]
+
+
+[*a]: Use before any [pop N] to get a/an.
+[plure]: Use before any [pop], and put [s] or [*s] after it; will pluralise singular nouns.
+[is-are]: says "is" or "are" depending on whether things are plural
+
+[cutadj] and [backadj]: use on either side of a scent pop if you don't want it to sometimes include randomly-selected adjectives, like [cutadj][pop allbasicscents][backadj].
+
+IRREGULAR PLURALS:
+
+[reckon]: declares that a noun is its own plural ('sheep')
+[*es] - > countess[es]
+[*f] -> wol[f|ves]
+[*ies] -> count[y|ies]
+[*en] -> ox[en]
+[*man] -> man/men; will eventually respect gender
+[*ices] -> cod[ex|ices]
+[*ix] -> aviatr[ix|ices]
+
+(You can come up with your own, too.)
+
+GENDERS:
+
+(of NPCs mentioned in a memory)
+
+[neut]: if gender is unestablished, set to a random gender
+[fem]: if gender is unestablished, 90% chance of setting to female, 5% to male, 5% nonbinary
+[masc]: if gender is unestablished, 90% chance of setting to male, 5% to female, 5% nonbinary
+
+[their], [they], [them]: returns their/her/his, they/he/she, them/her/him, according to pre-established gender; if no gender is established, choose one at random.
+
+MEMORY MANIPULATION:
+
+[m N]: Add resonance list N to possible resonances. So if a memory evokes romance, [m romance]. See Targeted Resonances for possibilities.
+
+[lover]: [m romance, [m lust], and tag lover-themed fragments at the end of the sentence
+
+[theseason], [upseason]: Says the current season: if there isn't an established season already, choose one. upseason does the same, but returns Spring rather than spring.
+[spring], [summer], [autumn], [winter]: says nothing, but sets the season manually.
+
+[aproposadj], [aproposnoun]: These grab words from the current theme/s - so if the perfume is goth-themed, they might give you 'pale' and 'crow' respectively. Mostly good for naming things ("Crow House").
+
+COMMONLY-USED LISTS:
+
+NPCnames: names of characters (might be full names, surnames or forenames)
+allsurnames: just surnames
+histnames: names that work as names of historical eras (generally one-word)
+
+Roles: a large list of personal nouns, including jobs (doctor, poet, admirer, subjectivist)
+
+allbasicscents: every scent, except for weird hints and more complicated constructions. Consider bracketing with [cutadj] and [backadj] if you want the output to be a single word
+
+colors: exciting colours! cornflower! sienna! indigo!
+simpcolors: basic colours! red, black, green, grey
+
+majorloc: major cities
+
+regionals: nations and regions that a scent might come from
+suitornats: national/cultural identity of NPCs; slightly different
+
+namedplace: locates a memory in a named place, with a preposition: 'at the Blue Mosque'
+didlocation: locates a memory in either a named or generic place ('in a Cairo makerspace')
