@@ -28,12 +28,18 @@ VOLUME - MEMORY
     * genericadjectives - defining qualities of distantly-remembered people
   BOOK - NAMED CHARACTERS
     * subloc - kinds of building that memorable events might happen inside
+    * profpara - brief summaries of professional relationships
+    * npcissues - problems of colleagues
     CHAPTER - NAMELISTS
       * NPCnames - any naming-pattern you care to come up with, really
   BOOK - COMPLEX MEMORY
     * convtopics gentopics - subjects of memorable conversations
     * memimperfect - a grab-bag of remembered features of a period in the PC's life
+    * longimperfect - a more complicated remembered feature, like a relationship (only 1 example right now)
     * festofsub, subfest, subexpo, oddfest: kinds of festival
+    * groupmainact - a memorable, scene-setting activity done with a friend
+    * groupdetails - an incident within a groupmainact activity
+    * soloaction - things done alone
     * suitoradjs - defining personal qualities of unnamed past loves
     * Roles - a big pile of personal nouns that is rather large but could be larger and more ramified
     * sidelines - hobbies unrelated to perfumery
