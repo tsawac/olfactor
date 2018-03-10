@@ -27,9 +27,14 @@ Instead of abooting:
 startroom is a room.
 
 After printing the banner text:
-	say "Update 0.6: [b]Damask Rose[/b][p]";
+	say "Update 0.7: [b]Leather[/b][p]";
 
 [
+UPDATE 0.7: LEATHER
+	* boots
+		* in theory other scented objects may come along later, but mostly boots
+	* address a bug with [*a] that makes it misfire on nested pops
+	* some prepatory work on unique memories
 UPDATE 0.6: DAMASK ROSE
 	* more resonance-tagging
 	* more yak-shaving on buildings
@@ -94,26 +99,41 @@ pop-count is a number that varies. pop-count is 1.
 
 poplist is a list of texts that varies.
 notelist is a list of texts that varies.
+
+depthgauge is a number that varies. depthgauge is 0.
+a-depths is a list of numbers that varies.
 	
 To say pop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
 	let X be the number of entries in N;
 	let Q be a random number between 1 and X;
 	now pop-count is Q;
 	let Z be entry Q of N;
 	now Z is the substituted form of Z;
-	if a-coming is true begin;
+	if depthgauge is listed in a-depths begin;
 		let F be character number 1 in Z;
 		if F matches the regular expression "<AEIOUaeiou>" begin;
 			say "n ";
 		otherwise;
 			say " ";
 		end if;
-		now a-coming is false;
+		remove depthgauge from a-depths;
 	end if;
 	say Z;
+	decrement depthgauge;
+	
 	
 	
 To say uppop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
 	let X be the number of entries in N;
 	let Q be a random number between 1 and X;
 	let Z be entry Q of N;
@@ -124,18 +144,24 @@ To say uppop (N - a list of texts):
 	let XA be character number 1 in XZ;
 	let XB be XA in upper case;
 	replace character number 1 in XZ with XB;
-	if a-coming is true begin;
+	if depthgauge is listed in a-depths begin;
 		let F be character number 1 in XZ;
 		if F matches the regular expression "<AEIOUaeiou>" begin;
 			say "n ";
 		otherwise;
 			say " ";
 		end if;
-		now a-coming is false;
+		remove depthgauge from a-depths;
 	end if;
 	say XZ;
+	decrement depthgauge;
 	
 To say titlepop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
 	let X be the number of entries in N;
 	let Q be a random number between 1 and X;
 	let Z be entry Q of N;
@@ -144,18 +170,24 @@ To say titlepop (N - a list of texts):
 	end if;]
 	let XZ be the substituted form of Z;
 	let XB be XZ in title case;
-	if a-coming is true begin;
+	if depthgauge is listed in a-depths begin;
 		let F be character number 1 in XB;
 		if F matches the regular expression "<AEIOUaeiou>" begin;
 			say "n ";
 		otherwise;
 			say " ";
 		end if;
-		now a-coming is false;
+		remove depthgauge from a-depths;
 	end if;
 	say XB;
+	decrement depthgauge;
 	
 To say downpop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
 	let X be the number of entries in N;
 	let Q be a random number between 1 and X;
 	let Z be entry Q of N;
@@ -163,36 +195,48 @@ To say downpop (N - a list of texts):
 	let XA be character number 1 in XZ;
 	let XB be XA in lower case;
 	replace character number 1 in XZ with XB;
-	if a-coming is true begin;
+	if depthgauge is listed in a-depths begin;
 		let F be character number 1 in XZ;
 		if F matches the regular expression "<AEIOUaeiou>" begin;
 			say "n ";
 		otherwise;
 			say " ";
 		end if;
-		now a-coming is false;
+		remove depthgauge from a-depths;
 	end if;
 	say XZ;
+	decrement depthgauge;
 	
 
 To say alldownpop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
 	let X be the number of entries in N;
 	let Q be a random number between 1 and X;
 	let Z be entry Q of N;
 	let XZ be the substituted form of Z;
 	now XZ is XZ in lower case;
-	if a-coming is true begin;
+	if depthgauge is listed in a-depths begin;
 		let F be character number 1 in XZ;
 		if F matches the regular expression "<AEIOUaeiou>" begin;
 			say "n ";
 		otherwise;
 			say " ";
 		end if;
-		now a-coming is false;
+		remove depthgauge from a-depths;
 	end if;
 	say XZ;
+	decrement depthgauge;
 
 To say noreppop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
 	let X be the number of entries in N;
 	let Q be a random number between 1 and X;
 	let Z be entry Q of N;
@@ -203,37 +247,44 @@ To say noreppop (N - a list of texts):
 		now Z is the substituted form of Z; 
 	end while;
 	add Z to poplist;
-	if a-coming is true begin;
+	if depthgauge is listed in a-depths begin;
 		let F be character number 1 in Z;
 		if F matches the regular expression "<AEIOUaeiou>" begin;
 			now Z is "n [Z]";
 			now a-coming is false;
 		otherwise;
 			now Z is  " [Z]";
-			now a-coming is false;
+			remove depthgauge from a-depths;
 		end if;
 	end if;
 	say Z;
+	decrement depthgauge;
 	
 To say friendpop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
 	let X be the number of entries in N;
 	let Q be a random number between 1 and X;
 	now pop-count is Q;
 	let Z be entry Q of N;
 	now Z is the substituted form of Z;
-	if a-coming is true begin;
+	if depthgauge is listed in a-depths begin;
 		let F be character number 1 in Z;
 		if F matches the regular expression "<AEIOUaeiou>" begin;
 			say "n ";
 		otherwise;
 			say " ";
 		end if;
-		now a-coming is false;
+		remove depthgauge from a-depths;
 	end if;
 	now notalone is true;
 	add Z to the clique;
 	add Z to socdirect;
 	say Z;
+	decrement depthgauge;
 
 [notalone should become true when a memory fragment involves a major NPC. This is only currently right for named NPCs, and might need expanding when unnamed but significant NPCs appear.]
 
@@ -387,7 +438,6 @@ A theme is a kind of thing.
 A theme has a list of texts called the twist.
 A theme has a list of texts called the composite.
 A theme has a list of texts called phantpre.
-A theme has a list of lists of texts called autoresonance.
 
 Goth is a theme. The twist of goth is {"astringent","attenuated", "bitter", "black", "bleak", "blood", "crimson", "dark", "desolate", "ethereal", "forbidden", "funereal", "grim", "lachrymose", "midnight", "mournful", "nocturnal", "pale", "purple", "red", "sanguine", "scarlet", "serpentine", "shadowy", "sinister", "spectral", "tragic", "vermillion", "white", "wispy"}.
 The composite of goth is {"haunting", "lingering over", "shrouded by", "deepened by", "darkened with", "enshrouded in", "fading into"}.
@@ -410,7 +460,7 @@ Lewd is a theme. The twist of lewd is {"bawdy", "beguiling", "carnal", "decadent
 The composite of lewd is {"caresses", "caressed by", "embraces", "embraced by", "entangled with", "pays court to", "seduces", "is seduced by", "swelling with", "tainted with", "glistening with", "kissed by"}.
 The phantpre of lewd is {"bind", "choke", "curve", "dream", "finger", "honey", "horn", "love", "maiden", "musk", "nectar", "sleep", "smoke", "urge"}.
 
-Ancient is a theme. The twist of ancient is {"ancient", "aged", "blood", "classic", "desert", "forbidden", "legacy", "majestic", "mysterious", "noble", "obscure", "portentous", "timeless"}.
+Ancient is a theme. The twist of ancient is {"ancient", "aged", "archaic", "blood", "classic", "desert", "forbidden", "legacy", "majestic", "mysterious", "noble", "obscure", "portentous", "timeless"}.
 The composite of ancient is {"graces", "in concert with", "entombed with", "emblazoned on", "limned by", "rich with", "forms a tapestry with", "crumbles into"}.
 The phantpre of ancient is {"blade", "chalice", "kings", "march", "paper", "pillar", "queens", "rook", "ruin", "script", "spear", "tower", "trove"}.
 
@@ -985,7 +1035,7 @@ manyadjs is a list of texts that varies. manyadjs is {"[pop regionals]", "[pop m
 [Thus far this list is pretty much entirely based on placenames associated with scent ingredients. Expand at will.]
 
 Regionals is a list of texts that varies. Regionals is {
-"Afghan", "African", "Algerian", "Anatolian", "Appalachian", "Australian", "Arabian", "Baltic", "Bulgarian", "Brazilian", "Chinese", "Corsican", "Cuban", "Damascus", "English", "Ethiopian", "Florentine", "French", "Genovese", "German", "Greek", "Guatamalan", "Haitian", "Hungarian", "Italian", "Irish", "Jamaican", "Jerusalem", "Korean", "Japanese", "Moroccan", "Mysore", "Nepali", "Palestinian", "Peruvian", "Persian", "Peruvian", "Roman", "Russian", "Siberian", "Somalian", "Syrian", "Turkish", "Ugandan", "Venezuelan", "Vietnamese", "Welsh"
+"Afghan", "African", "Algerian", "Anatolian", "Appalachian", "Australian", "Arabian", "Baltic", "Bulgarian", "Brazilian", "Chinese", "Corsican", "Cuban", "Damascus", "Dutch", "English", "Ethiopian", "Florentine", "French", "Genovese", "German", "Greek", "Guatamalan", "Haitian", "Hungarian", "Italian", "Irish", "Jamaican", "Jerusalem", "Korean", "Japanese", "Macedonian", "Mexican", "Moroccan", "Mysore", "Nepali", "Oaxacan", "Palestinian", "Peruvian", "Persian", "Peruvian", "Roman", "Russian", "Siberian", "Sicilian", "Somalian", "Syrian", "Thracian", "Turkish", "Ugandan", "Venezuelan", "Vietnamese", "Welsh"
 }.
 
 Book - Assembler
@@ -1366,7 +1416,7 @@ Volume - Memory
 memories is a list of texts that varies. 
 memories is {
 "[one of][pop gifts][or][pop antigifts][purely at random]",
-"[pop fashions]",
+"[one of][pop fashions][or][pop scentedgifts][purely at random]",
 "[pop selfreasons]",
 "[pop NPCsentence], [pop didpara]",
 "[pop complexmemory]",
@@ -1472,6 +1522,83 @@ genericroles is a list of texts that varies. genericroles is {
 "client[m business]", "colleague", "comrade", "critic", "editor", "interlocutor[m debate]", "lover[lover]", "patron", "protégé[m mentorship]", "student[m mentorship]", "suitor[m romance]", "rival", "[one of]ship[or]class[or]room[or]bunk[purely at random]mate"}
 
 genericadjectives is a list of texts that varies. genericadjectives is {"apologetic", "beloved", "bothersome", "difficult", "disappointing", "distant", "half-forgotten", "long-dead[m melancholy]", "long-lost", "longtime", "melancholy[m melancholy]", "noble", "occasional", "persistent", "respected", "royal", "tedious", "troublesome[m trouble]", "vexatious", "wronged"}.
+
+Part - Scented Things
+
+[(used to perfume) (a pair of good boots) (that N gave you|that you gave to N|for X to wear at Y)]
+
+scentedgifts is a list of texts that varies. scentedgifts is {
+"[one of]This was [pop imbued][or][uppop imbued][purely at random] [*a][pop clothing][one of], a gift from [pop NPCnames][or][comma] that [pop NPCnames] gave you[or][comma] that you bought in [pop majorloc][purely at random]",
+"You [pop madeit] this to scent [*a][pop clothing][comma] for [pop NPCnames] to wear at [one of][pop partytimes][or][pop festival][or][*their] [pop partymods] [pop partykinds][purely at random]"
+}
+
+clothing is a list of texts that varies. clothing is {"pair of [plure][pop bootlist]"}.
+
+imbued is a list of texts that varies. imbued is {"imbued into", "used to perfume", "worked into"}.
+
+Chapter - Boots
+
+bootlist is a list of texts that varies. bootlist is {
+"[one of][pop bootcrap] [or][delay d-bootcrap][or][purely at random][one of][pop bootcolors] [or][purely at random][one of][pop bootleather] [or][or][purely at random][one of][pop bootheels]-heel [or][delay heelfinal][or][purely at random][one of][pop bootheights] [or][purely at random]boot[s][finalclause]"
+}.
+
+
+[heels: French, Cuban, Spanish, military, opera, kidney, kitten, stiletto, platform, wedge]
+
+[chamois, suede, calfskin, cordovan, patent
+
+lace-up, button-up, strappy
+
+hand-tooled
+
+riding boot, high boot, top boot, ankle boot]
+
+['delay' is a way of making sure that something can be said either earlier or later in a text, but doesn't get repeated. The expected use is with a one-of statement that either pops N, or delays N.]
+
+The delaylist is a list of lists of texts that varies.
+
+To decide whether delays occur:
+	if the number of entries in the delaylist > 0, yes;
+	no.
+
+To say finalclause:
+	say "[if delays occur], [release-delay][end if]";
+
+To say delay (N - a list of texts):
+	add N to the delaylist;
+	
+To say release-delay:
+	if the number of entries in the delaylist > 0 begin;
+		let X be the number of entries in the delaylist;
+		let N be a random number between 1 and X;
+		let F be entry N in the delaylist;
+		say "[pop F][pushcomma]";
+	end if;
+	
+commacetic is a truth state that varies. commacetic is false.
+
+To say pushcomma:
+	now commacetic is true;
+	
+To say comma:
+	if commacetic is true begin;
+		say ",";
+		now commacetic is false;
+	end if;
+
+bootcrap is a list of texts that varies. bootcrap is {"cutout", "brocade", "button-up", "hand-tooled", "[one of]lace-up[or]high-laced[purely at random]", "strappy", "wingtip"}.
+
+d-bootcrap is a list of texts that varies. d-bootcrap is {"button-up", "hand-tooled[one of][or] in the [pop regionals] style[purely at random]", "lace-up", "with lots of straps"}.
+	
+bootheights is a list of texts that varies. bootheights is {"ankle", "calf-length", "high", "low", "knee", "[one of]motorcycle[or]engineer[or]combat[purely at random]", "riding", "thigh", "top"}.
+
+bootleather is a list of texts that varies. bootleather is {"calfskin", "chamois", "Cordovan leather", "patent leather", "suede", "[one of]velvet[or]satin[or]silk[purely at random]", "vinyl"}.
+
+bootcolors is a list of texts that varies. bootcolors is {"[pop colors]", "[pop simpcolors]", "black", "[one of]dark [or]light [or][purely at random]brown", "red"}.
+
+bootheels is a list of texts that varies. bootheels is {"French", "Cuban", "Spanish", "military", "opera", "kidney", "kitten", "stacked", "stiletto", "platform", "wedge"}.
+
+heelfinal is a list of texts that varies. heelfinal is {"with [*a][pop bootheels] heel", "[pop bootheels]-heeled"}.
 
 Book - Fashions
 
@@ -2423,14 +2550,14 @@ complexmemory is a list of texts that varies. complexmemory is {
 
 madeforparty is a list of texts that varies. madeforparty is {
 "You first wore it at [pop partytimes]",
-"You made it to wear at [pop partytimes]",
+"You [pop madeit] it to wear at [pop partytimes]",
 "You first smelled it on [one of][pop NPCnames][or][*a][pop modelshapes] [pop thegenders][purely at random] at [pop partytimes]",
-"You made it for [pop partytimes]",
+"You [pop madeit] it for [pop partytimes]",
 "[one of]Commissioned for[m business][or]A signature scent for[or]The official scent of[or]A bespoke scent for[purely at random] [pop partytimes]",
 "[one of]At [pop partytimes], it seemed as though everyone was wearing it[or]It seemed as though everyone was wearing it at [pop partytimes][purely at random]"
 }
 
-madeit is a list of texts that varies. madeit is {"composed it", "created it", "designed it", "developed it", "made it"}.
+madeit is a list of texts that varies. madeit is {"composed", "created", "designed", "developed", "made"}.
 
 partytimes is a list of texts that varies. partytimes is {
 "[pop NPCnames]'s [one of][pop fullparties][or][pop partymods] [pop partykinds][purely at random]",
@@ -2522,7 +2649,8 @@ groupaction is a list of texts that varies. groupaction is {
 "[pop groupmainact][one of] and[or],[purely at random] [noreppop groupdetails] and [noreppop groupdetails]"
 }.
 
-[obviously groupmainact is enormously incomplete]
+[obviously groupmainact is enormously incomplete:
+	* boat outings]
 
 groupmainact is a list of texts that varies. groupmainact is {
 "when [one of]the two of [or][purely at random]you [one of]broke[or]snuck[or]talked your way[purely at random] into [pop landmark][m mischief][m trouble]"
@@ -2633,7 +2761,9 @@ govphrase is a list of texts that varies. govphrase is {"back in[one of][or] the
 
 eraname is a list of texts that varies. eraname is {"the [pop gubberments]"}.
 
-gubberments is a list of texts that varies. gubberments is {"[noreppop histnames] administration", "[noreppop histnames] Cabinet", "Committee", "Commune", "[noreppop histnames] Compromise", "[noreppop histnames] Crisis", "Interregnum", "Pretendership", "Realignment", "[noreppop histnames] Regency", "[pop histnames] Republic", "Revanche", "Turmoil", "Triumvirate", "[noreppop histnames] Uprising"}.
+gubberments is a list of texts that varies. gubberments is {"[noreppop histnames] administration", "[noreppop histnames] Cabinet", "Committee", "Commune", "[noreppop histnames] Compromise", "[noreppop histnames] Crisis", "Interregnum", "Pretendership", "Realignment", "[noreppop histnames] Regency", "[pop histnames] Republic", "Revanche", "Turmoil", "Triumvirate", "[noreppop histnames] Uprising", "[pop reigns] of [pop histnames]"}.
+
+reigns is a list of texts that varies. reigns is {"ascendancy", "incumbency", "presidency", "reign", "tenure"}.
 
 govfelt is a list of texts that varies. govfelt is {"", "[noreppop govfeels] "}.
 
@@ -2650,9 +2780,9 @@ houseadjs is a list of texts that varies. houseadjs is {"[one of]adorable[or]wei
 
 housetypes is a list of texts that varies. housetypes is {"flat", "apartment", "atelier", "basement", "bedsit", "studio", "room", "loft", "townhouse"}.
 
-colors is a list of texts that varies. colors is {"absinthe", "apricot", "aquamarine", "amaranth", "azure", "bronze", "burgundy", "carmine", "celadon", "cerise", "cerulean", "chartreuse", "cinnabar", "claret", "copper", "coral", "cornflower", "ecru", "emerald", "goldenrod",  "heliotrope", "icterine", "indigo", "ivory", "lapis lazuli", "lavender", "magenta", "maroon", "mauve", "ochre", "oxblood", "periwinkle", "russet", "salmon", "scarlet", "sepia", "sienna", "tangerine", "turquoise", "ultramarine", "umber", "vermilion", "violet", "viridian"}.
+colors is a list of texts that varies. colors is {"absinthe", "apricot", "aquamarine", "amaranth", "azure", "bronze", "burgundy", "carmine", "celadon", "cerise", "cerulean", "chartreuse", "cinnabar", "claret", "copper", "coral", "cornflower", "ecru", "emerald", "fawn", "goldenrod",  "heliotrope", "icterine", "indigo", "ivory", "lapis lazuli", "lavender", "magenta", "maroon", "mauve", "ochre", "oxblood", "periwinkle", "plum", "russet", "salmon", "scarlet", "sepia", "sienna", "tangerine", "turquoise", "ultramarine", "umber", "vermilion", "violet", "viridian"}.
 
-simpcolors is a list of texts that varies. simpcolors is {"black", "blue", "brown", "green", "grey", "orange", "purple", "red", "white", "yellow", "[pop colors]"}.
+simpcolors is a list of texts that varies. simpcolors is {"black", "blue", "brown", "green", "grey", "orange", "pink", "purple", "red", "white", "yellow", "[pop colors]"}.
 
 [memimperfect needs a *lot* of additions, feels like; 'didn't adopt a cat' is good but way too common, e.g.]
 
@@ -2867,10 +2997,41 @@ Sam: pretty much the core brand tbh
 Cat: I want business cards that say "it's a _very_ nice dress"
 ]
 
+[
+uniquepop is only for the unique list
+]
+
+To say uniquepop (N - a list of texts):
+	increment depthgauge;
+	if a-coming is true begin;
+		add depthgauge to a-depths;
+		now a-coming is false;
+	end if;
+	let X be the number of entries in N;
+	let Q be a random number between 1 and X;
+	now pop-count is Q;
+	let Z be entry Q of N;
+	remove Z from N;  [this will never show up again]
+	now Z is the substituted form of Z;
+	if depthgauge is listed in a-depths begin;
+		let F be character number 1 in Z;
+		if F matches the regular expression "<AEIOUaeiou>" begin;
+			say "n ";
+		otherwise;
+			say " ";
+		end if;
+		remove depthgauge from a-depths;
+	end if;
+	say Z;
+	decrement depthgauge;
+	
+[Right now, uniquelist is worked randomly into memories. This should probably change closer to release, with unique memories being more paced out - three right at the beginning is probably not ideal.]
+
 uniquelist is a list of texts that varies. uniquelist is {
 "This was the first perfume you ever wore",
 "The first perfume you bought yourself",
-"This is the first scent you made (that wasn't rubbish, etc)"
+"This is the first scent you made (that wasn't rubbish, etc)",
+"You were in [pop majorloc] during the [pop gubberments]. You made this afterwards, to remember."
 }
 
 Book - Bottles
@@ -2935,13 +3096,16 @@ This is the full-scent rule:
 	end while;]
 	
 
+[testypop is a list of texts that varies. testypop is {"pile of [pop Roles]", "aggregation of [pop Roles]"}.]
+
 Instead of jumping:
 	let X be 0;
 	while X < 20 begin;
 	run cleanup;
 	themepick;
+		[say "[*a][pop testypop][br]";]
 		[say "[pop brandnames][br]";]
-		say "[pop structures]. [pop selfreasons].[p]";
+		say "[pop structures]. [pop scentedgifts][br]";
 		[say "[pop didlocation][br]";]
 		[say "[pop rand-res][br]";]
 		[say "[friendpop NPCnames] [one of]wore it[or]was wearing it[or]smelled of it[purely at random] [pop temporalic][br]";]
@@ -2973,4 +3137,11 @@ To run cleanup:
 		now poplist is {};
 		now notelist is {};
 		now the fraglist is {};
+		now the delaylist is {};
+		now commacetic is false;
+		now depthgauge is 0;
+		now a-depths is {};
+		if the number of entries in uniquelist < 1 begin;
+			remove "[pop uniquelist]" from memories, if present;
+		end if;
 now NPC-gender is 0;
