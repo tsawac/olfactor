@@ -33,7 +33,9 @@ After printing the banner text:
 UPDATE 0.8: NEROLI
 	* expanded group actions
 	* more lover fragments
+	* pops now track depth;  this should make a/an work better
 	* first properly-developed unique memory; unique memories now appear in regular output
+	* various corpus additions
 UPDATE 0.7: LEATHER
 	* boots
 		* in theory other scented objects may come along later, but mostly boots
@@ -135,7 +137,7 @@ To say pop (N - a list of texts):
 		otherwise;
 			say " ";
 		end if;
-		remove depthgauge from a-depths;
+		remove depthgauge from a-depths, if present;
 	end if;
 	say Z;
 	decrement depthgauge;
@@ -165,7 +167,7 @@ To say uppop (N - a list of texts):
 		otherwise;
 			say " ";
 		end if;
-		remove depthgauge from a-depths;
+		remove depthgauge from a-depths, if present;
 	end if;
 	say XZ;
 	decrement depthgauge;
@@ -191,7 +193,7 @@ To say titlepop (N - a list of texts):
 		otherwise;
 			say " ";
 		end if;
-		remove depthgauge from a-depths;
+		remove depthgauge from a-depths, if present;
 	end if;
 	say XB;
 	decrement depthgauge;
@@ -216,7 +218,7 @@ To say downpop (N - a list of texts):
 		otherwise;
 			say " ";
 		end if;
-		remove depthgauge from a-depths;
+		remove depthgauge from a-depths, if present;
 	end if;
 	say XZ;
 	decrement depthgauge;
@@ -240,7 +242,7 @@ To say alldownpop (N - a list of texts):
 		otherwise;
 			say " ";
 		end if;
-		remove depthgauge from a-depths;
+		remove depthgauge from a-depths, if present;
 	end if;
 	say XZ;
 	decrement depthgauge;
@@ -268,7 +270,7 @@ To say noreppop (N - a list of texts):
 			now a-coming is false;
 		otherwise;
 			now Z is  " [Z]";
-			remove depthgauge from a-depths;
+			remove depthgauge from a-depths, if present;
 		end if;
 	end if;
 	say Z;
@@ -292,7 +294,7 @@ To say friendpop (N - a list of texts):
 		otherwise;
 			say " ";
 		end if;
-		remove depthgauge from a-depths;
+		remove depthgauge from a-depths, if present;
 	end if;
 	now notalone is true;
 	add Z to the clique;
