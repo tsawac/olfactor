@@ -27,7 +27,7 @@ Instead of abooting:
 startroom is a room.
 
 After printing the banner text:
-	say "Update 0.7: [b]Neroli[/b][p]";
+	say "Update 0.8: [b]Neroli[/b][p]";
 
 [
 UPDATE 0.8: NEROLI
