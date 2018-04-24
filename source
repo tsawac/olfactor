@@ -492,7 +492,6 @@ Fall is a theme. The twist of fall is {"autumnal", "brown", "cool", "earthy", "f
 The composite of fall is {"lingering on", "drifts through", "smoky with", "decaying into", "gives way to"}.
 The phantpre of fall is {"apple", "autumn", "burn", "copper", "cloud", "dusk", "ember", "fog", "harvest", "phoenix", "rain", "wind"}.
 
-
 Winter is a theme. The twist of winter is {"austere", "barren", "bitter", "black", "bracing", "brisk", "chilly", "dark", "fire", "grim", "harsh", "metallic", "midnight", "nocturnal", "pale", "severe", "sharp", "somber", "white"}.
 The composite of winter is {"resting upon", "sinks into", "slumbers on", "fades into", "whispers of"}.
 The phantpre of winter is {"bitter", "flint", "frost", "grim", "ice", "iron", "knife", "pale", "snow", "stone", "storm", "thorn", "winter", "wolf"}.
@@ -1615,6 +1614,7 @@ bootleather is a list of texts that varies. bootleather is {"calfskin", "chamois
 bootcolors is a list of texts that varies. bootcolors is {"[pop colors]", "[pop simpcolors]", "black", "[one of]dark [or]light [or][purely at random]brown", "red"}.
 
 bootheels is a list of texts that varies. bootheels is {"French", "Cuban", "Spanish", "military", "opera", "kidney", "kitten", "stacked", "stiletto", "platform", "wedge"}.
+
 
 heelfinal is a list of texts that varies. heelfinal is {"with [*a][pop bootheels] heel", "[pop bootheels]-heeled"}.
 
@@ -2941,7 +2941,6 @@ movementprefixes is a list of texts that varies. movementprefixes is {"anarcho",
 movementsuffixes is a list of texts that varies. movementsuffixes is {"anarchist", "classicist", "feminist", "formalist", "graphic", "humanist", "impressionist", "localist", "ludologist", "materialist", "modernist", "narrativist", "pagan", "positivist", "realist", "romantic", "primitivist", "socialist", "surrealist", "structuralist", "symbolist", "textualist", "theist"}.
 To say movements: say "[pop movementprefixes][pop movementsuffixes]".
 
-
 rockmusicians is a list of texts that varies. rockmusicians is {"bassist", "drummer", "guitarist", "vocalist", "[pop musicians]"}.
 
 musicians is a list of texts that varies. musicians is {"accordionist", "banjo player", "bassist", "bassoonist", "beatboxer", "cellist", "chorister", "dulcimer player", "flautist", "glockenspiel player", "harpist", "harpsichordist", "horn player", "lute player", "oboist", "organist", "percussionist", "pianist", "taiko drummer", "theremin player", "throat-singer", "timpanist", "trombonist", "trumpet player", "tuba player", "turntablist", "violinist", "violist", "xylophonist"}.
@@ -3323,6 +3322,27 @@ perfumederring is a list of texts that varies. perfumederring is {
 "You wore this perfume during your escape, as a little island of normalcy"
 }
 
+"[pop derringdo]"
+}
+
+Part - Derring-Do
+
+[A unique memory in which the protagonist, their peripatetic lifestyle having landed them in a country under an oppressive government, performs an act of small but exciting resistance.
+1. Having become suspected, an escape across the border.
+2. Passing messages for a resistance cell.
+3. Providing a meeting-space and lookout.
+4. Sheltering an escaped political prisoner.]
+
+derringdo is a list of texts that varies. derringdo is {
+"[pop youwerein] [one of][pop majorloc][or][pop nations][purely at random] during [pop eraname]; [pop escapemotive] [pop derringfinal][if scented-trouble is false]. [pop perfumederring][end if][m strength][m adventure][m trouble]"
+}.
+
+perfumederring is a list of texts that varies. perfumederring is {
+"You [pop madeit] this scent [one of]on your first day of freedom[or]to mark the event, as soon as you had a little breathing-space[purely at random]",
+"You [pop madeit] this scent beforehand, as an exercise to calm your nerves",
+"You wore this perfume during your escape, as a little island of normalcy"
+}
+
 youwerein is a list of texts that varies. youwerein is {
 "You were in",
 "You found yourself in",
@@ -3480,7 +3500,7 @@ ministries is a list of texts that varies. ministries is {"Adherence", "Complian
 
 ofministries is a list of texts that varies. ofministries is {"Adherence", "Compliance", "Corrections", "Defence", "Doctrine", "[one of]Home[or]Mother[or]Father[purely at random]land [one of]Integrity[or]Defence[or]Preparedness[or]Readiness[or]Security[purely at random]", "the Interior", "Orthodoxy", "Propaganda", "Security", "War"}.
 
-Part 3 Death
+Part 3 - Death
 
 [
 A unique memory in which someone close to the protagonist dies,
