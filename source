@@ -492,7 +492,6 @@ Fall is a theme. The twist of fall is {"autumnal", "brown", "cool", "earthy", "f
 The composite of fall is {"lingering on", "drifts through", "smoky with", "decaying into", "gives way to"}.
 The phantpre of fall is {"apple", "autumn", "burn", "copper", "cloud", "dusk", "ember", "fog", "harvest", "phoenix", "rain", "wind"}.
 
-
 Winter is a theme. The twist of winter is {"austere", "barren", "bitter", "black", "bracing", "brisk", "chilly", "dark", "fire", "grim", "harsh", "metallic", "midnight", "nocturnal", "pale", "severe", "sharp", "somber", "white"}.
 The composite of winter is {"resting upon", "sinks into", "slumbers on", "fades into", "whispers of"}.
 The phantpre of winter is {"bitter", "flint", "frost", "grim", "ice", "iron", "knife", "pale", "snow", "stone", "storm", "thorn", "winter", "wolf"}.
@@ -1615,6 +1614,7 @@ bootleather is a list of texts that varies. bootleather is {"calfskin", "chamois
 bootcolors is a list of texts that varies. bootcolors is {"[pop colors]", "[pop simpcolors]", "black", "[one of]dark [or]light [or][purely at random]brown", "red"}.
 
 bootheels is a list of texts that varies. bootheels is {"French", "Cuban", "Spanish", "military", "opera", "kidney", "kitten", "stacked", "stiletto", "platform", "wedge"}.
+
 
 heelfinal is a list of texts that varies. heelfinal is {"with [*a][pop bootheels] heel", "[pop bootheels]-heeled"}.
 
@@ -2941,7 +2941,6 @@ movementprefixes is a list of texts that varies. movementprefixes is {"anarcho",
 movementsuffixes is a list of texts that varies. movementsuffixes is {"anarchist", "classicist", "feminist", "formalist", "graphic", "humanist", "impressionist", "localist", "ludologist", "materialist", "modernist", "narrativist", "pagan", "positivist", "realist", "romantic", "primitivist", "socialist", "surrealist", "structuralist", "symbolist", "textualist", "theist"}.
 To say movements: say "[pop movementprefixes][pop movementsuffixes]".
 
-
 rockmusicians is a list of texts that varies. rockmusicians is {"bassist", "drummer", "guitarist", "vocalist", "[pop musicians]"}.
 
 musicians is a list of texts that varies. musicians is {"accordionist", "banjo player", "bassist", "bassoonist", "beatboxer", "cellist", "chorister", "dulcimer player", "flautist", "glockenspiel player", "harpist", "harpsichordist", "horn player", "lute player", "oboist", "organist", "percussionist", "pianist", "taiko drummer", "theremin player", "throat-singer", "timpanist", "trombonist", "trumpet player", "tuba player", "turntablist", "violinist", "violist", "xylophonist"}.
@@ -3109,6 +3108,220 @@ uniquelist is a list of texts that varies. uniquelist is {
 "This was the first perfume you ever wore",
 "The first perfume you bought yourself",
 "This is the first scent you made (that wasn't rubbish, etc)",
+"[pop derringdo]",
+"[pop lost]"
+}
+
+Part 1 - Lost
+
+[a unique memory in which the protagonist gets lost on a trip and something pleasant and memorable happens]
+
+lost is a list of texts that varies. lost is {
+"[pop youwerelost] [pop majorloc] [pop tripreason]; [pop lostoccasion]. [pop lostreason] [one of]and that's how[or]and that's when[or]at which point[purely at random] you [one of]discovered[or]happened upon[or]came across[or]stumbled upon[or]found[purely at random] [a*][pop discoveryadj] [pop lostdiscovery]. [pop perfumelost]"
+}.
+
+youwerelost is a list of texts that varies. youwerelost is {
+"You were in",
+"You found yourself in",
+"You once visited"
+}.
+
+tripreason is a list of texts that varies. tripreason is {
+"for a festival",
+"on a research trip",
+"on sabbatical",
+"quite randomly",
+"for reasons that no longer seem important",
+"for reasons you've completely forgotten",
+"on vacation",
+"on a layover",
+"on the way home from somewhere else entirely"
+}.
+
+lostoccasion is a list of texts that varies. lostoccasion is {
+"it was your birthday",
+"you were in a gloriously good mood",
+"the weather was beautiful, the sky [pop skydesc] and the breeze [pop breezedesc]",
+"you were so happy, having just received word a paper was accepted for publication",
+"travel in those days was always invigorating",
+"it was a holiday and the city hummed with celebration"
+}
+
+skydesc is a list of texts that varies. skydesc is {
+"clear as crystal",
+"cloudless",
+"lightly clouded",
+"skimmed with clouds",
+"blue and vast"
+}.
+
+breezedesc is a list of texts that varies. breezedesc is {
+"warm",
+"smelling of fresh pastry",
+"smelling of flowers",
+"gentle"
+}.
+
+lostreason is a list of texts that varies. lostreason is {
+"Thanks to [pop lostdueto] you became [pop lostadj] lost,",
+"Due to [pop lostdueto] you became [pop lostadj] lost,",
+"On a long walk you became [pop lostadj] lost,",
+"Out walking you became [pop lostadj] lost,"
+}
+
+lostdueto is a list of texts that varies. lostdueto is {
+"[one of]a bad[or]an outdated[or]an incomplete[or]a misplaced[purely at random] map",
+"street construction",
+"a moment of distraction",
+"a moment of inattention",
+"a confusing layout of streets",
+"two streets with similar names",
+"[one of]bad[or]misleading[or]incomplete[purely at random] directions",
+"[one of]a missing[or]an illegible[purely at random] street sign"
+}.
+
+lostadj is a list of texts that varies. lostadj is {
+"epically",
+"extremely",
+"bewilderingly",
+"astoundingly",
+"wonderfully",
+"deeply",
+"mind-bogglingly"
+}.
+
+lostdiscovery is a list of texts that varies. lostdiscovery is {
+"[pop discindoors], where you [pop indoorsfun]",
+"[pop discoutdoors], where you [pop outdoorsfun]"
+}.
+
+discoveryadj is a list of texts that varies. discoveryadj is {
+"signless",
+"private",
+"hidden",
+"out of the way",
+"mostly forgotten"
+}.
+
+discindoors is a list of texts that varies. discindoors is {
+"bar",
+"tavern",
+"club",
+"coffee shop",
+"food court",
+"arcade"
+}.
+
+discoutdoors is a list of texts that varies. discoutdoors is {
+"garden",
+"park",
+"plaza",
+"amphitheater",
+"picnic area"
+}.
+
+indoorsfun is a list of texts that varies. indoorsfun is {
+"[pop spent] [pop funlength] playing [pop gamemood] [pop games] with the other patrons",
+"[pop spent] [pop funlength] reading from its one [one of]weird[or]odd[or]unexplained[purely at random] bookshelf full of [pop weirdshelf] and finding, stuffed in sideways near the bottom, an obscure early novel from a favorite author",
+"[pop spent] [pop funlength] in conversation with the other patrons, who, as sometimes happens while traveling, had instantly become close friends",
+"[pop spent] [pop funlengthshort] talking to a fellow traveler who happened to attend your alma mater several years [one of]before[or]after[purely at random] you. You traded in such exquisite gossip",
+"[pop spent] [pop funlength] getting free samples from the charming staff, one of whom happened to be a culinary genius hoping to open a catering company"
+}.
+
+outdoorsfun is a list of texts that varies. outdoorsfun is {
+"[pop spent] [pop funlengthshort] watching a black bird with [a*][pop simpcolors] head swoop down to snatch food from tourist's hands",
+"[pop spent] [pop funlengthshort] watching a busker, [one of]a guitarist[or]a fiddler[or]an accordionist[or]a keyboardist[purely at random] who seemed to play every song you knew as a child",
+"[pop spent] [pop funlength] watching, and then participating in and then, miraculously, winning a pop-up [pop outdoorgame] tournament",
+"bought a single ticket to a raffle on a whim, and won. You shared your prize, an implausibly large cake, with bystanders"
+}.
+
+spent is a list of texts that varies. spent is {
+"spent",
+"passed"
+}
+
+funlengthshort is a list of texts that varies. funlengthshort is {
+"almost an hour",
+"half an hour"
+}
+
+funlength is a list of texts that varies. funlength is {
+"[one of][or]several [or]a few [purely at random]hours",
+"an hour",
+"all afternoon",
+"all evening",
+"a seemingly timeless period"
+}
+
+outdoorgame is a list of texts that varies. outdoorgame is {
+"badminton",
+"bocce ball",
+"croquet",
+"horseshoes",
+"skittles",
+"lawn darts",
+"quoits"
+}.
+
+gamemood is a list of texts that varies. gamemood is {
+"some odd version of",
+"a weirdly intense game of",
+"a laughter-filled game of",
+"a strange local variant of",
+"a bizarrely house-ruled version of"
+}.
+
+games is a list of texts that varies. games is {
+"rummy",
+"charades",
+"darts",
+"chess",
+"monopoly",
+"pool",
+"pick-up sticks",
+"bridge",
+"poker"
+}
+
+weirdshelf is a list of texts that varies. weirdshelf is {
+"[one of]antique[or]illuminated[or]illustrated[purely at random] scrolls", "chapbooks", 
+"[one of]collectible [or][purely at random]magazines", "comics", "essays", "fantasies", "gothics", 
+"[one of]historical[or]political[or]old court[purely at random] documents", 
+"histories", 
+"[one of]literary[or]political[or]cultural[or]esoteric[purely at random] ephemera", 
+"the writings of local authors", 
+"[one of]modern [or]foreign [or]vintage [or][purely at random]cookbooks", 
+"[one of]offbeat [or]obscure [or]famous [or]notable [or][purely at random]biographies", 
+"[one of]old [or][purely at random][one of]maps[or]atlases[purely at random]", 
+"poetry", 
+"[one of]radical[or]translated[or]experimental[or]classic[purely at random] literature", 
+"rare volumes", 
+"[one of]recent [or]ancient [or][purely at random]memoirs"
+}
+
+perfumelost is a list of texts that varies. perfumelost is {
+"You [pop madeit] this scent [one of]when you got home[or]to remember that day[purely at random]",
+"This scent was what you had put on just before leaving your hotel room"
+}
+
+Part 2 Derring-Do
+
+[A unique memory in which the protagonist, their peripatetic lifestyle having landed them in a country under an oppressive government, performs an act of small but exciting resistance.
+1. Having become suspected, an escape across the border.
+2. Passing messages for a resistance cell.
+3. Providing a meeting-space and lookout.
+4. Sheltering an escaped political prisoner.]
+
+derringdo is a list of texts that varies. derringdo is {
+"[pop youwerein] [one of][pop majorloc][or][pop nations][purely at random] during [pop eraname]; [pop escapemotive] [pop derringfinal][if scented-trouble is false]. [pop perfumederring][end if][m strength][m adventure][m trouble]"
+}.
+
+perfumederring is a list of texts that varies. perfumederring is {
+"You [pop madeit] this scent [one of]on your first day of freedom[or]to mark the event, as soon as you had a little breathing-space[purely at random]",
+"You [pop madeit] this scent beforehand, as an exercise to calm your nerves",
+"You wore this perfume during your escape, as a little island of normalcy"
+}
+
 "[pop derringdo]"
 }
 
@@ -3287,7 +3500,7 @@ ministries is a list of texts that varies. ministries is {"Adherence", "Complian
 
 ofministries is a list of texts that varies. ofministries is {"Adherence", "Compliance", "Corrections", "Defence", "Doctrine", "[one of]Home[or]Mother[or]Father[purely at random]land [one of]Integrity[or]Defence[or]Preparedness[or]Readiness[or]Security[purely at random]", "the Interior", "Orthodoxy", "Propaganda", "Security", "War"}.
 
-Part - Death
+Part 3 - Death
 
 [
 A unique memory in which someone close to the protagonist dies,
@@ -3378,7 +3591,8 @@ Instead of jumping:
 	themepick;
 		[say "[*a][pop testypop][br]";]
 		[say "[pop brandnames][br]";]
-		say "[pop structures]. [pop derringdo].[p]";
+		[say "[pop structures]. [pop derringdo].[p]";]
+		say "[pop structures]. [pop lost].[p]";
 		[say "It recalls [friendpop NPCnames][lover], [pop attractiveadjs] in [a*][pop color][pop garment] at [pop festival]";]
 		[say "[pop onenightfore][pop onenightsitu] [if notalone is true][pop groupaction][otherwise][pop soloaction][end if][br]";]
 		[say "[pop didlocation][br]";]
