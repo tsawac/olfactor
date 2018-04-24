@@ -3322,27 +3322,6 @@ perfumederring is a list of texts that varies. perfumederring is {
 "You wore this perfume during your escape, as a little island of normalcy"
 }
 
-"[pop derringdo]"
-}
-
-Part - Derring-Do
-
-[A unique memory in which the protagonist, their peripatetic lifestyle having landed them in a country under an oppressive government, performs an act of small but exciting resistance.
-1. Having become suspected, an escape across the border.
-2. Passing messages for a resistance cell.
-3. Providing a meeting-space and lookout.
-4. Sheltering an escaped political prisoner.]
-
-derringdo is a list of texts that varies. derringdo is {
-"[pop youwerein] [one of][pop majorloc][or][pop nations][purely at random] during [pop eraname]; [pop escapemotive] [pop derringfinal][if scented-trouble is false]. [pop perfumederring][end if][m strength][m adventure][m trouble]"
-}.
-
-perfumederring is a list of texts that varies. perfumederring is {
-"You [pop madeit] this scent [one of]on your first day of freedom[or]to mark the event, as soon as you had a little breathing-space[purely at random]",
-"You [pop madeit] this scent beforehand, as an exercise to calm your nerves",
-"You wore this perfume during your escape, as a little island of normalcy"
-}
-
 youwerein is a list of texts that varies. youwerein is {
 "You were in",
 "You found yourself in",
