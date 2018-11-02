@@ -1,6 +1,18 @@
-"Heart Notes" by Heavy Petal
+"Scents and Semiosis" by Heavy Petal
 
-Include Basic Screen Effects by Emily Short.
+Include Vorple by Juhana Leinonen.
+Include Vorple Element Manipulation by Juhana Leinonen.
+Include Vorple Hyperlinks by Juhana Leinonen.
+Include Vorple Multimedia by Juhana Leinonen.
+Include Vorple Screen Effects by Juhana Leinonen.
+Include Vorple Command Prompt Control by Juhana Leinonen.
+[Include Vorple Modal Windows by Juhana Leinonen.]
+
+Release along with the file "scents-semiosis.jpg", the file "heavypetal2a.png", and the file "modalbar.jpg".
+Release along with the "Vorple" interpreter.
+Release along with a website.
+Release aolong with the source text.
+Release along with style sheet "scents.css".
 
 Use MAX_STATIC_DATA of 1800000.
 Use MAX_SYMBOLS of 50000.
@@ -20,16 +32,95 @@ To say /co -- running on: say "[no line break][cb][/i][line break]";
 To say wait for any key: wait for any key.
 To say clear the screen: clear the screen.
 
+
 Abooting is an action applying to nothing. Understand "about" as abooting.
 Instead of abooting:
+	now advnum is 2;
+	open HTML tag "table" called "abouttable";
+	open HTML tag "tr";
+	open HTML tag "td" called "flowerbar";
+	place an image "modalbar.jpg" with the description "floral sidebar";
+	close HTML tag;
+	open HTML tag "td";
+	say "[banner text]";
 	say "Made for Emily Short.[p]Heavy Petal, which does not exist, is Sam Kabo Ashwell, Yoon Ha Lee, Cat Manning, and Caleb Wilson.";
+	close HTML tag;
+	close HTML tag;
+	close HTML tag;
+	wait for any key;
+	remove the element called "abouttable";
+
+[The perfumes described here do not follow some fairly basic principles of real-world perfume composition; the principles are imprecise and difficult to systematise, the 'oriental' category of scents didn't jive well with how we wanted our implied world, and we didn't want to overconstrain our possibilities. (Also, we knew that Emily was interested in this approach, and therefore probably had a backburnered prototype for it that would be a lot better than ours.) Consider the scents here hopeful monsters rather than well-bred show animals.
+
+In the real world, perfumes fade considerably faster than the conceit here suggests. Do not try to store a beloved perfume for decades.";]
 
 startroom is a room.
 
-After printing the banner text:
-	say "Update 0.10: [b]Onycha[/b][p]";
+After printing the banner text when advnum is not 1:
+	say "Update 0.12: [b]Jonquil[/b][p]";
+	
+advnum is a number that varies. advnum is 1.
+
+Rule for printing the banner text when advnum is 1: do nothing instead.
+	
+The display Vorple credits rule does nothing if advnum is 1.
+
+When play begins:
+	 preload images {"heavypetal2a.png", "modalbar.jpg", "scents-semiosis.jpg"};
+	if Vorple is supported begin;
+	open HTML tag "div" called "firstpetal";
+	place an image "heavypetal2a.png" with the description "Heavy Petal", centered;
+	close HTML tag;
+	open HTML tag "div" called "petalfade";
+	place an image "scents-semiosis.jpg" with the description "Cover art", centered;
+	close HTML tag;
+	wait for any key;
+	hide the element called "firstpetal";
+	add name "fadein" to the element called "petalfade";
+	wait for any key;
+	hide the element called "petalfade";
+	open HTML tag "div" called "abootbox";
+	place a link to the command "about" reading "&", without showing the command;
+	close HTML tag;
+	place a block level element called "maintext";
+	set output focus to the element called "maintext";
+	end if;
+	hide the prompt;
+
+
+
+When play begins:
+say "There are other perfume-boxes, other lists, sharply curated according to audience. You allow yourself a degree of sentiment in their selection, but that too serves a public purpose. This collection - messy, unfashionable, incoherently themed - is an entirely private matter. ";
+place a link to the command "advance" reading "A giant's secret heart.", without showing the command.
+
+
+
+Advancing is an action applying to nothing. Understand "advance" as advancing.
+
+Instead of advancing when advnum is 1:
+say "Each scent brings back memories that once meant something important. They might still. But scents change their character as they slowly break down, and history moulders if repeated by rote. Once in a while you clear an evening, unlock the chest, and unstopper your old selves to see ";
+place a link to the command "k" reading "what they are to you now.", without showing the command;
+if Vorple is not supported, say "what they are to you now.";
+now advnum is 2;
 
 [
+TODO: 
+* remove links if they stay on-screen after being clicked once
+* display of meaning-associations
+]
+
+[
+UPDATE 0.12: JONQUIL
+	*  First run at Vorple interface
+	* added a (vestigial?) unique about the first perfume the PC made
+UPDATE 0.11: DEVILWOOD
+	* connecting phrases
+	* conclusion
+	* many minor additions:
+		* more fiddly era names
+		* titles of movies, plays etc.
+	*  city fragments
+	* expanded selfreasons a fair amount
 UPDATE 0.10: ONYCHA
 	* Seasons now respect season theme (you can still get summer goths)
 	* more tinkering with historical names, inc. monarchs
@@ -470,7 +561,7 @@ A theme has a list of texts called phantpre.
 A theme has a list of texts called popstarlist.
 A theme has a list of texts called tvlist.
 
-Goth is a theme. The twist of goth is {"astringent","attenuated", "bitter", "black", "bleak", "blood", "crimson", "dark", "desolate", "ephemeral", "ethereal", "forbidden", "funereal", "grim", "lachrymose", "midnight", "mournful", "nocturnal", "pale", "purple", "red", "sanguine", "scarlet", "serpentine", "shadowy", "sinister", "spectral", "tragic", "vermillion", "weeping", "white", "wispy"}.
+Goth is a theme. The twist of goth is {"astringent","attenuated", "bitter", "black", "bleak", "blood", "crimson", "dark", "desolate", "ephemeral", "ethereal", "forbidden", "funereal", "grim", "lachrymose", "midnight", "morbid", "mournful", "nocturnal", "pale", "purple", "red", "sanguine", "scarlet", "serpentine", "shadowy", "sinister", "spectral", "tragic", "vermillion", "weeping", "white", "wispy"}.
 The composite of goth is {"haunting", "lingering over", "shrouded by", "deepened by", "darkened with", "enshrouded in", "fading into"}.
 The phantpre of goth is {"bane", "bleak", "bone", "corpse", "crow", "dagger", "dark", "grave", "grief", "heart", "hurt", "pale", "moon", "night", "poison", "raven", "rib", "rose", "shadow", "shroud", "skull", "sorrow", "spine", "tomb","witch"}.
 
@@ -522,6 +613,8 @@ To say aproposadj:
 	end repeat;
 	say "[pop Z]";
 	
+apropos-adjlist is a list of texts that varies. apropos-adjlist is {"[aproposadj]"}.
+	
 To say aproposnoun:
 	let Z be multinotes;
 	repeat with N running through the themelist begin;
@@ -564,6 +657,10 @@ To theme-resonance (N - a theme):
 	if N is spring, add beginnings to assoc-list;
 	if N is fall, add endings to assoc-list;
 	if N is lewd, add lust to assoc-list;
+	if N is spring and the current season is "none", now the current season is "spring";
+	if N is summer and the current season is "none", now the current season is "summer";
+	if N is fall and the current season is "none", now the current season is "autumn";
+	if N is winter and the current season is "none", now the current season is "winter";
 	
 	[say the themelist;
 	say ": ";]
@@ -749,7 +846,7 @@ topnotes is a list of texts that varies. topnotes is {
 
 apriflavs is a list of texts that varies. apriflavs is {"black", "Chinese", "Greek", "purple"}.
 basiflav is a list of texts that varies. basiflav is {"anise", "African blue", "camphor", "cinnamon", "clove", "dark opal", "dwarf", "Genovese", "globe", "holy", "lemon", "purple", "Rubin", "spice", "Thai"}.
-bergaflav is a list of texts that varies. bergaflav is {"Italian", "Calabrian", "Ivoirian"}.
+bergaflav is a list of texts that varies. bergaflav is {"Italian", "Calabrian", "Ivoirian", "[pop citruflav]"}.
 peppflav is a list of texts that varies. peppflav is {"black", "black", "black", "black", "Malabar black", "Tellicherry black", "green", "pink", "white", "Sarawak white", "Muntok white", "wild"}.
 boroflav is a list of texts that varies. boroflav is {"alpine", "coast", "desert", "granite", "island", "lemon", "rosemary", "sickle", "sticky", "swamp"}.
 chamflav is a list of texts that varies. chamflav is {"aged", "blanc de noirs", "dry", "pink", "vintage"}.
@@ -758,11 +855,13 @@ sageflav is a list of texts that varies. sageflav is {"antelope", "black","clary
 cofflav is a list of texts that varies. cofflav is {"Brazilian", "dark", "Ethiopian", "espresso", "Guatamalan", "Haitian", "Jamaican", "Kauai", "Ugandan", "Vietnamese"}. 
 gingflav is a list of texts that varies. gingflav is {"candied", "crystallised", "hot", "fiery", "root", "white"}.
 lavflav is a list of texts that varies. lavflav is {"Bulgarian", "English", "French"}.
-lemflav is a list of texts that varies. lemflav is {"Meyer", "Sicilian", "pink", "Ponderosa", "Sorrento", "imperial", "rough"}.
-limeflav is a list of texts that varies. limeflav is {"Persian", "key", "Australian", "wild", "Tahiti", "winged", "kaffir", "blacktwig", "Kadaku", "Palestinian sweet", "blood", "desert", "outback"}.
+lemflav is a list of texts that varies. lemflav is {"Meyer", "Sicilian", "pink", "Ponderosa", "Sorrento", "imperial", "rough", "[pop citruflav]"}.
+limeflav is a list of texts that varies. limeflav is {"Persian", "key", "Australian", "wild", "Tahiti", "winged", "kaffir", "blacktwig", "Kadaku", "Palestinian sweet", "blood", "desert", "outback", "[pop citruflav]"}.
 mintflav is a list of texts that varies. mintflav is {"apple", "Brazilian", "bergamot", "chocolate", "Corsican", "Cuban", "forest", "garden", "grey", "marsh", "mojito", "orange", "water", "wild"}.
-oranflav is a list of texts that varies.  oranflav is {"Valencia", "Jaffa", "blood", "bitter", "bergamot", "cherry", "Hassaku"}.
+oranflav is a list of texts that varies.  oranflav is {"Valencia", "Jaffa", "blood", "bitter", "bergamot", "cherry", "Hassaku", "[pop citruflav]"}.
 violflav is a list of texts that varies. violflav is {"dog", "dusky", "blue", "purple", "bush", "Persian", "damask", "dame's", "water", "African", "Chinese", "meadow", "hooded"}.
+
+citruflav is a list of texts that varies. citruflav is {"bitter", "green", "herbal", "hesperidian", "juicy", "sharp", "sulfurous"}.
 
 Chapter -  Heart Notes
 
@@ -776,6 +875,7 @@ heartnotes is a list of texts that varies. heartnotes is {
 "[djectr]ale yeast[b ancient][b summer][b fall]", 
 "[djectr]anise[b goth][b glam][b ancient]", 
 "[djectr]bay rum[b summer][b glam]",
+"[djectr]bluebell[b spring][b woodland]",
 "[dject meloflav]melon[b goth][b mystic][b winter]", 
 "[djectr]butter[b lewd][b summer][b fall]", 
 "[dject chocflav]chocolate[b goth][b lewd][b fall]",
@@ -833,6 +933,7 @@ heartnotes is a list of texts that varies. heartnotes is {
 "[djectr]magnolia[b woodland][b summer]", 
 "[djectr]massoia bark[b mystic][b woodland][b summer]", 
 "[djectr]meadowsweet[b woodland][b spring][b summer]",
+"[djectr]moonflower[b goth][b mystic]",
  "[djectr]myrtle[b mystic][b woodland][b ancient]",
  "[djectr]narcissus[b goth][b woodland][b glam][b lewd][b summer]", 
 "[djectr]neroli[b mystic][b woodland][b glam][b lewd][b summer]",
@@ -849,6 +950,7 @@ heartnotes is a list of texts that varies. heartnotes is {
 "[djectr]peony[b woodland][b spring]",
  "[djectr]persimmon[b mystic][b lewd][b ancient]", 
 "[djectr]petitgrain[b goth][b woodland][b glam]", 
+"petrichor[b woodland][b fall][b spring][b ancient]",
 "[djectr]pikaki[b woodland][b summer]", 
 "[djectr]pineapple[b lewd][b summer]",
  "[djectr]plum[b woodland][b lewd][b summer][b fall]", 
@@ -860,6 +962,7 @@ heartnotes is a list of texts that varies. heartnotes is {
  "[djectr]rosemary[b ancient][b summer]",
  "[dject rumflav]rum[b glam][b lewd][b fall]", 
 "[djectr]sakura[b spring][b lewd]",
+"[djectr]sampaguita[b glam][b lewd][b summer]", 
 "[djectr]sea salt[b glam][b ancient][b fall]",
  "[djectr]smoke[b goth][b mystic][b lewd][b ancient][b winter]",
  "[djectr]soursop[b woodland][b lewd][b summer]", 
@@ -902,7 +1005,7 @@ roseflav is a list of texts that varies. roseflav is {"black", "blood-red", "bri
 pearflav is a list of texts that varies. pearflav is {"white", "Nashi", "Algerian", "Syrian", "Afghan", "Siberian", "d'Anjou", "Callery"}.
 orchflav is a list of texts that varies. orchflav is {"adder's-mouth", "bamboo", "bee", "bog", "butterfly", "black", "crow", "hooded", "easter", "fairy", "fiveleaf", "flame", "jewel", "long-claw", "phantom", "peacock", "shadow witch", "star", "swan", "tiger"}.
 rumflav is a list of texts that varies. rumflav is {"white", "black", "gold", "silver", "light", "dark", "red", "blackstrap", "spiced", "navy", "overproof", "Barbados", "Demerara", "Jamaican", "Haitian", "Venezuelan"}.
-tequflav is a list of texts that varies. tequflav is {"anejo", "blanco", "reposado", "silver", "golden"}.
+tequflav is a list of texts that varies. tequflav is {"añejo", "blanco", "reposado", "silver", "golden"}.
 whisflav is a list of texts that varies. whisflav is {"malt", "single malt", "corn", "rye", "wheat", "Highland", "Lowland", "Islay", "Speyside", "Japanese", "Irish", "buckwheat"}.
 
 Chapter - Base Notes
@@ -924,6 +1027,7 @@ basenotes is a list of texts that varies. basenotes is {
 "[djectr]bitter almond[b goth][b woodland]", 
 "[dject bourflav]bourbon[b glam][b lewd][b summer][b fall]",
  "[djectr]bois de rose[b goth][b spring][b summer]",
+"[djectr]buckwheat[b fall][b ancient][b woodland]",
   "[djectr]burdock[b woodland][b summer][b fall]",
  "[djectr]caramel[b glam][b lewd][b fall]", 
 "[djectr]cascarilla[b goth][b summer]",
@@ -941,6 +1045,7 @@ basenotes is a list of texts that varies. basenotes is {
 "[dject firflav]fir[b woodland][b winter]",
 "[djectr]frankincense[b mystic][b ancient][b glam]",
  "[djectr]gentian[b spring]",
+"geosmin[b woodland][b spring][b fall]",
  "[djectr]germander[b spring][b summer]", 
 "[djectr]hinoki[b mystic][b glam]",
  "[dject honeflav]honey[b mystic][b woodland][b ancient][b summer][b fall]", 
@@ -998,7 +1103,7 @@ molflav is a list of texts that varies. molflav is {"blackstrap", "golden", "can
 muskflav is a list of texts that varies. muskflav is {"alligator", "Arabian", "body", "beetle", "crocodile", "crystalline", "dark", "duck", "heavy", "red", "shrew", "skin","snake", "turtle", "lynx", "thick", "Tonkin", "Assam", "Nepali", "Carbadine", "white"}.
 opiuflav is a list of texts that varies. opiuflav is {"black", "narcotic", "sweet"}.
 sandflav is a list of texts that varies. sandflav is {"black","Mysore", "white"}.
-tobaflav is a list of texts that varies. tobaflav is {"fire-cured", "brightleaf", "Cavendish", "cigar", "Criollo", "Dokha", "gutka", "Turkish", "Perique", "shade", "wild"}.
+tobaflav is a list of texts that varies. tobaflav is {"fire-cured", "flowering", "brightleaf", "Cavendish", "cigar", "Criollo", "Dokha", "gutka", "Turkish", "Perique", "shade", "wild"}.
 vaniflav is a list of texts that varies. vaniflav is {"bourbon", "cloying", "creamy", "dark", "rich", "sweet", "Madagascar"}.
 grisflav is a list of texts that varies. grisflav is {"marine", "pure white", "earthy", "woody", "antique", "white gold", "sweet black"}.
 firflav is a list of texts that varies. firflav is {"Douglas", "Sicilian", "silver", "Greek", "Moroccan", "Syrian", "Algerian", "balsam", "Siberian", "Colorado white", "grand", "sacred", "red", "noble"}.
@@ -1011,7 +1116,7 @@ Chapter - Hints
 
 There's potential for separate hints based on theme, but that can probably wait for if/when the list gets unwieldy.]
 
-hints is a list of texts that varies. hints is {"[scentpop topnotes]", "[scentpop heartnotes]", "[scentpop basenotes]", "ammonia", "banana", "barbecue", "beeswax", "blue cheese", "box tree", "fresh-baked bread", "capers", "charcoal", "chlorine", "cow parsnip",  "red dal", "decay", "devil's club", "dill", "durian", "dust", "engine oil", "fermented black bean chili paste",  "fish sauce", "fried potatoes", "onions frying in butter", "garlic", "graveyard dirt", "gochujang", "hemlock", "henna", "hamster cages", "hay", "kimchee", "kudzu", "kyphi", "fajitas", "falafel", "fresh laundry", "kukui nut", "leaf mold", "brewer's malt", "mandrake", "marjoram", "mud", "new car smell", "Penguin paperbacks", "pesto", "roast beef", "rust","ocean air", "soil", "soma", "sorrel", "split-pea soup",  "streets after rain","summer sausage",  "sweat", "tarmac", "turpentine", "[pop regionals] kitchens", "[pop oddbooze]", "[phantasm][pop phantsuffix]", "[pop citrons]", "[pop woods][one of] bark[or] leaf[or] wood[or][purely at random]", "[pop flowers]", "[pop fungi]", "[pop fruits]", "[pop redwines]"}.
+hints is a list of texts that varies. hints is {"[scentpop topnotes]", "[scentpop heartnotes]", "[scentpop basenotes]", "ammonia", "bacon", "banana", "barbecue", "barnyard", "beeswax", "blue cheese", "box tree", "fresh-baked bread", "capers", "charcoal", "chlorine", "cow parsnip",  "red dal", "damp concrete", "decay", "devil's club", "dill", "durian", "dust", "engine oil", "fermented black bean chili paste",  "fish sauce", "fried potatoes", "fried rice", "onions frying in butter", "garlic", "gasolene", "graveyard dirt", "gochujang", "hemlock", "henna", "hamster cages", "hay", "health food stores", "horses", "hot cast iron", "kimchee", "kudzu", "kyphi", "fajitas", "falafel", "fresh laundry", "kukui nut", "leaf mold", "brewer's malt", "mandrake", "marjoram", "meat", "mud", "new car smell", "fresh pasta", "Penguin paperbacks", "pesto", "polished brass", "roast beef", "rust","ocean air", "soil", "soma", "sorrel", "split-pea soup", "summer sausage",  "sweat", "tarmac", "turpentine", "wet dog", "[pop regionals] kitchens", "[pop oddbooze]", "[phantasm][pop phantsuffix]", "[pop citrons]", "[pop woods][one of] bark[or] leaf[or] wood[or][purely at random]", "[pop flowers]", "[pop fungi]", "[pop fruits]", "[pop redwines]"}.
 
 hintkinds is a list of texts that varies. hintkinds is {"a hint of", "the [one of]slightest[or]merest[or]faintest[purely at random] suggestion of", "undertones of", "the memory of", "murmurs of", "a touch of", "subtle hints of", "the barest hint of", "a faint hint of", "a spray of", "a drop of", "a breath of"}.
 
@@ -1024,7 +1129,7 @@ Chapter - Multikinds
 
 multinotes is a list of texts that varies. multinotes is {"amber", "balsam", "citrus", "coffee", "honey", "mint", "moss", "musk", "orchid", "resin", "rose", "rum", "tea", "wood", "[pop basenotes]", "[pop heartnotes]", "[pop topnotes]"}.
 
-multiadjs is a list of texts that varies. multiadjs is {"aged", "black", "blackened", "bitter", "bittersweet", "blood", "dark", "fire", "forbidden", "golden", "green", "light", "pale", "pink", "raw", "red", "silver", "smoked", "sweet", "white", "[pop colors]"}.
+multiadjs is a list of texts that varies. multiadjs is {"aged", "black", "blackened", "bitter", "bittersweet", "blood", "dark", "fire", "forbidden", "golden", "green", "light", "pale", "pink", "raw", "red", "silver", "smoked", "swamp", "sweet", "white", "[pop colors]"}.
 
 multiphrases is a list of texts that varies. multiphrases is {"[one of]three[or]four[or]five[purely at random] kinds of [notepop multinotes]",
 "[noreppop multix]"}.
@@ -1050,9 +1155,9 @@ allbasicscents is a list of texts that varies. allbasicscents is {
 
 citrons is a list of texts that varies. citrons is {"amantsu", "citron[b ancient]", "bergamot", "Buddha's hand[b mystic]", "calamansi", "cam sanh", "clementine", "etrog[b mystic][b ancient]", "grapefruit[b glam]", "hyuganatsu", "iyokan", "kabosu", "kinnow", "kiyomi", "kumquat", "lemon", "lime[b glam]", "mandarin", "mangshanyegan", "nartjie[b summer]", "orange", "pomelo", "rangpur", "satsuma", "shangjuan", "sudachi", "limetta", "tangelo", "tangor", "ugli", "yuzu[b glam]"}.
 
-woods is a list of texts that varies. woods is {"alder", "aspen", "ash", "beech", "birch", "blackthorn", "buckthorn", "catalpa", "cedar", "dogwood", "ebony", "elm", "fir", "gingko", "hazel", "hickory", "linden", "mahogany", "manzanita", "maple", "mesquite", "oak", "osier", "pine", "poplar","redwood",  "rowan", "spruce", "sycamore", "willow"}.
+woods is a list of texts that varies. woods is {"alder", "aspen", "ash", "beech", "birch", "blackthorn", "buckthorn", "catalpa", "cedar", "dogwood", "ebony", "elm", "fir", "gingko", "hazel", "hickory", "linden", "locust", "mahogany", "manzanita", "maple", "mesquite", "oak", "osier", "pine", "poplar","redwood",  "rowan", "spruce", "sycamore", "willow"}.
 
-flowers is a list of texts that varies. flowers is {"anenome", "asphodel", "avens", "azalea", "bramble", "bryony", "celandine", "cinquefoil", "columbine", "crowfoot", "eyebright", "fireweed", "goldenrod", "gorse","grass-of-parnassus", "hawthorn", "heather", "hedyosmum", "hibiscus", "loosestrife", "mallow", "monkshood", "oceanspray", "pansy", "phlox", "primrose", "saxifrage", "spearwort","tansy", "tormentil", "trillium", "vetch", "volkameria", "xtabentún"}.
+flowers is a list of texts that varies. flowers is {"amaryllis", "anenome", "asphodel", "avens", "azalea", "azara", "bramble", "bryony", "celandine", "cinquefoil", "columbine", "crowfoot", "daffodil", "daphne", "eyebright", "evening-stock", "fireweed", "goldenrod", "gorse","grass-of-parnassus", "hawthorn", "heather", "hedyosmum", "hibiscus", "loosestrife", "mallow", "monkshood", "oceanspray", "pansy", "phlox", "primrose", "saxifrage", "spearwort", "sweet alyssum","tansy", "tormentil", "trillium", "vetch", "volkameria", "xtabentún"}.
 
 fungi is a list of texts that varies. fungi is {"cornsmut", "dryad's saddle", "witches['] butter", "shaggy inkcap", "stagshorn", "stinkhorn", "tawny grisette"}.
 
@@ -1129,12 +1234,6 @@ scentbases is {"base notes of [scentpop basenotes] and [scentpop basenotes]",
 }.
 
 Volume - Reflective Choice
-
-[This is vestigial thus far, and is the next big To Do item for getting the interactive part working: creating lists of things, and synonyms for things that scent-notes could come to symbolise, for the player. 
-
-Once that's done, individual bits of memory can be tagged with general moods, which will be suggested to the player - so, if oudh appears in a fragment about the end of a relationship, it might suggest something like 'oudh stands for letting things die'. The suggestions will probably be wildly off at least some of the time - we're inviting the player to do some hand-sorting on our behalf, really.
-
-Anyway, don't worry about this just yet.]
 
 Book - Memorialising
 
@@ -1238,39 +1337,39 @@ time of transition
 
 Chapter - Targeted Resonance
 
-romance is a list of texts that varies. romance is {"love", "romance"}.
+romance is a list of texts that varies. romance is {"love", "romance", "attraction", "flirtation", "intimacy", "courtship", "[pop lust]"}.
 
-beginnings is a list of texts that varies. beginnings is {"beginnings"}.
+beginnings is a list of texts that varies. beginnings is {"beginnings", "preludes", "overtures", "openings", "new dawns"}.
 
-endings is a list of texts that varies. endings is {"endings"}.
+endings is a list of texts that varies. endings is {"endings", "finality", "closure", "[pop regrets]"}.
 
-kindness is a list of texts that varies. kindness is {"kindness"}.
+kindness is a list of texts that varies. kindness is {"kindness", "empathy", "kind-heartedness", "charity", "mercy"}.
 
-regrets is a list of texts that varies. regrets is {"regret"}.
+regrets is a list of texts that varies. regrets is {"regret", "loss", "[pop melancholy]"}.
 
-mischief is a list of texts that varies. mischief is {"mischief"}.
+mischief is a list of texts that varies. mischief is {"mischief", "misbehaviour", "[pop trouble]"}.
 
 fashion is a list of texts that varies. fashion is {"ephemera", "fashion", "style", "[pop beauty]"}.
 
-mentorship is a list of texts that varies. mentorship is {"mentorship"}.
+mentorship is a list of texts that varies. mentorship is {"mentorship", "patronage", "teaching", "didacticism", "good examples"}.
 
-experiment is a list of texts that varies. experiment is {"experimentation"}.
+experiment is a list of texts that varies. experiment is {"experimentation", "trying new things"}.
 
 learning is a list of texts that varies. learning is {"growth", "learning", "[pop mentorship]"}.
 
-friendship is a list of texts that varies. friendship is {"friends", "friendship"}.
+friendship is a list of texts that varies. friendship is {"friends", "friendship", "collegiality", "comrades", "community"}.
 
-weakness is a list of texts that varies. weakness is {"weakness"}.
+weakness is a list of texts that varies. weakness is {"weakness", "incapacity"}.
 
 strength is a list of texts that varies. strength is {"ability", "bravery", "confidence", "courage", "power", "strength"}.
 
 academia is a list of texts that varies. academia is {"academia", "research", "textuality", "[pop learning]", "[pop experiment]"}.
 
-business is a list of texts that varies. business is {"business", "money"}.
+business is a list of texts that varies. business is {"business", "money", "wealth", "ventures"}.
 
-savviness is a list of texts that varies. savviness is {"acumen", "expertise", "savviness", "talent"}.
+savviness is a list of texts that varies. savviness is {"acumen", "expertise", "savviness", "skill", "talent", "understanding"}.
 
-solitude is a list of texts that varies. solitude is {"loneliness", "solitude"}.
+solitude is a list of texts that varies. solitude is {"introversion", "isolation", "loneliness", "solitude"}.
 
 debate is a list of texts that varies. debate is {"argument", "conflict", "debate", "discussion", "dispute"}.
 
@@ -1278,25 +1377,25 @@ promises is a list of texts that varies. promises is {"confidences", "promises",
 
 beauty is a list of texts that varies. beauty is {"aesthetics", "art", "beauty", "grace", "elegance", "poise"}.
 
-lust is a list of texts that varies. lust is {"carnality", "lust", "[pop romance]"}.
+lust is a list of texts that varies. lust is {"carnality", "fetish", "kink", "sex", "lust", "desire", "arousal", "intimacy", "sex", "[pop romance]"}.
 
 righteous is a list of texts that varies. righteous is {"righteousness", "virtue"}.
 
 adventure is a list of texts that varies. adventure is {"adventure"}.
 
-mistakes is a list of texts that varies. mistakes is {"dead ends", "errors", "mistakes"}.
+mistakes is a list of texts that varies. mistakes is {"dead ends", "errors", "mistakes", "flaws", "imperfection", "false starts"}.
 
 wit is a list of texts that varies. wit is {"cleverness", "cunning", "wit", "[pop debate]", "[pop savviness]", "[pop mischief]"}.
 
-melancholy is a list of texts that varies. melancholy is {"melancholy", "sadness", "tragedy"}.
+melancholy is a list of texts that varies. melancholy is {"melancholy", "sadness", "tragedy", "depression"}.
 
-performance is a list of texts that varies. performance is {"performance"}.
+performance is a list of texts that varies. performance is {"display", "performance"}.
 
 trouble is a list of texts that varies. trouble is {"danger", "risk", "threat", "trouble"}.
 
-politics is a list of texts that varies. politics is {"politics"}.
+politics is a list of texts that varies. politics is {"intrigue", "politics", "power"}.
 
-craft is a list of texts that varies. craft is {"craft", "[pop savviness]"}.
+craft is a list of texts that varies. craft is {"craft", "design", "[pop savviness]"}.
 
 
 
@@ -1319,11 +1418,11 @@ mod-res is a list of texts that varies. mod-res is {
 "abiding", "active", "acute", "affected", "anguished", "anxious", "ambiguous", "ambivalent", "awkward", "balanced", "blameless", "calm", "cautious", "complicated", "conflicted", "comfortable", "debauched", "decadent", "deceptive", "deliberate", "delicate", "deserved", "desparate", "difficult", "diligent", "distressing", "doomed", "dull", "equivocal", "false", "familiar", "feigned", "fervent", "fierce", "fleeting", "flirtatious", "foolish", "futile", "gentle", "glorious", "guilty", "habitual", "heavy", "highly specific", "hopeful", "hopeless",  "hypothetical", "idle", "improper", "innocent", "intellectual", "intense", "immoderate", "inappropriate", "inconsequential", "ingenuous", "instinctive", "intellectual", "intentional", "intuitive", "irrational", "lewd", "light", "lonely", "mannered", "mature", "mindful", "misplaced", "muted", "naive", "naked", "nebulous", "overwhelming", "painful", "passive", "performative", "playful", "polite", "precise", "private", "radiant", "radical", "rational", "raw", "reflexive", "reluctant", "resolute", "rhetorical", "righteous", "romantic", "secret", "sensual", "selfish", "self-indulgent", "serious", "shameful", "sharp", "sickening", "simple", "sincere", "sleepy", "spiritual", "strained", "stagnant", "studied", "subtle", "sudden", "suppressed", "tentative", "timely", "tranquil", "transient", "unattainable","uncomfortable", "undeserved", "undirected", "unesasy", "unfamiliar", "unfortunate", "untimely", "veiled", "vexatious", "violent", "virtuous", "visceral", "weary", "wilful", "winsome"
 }
 
-res-acts is a list of texts that varies. res-acts is {"absence", "action", "advancement", "agency", "agreement", "alliance", "balance", "beginnings", "calamity", "chaos", "collapse", "community", "concealment", "conclusion", "conflict", "confluence", "conformity", "courtship", "craft", "crisis", "danger", "death", "disappointment", "decay", "decision", "defeat", "dependence", "desolation", "destruction", "difficulties", "disagreement", "disaster", "discovery", "discretion", "display", "distraction", "disunity", "divergence", "division", "error", "exhaustion", "expansion", "experiment", "failure", "fame", "friendship", "growth", "harmony", "imitation", "intimacy", "justice", "malaise", "mistakes", "movement", "mutuality", "impasse", "independence", "integrity", "interdependence", "isolation", "neglect", "notoreity", "obscurity", "observation", "opportunity", "organisation", "peace", "performance", "privation", "progress", "recognition", "recovery", "redemption", "reform", "respect", "return", "revelation", "revolution", "ridicule", "rivalry", "silence", "stagnation", "study", "struggle", "success", "synthesis", "thought", "transformation", "transgression", "travel", "turmoil", "threats", "trial", "triumph", "union", "unity", "victory", "withdrawal", "work", "[pop base-res]"}.
+res-acts is a list of texts that varies. res-acts is {"absence", "action", "advancement", "agency", "agreement", "alliance", "balance", "beginnings", "calamity", "chaos", "collapse", "community", "concealment", "conclusion", "conflict", "confluence", "conformity", "courtship", "craft", "crisis", "danger", "death", "disappointment", "decay", "decision", "defeat", "dependence", "desolation", "destruction", "difficulties", "disagreement", "disaster", "discomfort", "discovery", "discretion", "display", "distraction", "disunity", "divergence", "division", "error", "exhaustion", "expansion", "experiment", "failure", "fame", "friendship", "growth", "harmony", "imitation", "intimacy", "justice", "malaise", "mistakes", "mercy", "movement", "mutuality", "impasse", "independence", "integrity", "interdependence", "isolation", "neglect", "notoreity", "obscurity", "observation", "opportunity", "organisation", "peace", "performance", "privation", "progress", "recognition", "recovery", "redemption", "reform", "respect", "return", "revelation", "revenge", "revolution", "ridicule", "rivalry", "silence", "stagnation", "study", "struggle", "success", "synthesis", "thought", "transformation", "transgression", "travel", "turmoil", "threats", "trial", "triumph", "union", "unity", "victory", "withdrawal", "work", "[pop base-res]"}.
 
-act-mods is a list of texts that varies. act-mods is {"abiding", "accepted", "brief", "brilliant", "catastrophic", "complete", "contingent", "creative","dangerous", "difficult", "disruptive", "distant", "easy", "enthusiastic", "erotic", "false", "foolish", "fundamental", "gradual", "hazardous", "hidden", "ideal", "inexorable", "necessary", "perfect", "personal", "practical", "pragmatic", "professional", "prolonged", "rapid", "refused", "romantic", "squandered", "unnecessary", "reluctant", "secret", "subtle", "spiritual", "unattainable", "unreliable", "unresolved", "[pop mod-res]"}.
+act-mods is a list of texts that varies. act-mods is {"abiding", "accepted", "brief", "brilliant", "catastrophic", "complete", "contingent", "creative","dangerous", "difficult", "disruptive", "distant", "easy", "enthusiastic", "erotic", "false", "foolish", "fundamental", "gradual", "hazardous", "hidden", "ideal", "inexorable", "necessary", "perfect", "personal", "practical", "pragmatic", "professional", "prolonged", "radical", "rapid", "refused", "romantic", "squandered", "unnecessary", "reluctant", "secret", "subtle", "spiritual", "unattainable", "unreliable", "unresolved", "[pop mod-res]"}.
 
-act-connect is a list of texts that varies. act-connect is {"leading to", "turning to", "transformed into", "despite", "which causes", "curtailed by", "interrupted by", "that becomes", "fostering", "that causes", "in tension with"}.
+act-connect is a list of texts that varies. act-connect is {"leading to", "turning to", "transformed into", "despite", "which causes", "curtailed by", "interrupted by", "that becomes", "fostering", "that causes", "in tension with", "complicated by"}.
 
 micro-res is a list of texts that varies. micro-res is {
 "the [pop base-res] of [pop res-acts]",
@@ -1366,6 +1465,7 @@ Check selecting while choose-mode is 1:
 	end if;
 	
 Carry out selecting while choose-mode is 1:
+	remove the element called "choicelist";
 	let N be the number understood;
 	choose row N in the Table of Present Options;
 	if the note entry is "RETRY" begin;
@@ -1373,12 +1473,19 @@ Carry out selecting while choose-mode is 1:
 		suggest semantics;
 		offer choices;
 	otherwise if the note entry is "FAIL";
-		say "The memory doesn't mean what it used to. Perfumes fade, and must be turned over. You set it aside.";
+		clear the element called "maintext";
+		say "The memory doesn't mean what it used to. Perfumes fade. You set it aside.[p][pop somethingelse].";
 		now try-counter is 0;
+		run cleanup;
+		now choose-mode is 0;
+		stock possibility;
+		[we avoid bottle-preamble here, because that implies a chosen meaning]
+		offer bottle-choice;
+		stop;
 	otherwise;
 		let P be note entry;
 		let Q be the meaning entry;
-		say "[P in sentence case] for [Q]. Yes, that will serve.[p]";
+		say "[P in sentence case] for [Q][if a random chance of 3 in 4 succeeds]. [pop memoryconfirm][end if].[p]";
 		now try-counter is 0;
 		choose a blank row in the Table of Enduring Symbols;
 		now the note entry is P;
@@ -1386,6 +1493,7 @@ Carry out selecting while choose-mode is 1:
 		run cleanup;
 		now choose-mode is 0;
 		stock possibility;
+		bottle-preamble;
 		offer bottle-choice;
 		stop;
 		[possibly BAN THIS SCENT FROM BEING IN MEANINGS AGAIN?]
@@ -1393,21 +1501,22 @@ Carry out selecting while choose-mode is 1:
 	
 
 To offer choices:
-	[remove the element called "choicelist";]
+	remove the element called "choicelist";
 	let N be 1; 
-	[if Vorple is supported, say "[p]";]
-[	open HTML tag "ul" called "choicelist";]
+	if Vorple is supported, say "[p]";
+	open HTML tag "table" called "choicelist";
 	repeat through the Table of Present Options begin;
-		[open HTML tag "li" called "choiceopt";
-		if Vorple is not supported, say "[br][N]. ";]
-		[place a link to command "[N]" reading "[menu-text entry]", without showing the command;
-		close HTML tag;]
-		say "[N]: [menu-text entry][br]";
+		open HTML tag "tr";
+		open HTML tag "td" called "choiceopt";
+		place a link to command "[N]" reading "[menu-text entry]", without showing the command;
+		close HTML tag;
+		if Vorple is not supported, say "[N]: [menu-text entry][br]";
 		increment N;
+		close HTML tag;
 	end repeat;
-	say "[br]";
-	[close HTML tag;
-	scroll to the end of the page;]
+	if Vorple is supported, say "[br]";
+	close HTML tag;
+	scroll to the end of the page;
 	
 Part - Choice of Bottles
 	
@@ -1420,15 +1529,26 @@ Check selecting while choose-mode is 0:
 	end if;
 	
 Carry out selecting while choose-mode is 0:
+	clear the element called "maintext";
 	let N be the number understood;
 	choose row N in the Table of Imps;
+	if the desc entry is "END" begin;
+		say "You have time for more, and your nose isn't losing sensitivity yet. But this is not a process that you will ever complete, and perhaps it's enough for one evening.[p]";
+		wait for any key;
+			endgame;
+		[concluding choice, final text]
+	otherwise;
+	let J be the theme-rep entry;
+	add J to the themelist;
+	themepick;
 	now choose-mode is 1;
 	follow the full-scent rule;
+	end if;
 
 Table of Imps
 theme-rep	desc
 a theme	some text
-with 3 blank rows
+with 4 blank rows
 
 To stock possibility:
 	let Z be 3;
@@ -1443,13 +1563,35 @@ To stock possibility:
 		let Q be the substituted form of "[pop bottlepats]";
 		now the desc entry is Q;
 	end while;
+	if bottlecount > 8 begin;
+		choose a blank row in the Table of Imps;
+		now the desc entry is "END";
+	end if;
+	now the themelist is {};
 	
 To offer bottle-choice:
 	let X be 0;
+	open HTML tag "table" called "choicelist";
 	repeat through Table of Imps begin;
 		increment X;
-		say "[X]: [the desc entry][br]";
+		if Vorple is not supported, say "[X]: ";
+		if the desc entry is "END" begin;
+			if Vorple is not supported, say "[one of]That's enough for one night[or]Actually, you're done for the night[or]That's enough[or]Enough[or]You've remembered enough for now[or]No, you've remembered all you need to[or]You're done here[or]It suffices. Enough[or]Time for bed[at random].";
+			open HTML tag "tr";
+			open HTML tag "td" called "choiceopt";
+			place a link to command "[X]" reading "[one of]That's enough for one night[or]Actually, you're done for the night[or]That's enough[or]Enough[or]You've remembered enough for now[or]No, you've remembered all you need to[or]You're done here[or]It suffices. Enough[or]Time for bed[at random].", without showing the command;
+			close HTML tag;
+			close HTML tag;
+		otherwise;
+			if Vorple is not supported, say "[the desc entry][br]";
+			open HTML tag "tr";
+			open HTML tag "td" called "choiceopt";
+			place a link to command "[X]" reading "[the desc entry]", without showing the command;
+			close HTML tag;
+			close HTML tag;
+		end if;
 	end repeat;
+	close HTML tag;
 
 To say randbottle:
 	let N be entry 1 in the themelist;
@@ -1457,19 +1599,91 @@ To say randbottle:
 	say "[pop Z]";
 
 
+To endgame:
+	clear the element called "maintext";
+	repeat through the Table of Enduring Symbols begin;
+		say "[note entry] for [meaning entry][br]";
+	end repeat;
+	say "[br]Not a scent that you could construct in a bottle, perhaps. And not the only version of your past. But you feel the shape of it, and it's what you choose for now.";
+
+Part - Connecting Phrases
+
+bottlecount is a number that varies. bottlecount is 0.
+
+To bottle-preamble:
+	now bottlecount is bottlecount + 1;
+	if bottlecount is 1 begin;
+	clear the element called "maintext";
+		say "The casket is deliberately not organised in any particular way, and you avoid the impulse to go through the vials in order; your other routines have system enough. You run a hand through the vials, as though dangling your arm from a boat to touch the water, and pick out one, two, a third, for any reason or none.[p]";
+	otherwise;
+	wait for any key;
+	clear the element called "maintext";
+		say "[pop nextbottle]: ";
+		if Vorple is not supported, say "[p]";
+	end if;
+	wait for any key;
+
+nextbottle is a list of texts that varies. nextbottle is {
+"Part of you; not all of you. [pop nextbark]",
+"You linger, but only a little. [pop nextbark]",
+"Reseal the bottle; [one of]replace it in[or]return it to[or]put it back in[purely at random] [one of]the chest[or]its place[or]the chest[or]its niche[or]storage[purely at random]. [pop nextbark]",
+"Taking your time, you return it and look for the next one",
+"You have plenty of time. [pop nextbark]",
+"Breathe. Remember. [pop nextbark]",
+"Hold it for a moment[one of].[or], but not so close that it consumes you.[or], but lightly.[or]. Set it aside.[purely at random] [pop nextbark]",
+"[pop nextbark]"}.
+
+nextbark is a list of texts that varies. nextbark is {
+"Moving on",
+"Find another",
+"Let's see what else",
+"Back to the chest",
+"Next",
+"Clear the palate",
+"Another",
+"Time for [one of]another[or]something else[or]one more[purely at random]",
+"One more",
+"Let's see"
+}.
+	
+memoryconfirm is a list of texts that varies. memoryconfirm is {
+"Yes, that will serve",
+"Yeah, that feels right",
+"That seems right",
+"Makes sense to you",
+"Perfect",
+"That'll work",
+"Good",
+"Yeah",
+"All right",
+"Yes",
+"You commit it to memory"
+}
+
+somethingelse is a list of texts that varies. somethingelse is {
+"Something else, then",
+"Try another",
+"[pop nextbark]"
+}.
+
 Part - Special Commands
 
 The try-counter is a number that varies. The try-counter is 0.
 
 To add refresh:
 	choose a blank row in the Table of Present Options;
-	now the menu-text entry is "None of these feel right. Reconsider.";
+	now the menu-text entry is "None of these feel right. Reconsider. ";
 	now the note entry is "RETRY";
 	
 To add failure:
 	choose a blank row in the Table of Present Options;
-	now the menu-text entry is "This perfume isn't worth keeping.";
+	now the menu-text entry is "This perfume isn't worth keeping. ";
 	now the note entry is "FAIL";
+	
+To add conclusion:
+	choose a blank row in the Table of Present Options;
+	now the menu-text entry is "That will do for the evening. ";
+	now the note entry is "END";
 
 Part - The Ontologies of Babylon
 
@@ -1512,7 +1726,7 @@ To suggest semantics:
 Table of Enduring Symbols
 note	meaning
 some text	some text
-with 20 blank rows
+with 50 blank rows
 	
 Volume - Memory
 
@@ -1564,18 +1778,30 @@ To say upseason:
 		say "[uppop F]";
 	end if;
 
-To say summer: now the current season is "summer".
-To say winter: now the current season is "winter".
-To say spring: now the current season is "spring".
-To say autumn: now the current season is "autumn".
+To say summer: if the current season is "none", now the current season is "summer".
+To say winter: if the current season is "none", now the current season is "winter".
+To say spring: if the current season is "none", now the current season is "spring".
+To say autumn: if the current season is "none", now the current season is "autumn".
 
-springthings is a list of texts that varies. springthings is {"spring", "new beginnings"}.
+springthings is a list of texts that varies. springthings is {"spring", "new beginnings", "rebirth"}.
 
 summerthings is a list of texts that varies. summerthings is {"midsummer", "summer"}.
 
-autumnthings is a list of texts that varies. autumnthings is {"autumn", "harvest"}.
+autumnthings is a list of texts that varies. autumnthings is {"autumn", "harvest", "decline", "melancholy"}.
 
 winterthings is a list of texts that varies. winterthings is {"hibernation", "midwinter", "the year's turning", "winter"}.
+
+months is a list of texts that varies. months is {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}.
+
+To say aproposmonth:
+	if the current season is "none" begin;
+		say "[pop months]";
+	otherwise;
+		if the current season is "spring", say "[one of]March[or]April[or]May[purely at random]";
+		if the current season is "summer", say "[one of]June[or]July[or]August[purely at random]";
+		if the current season is "autumn", say "[one of]September[or]October[or]November[purely at random]";
+		if the current season is "winter", say "[one of]December[or]January[or]February[purely at random]";
+	end if;
 
 Part - Time of Day
 
@@ -1590,21 +1816,80 @@ selfreasons is a list of texts that varies. selfreasons is {
 "[pop classpiece]",
 "The fortunate result of [one of]idle [or]undirected [or]intense [or]self-indulgent [or][purely at random]experimentation with [pop notelist][pop fortunatetail]",
 "This was your [one of]showcase piece[or]signature piece[or]flagship scent[or]example piece[purely at random] [one of]from back when you were branding yourself around the [pop brandnames] line[or]during your [pop brandnames] period[purely at random]",
-"One of your more unabashedly commercial efforts, [pop bigbucks]"}.
+"[one of]One of your more unabashedly commercial efforts,[or]This one was purely commercial:[or]A big-ticket gig, this:[or]A foray outside your usual line:[purely at random] [pop bigbucks][if a random chance of 2 in 3 succeeds]. [pop buckscoda][end if]",
+"[one of]Made to accompany[or]Commissioned as an accompaniment for[or]A scent-effects piece for[purely at random] the [drama-scene] [one of]scene[or]sequence[purely at random][one of]s[or][purely at random] in [one of]the movie[or][a*][pop dramatica] production of[or]the interactive theatre piece[purely at random] [pop narrative-titles]"}.
+
+dramatica is a list of texts that varies. dramatica is {"Broadway", "musical", "Off-Broadway", "stage", "[movements]", "[pop movementsuffixes]"}.
+
+A theme has a list of texts called scenelist.
+
+To say drama-scene:
+	sort the themelist in random order;
+	let N be entry 1 in the themelist;
+	let Q be the scenelist of N;
+	say "[pop Q]";
+	
+The scenelist of goth is {"angst", "death", "depression", "mourning", "murder", "suicide"}.
+The scenelist of mystic is {"alchemy", "cabal", "demonology", "hermetic", "esoteric", "prophetic", "ritual", "sorcery", "surreal"}.
+The scenelist of woodland is {"countryside", "hunting", "outdoor", "rustic", "sylvan", "wilderness"}.
+The scenelist of glam is {"avant-garde", "city", "dance", "fashion", "masque", "nightclub"}.
+The scenelist of lewd is {"erotic", "flirting", "intimate", "love", "seduction", "sex"}.
+The scenelist of ancient is {"archaeology", "battle", "ceremonial", "conspiracy", "desert", "epic"}.
+The scenelist of spring is {"childhood", "innocence", "education", "training"}.
+The scenelist of summer is {"beach", "jungle", "party", "tropical", "vacation", "wedding"}.
+The scenelist of fall is {"downfall", "end-of-an-era", "farewell", "harvest", "coming-of-age"}.
+The scenelist of winter is {"alpine", "arctic", "blizzard", "ice-skating", "hypothermia", "nadir", "outer space", "storm"}.
+
+narrative-titles is a list of texts that varies. narrative-titles is {
+"[pop NPCnames]",
+"[noreppop allforenames] and [noreppop allforenames]",
+"[pop kingname]",
+"[one of][titlepop apropos-adjlist][purely at random] [one of][titlepop oddfest][or][titlepop festofsub][purely at random]",
+"[one of][uppop base-res][or][uppop res-acts][purely at random]",
+"The [pop Roles]",
+"[one of][uppop apropos-adjlist][or][uppop mod-res][purely at random] [one of][uppop beasts][or][uppop ikons][purely at random]"
+}.
 
 bigbucks is a list of texts that varies. bigbucks is {
 "a tie-in with [one of]a blockbuster movie[or]a high-street fashion line[or]a lifestyle brand[or]a major videogame[purely at random]",
-"a celebrity-branded scent for [one of][pop kingname][or][pop allstars] [pop NPCnames][purely at random]"}.
+"a celebrity-branded scent for [one of][pop kingname][or][pop allstars] [pop NPCnames][purely at random]",
+"the concept piece for a line of [pop capmodif] [pop capscents]"}.
+
+buckscoda is a list of texts that varies. buckscoda is {
+"It never actually saw production, but you felt it was solid work",
+"You didn't get credited for it, thankfully",
+"You specifically required a clause in the contract to prevent them from crediting you for it",
+"You were never officially associated with it, but it was an open secret in the profession",
+"You were paid [one of]what seemed like a staggering sum at the time[or]promptly, smoothly and well[or]far more than the work seemed worth[purely at random], [one of]which was more emotionally confusing than you'd expected[or]which you sorely needed[purely at random]"}.
+
+capscents is a list of texts that varies. capscents is {
+"air freshener",
+"fabric softener",
+"bath soaps",
+"scented candles",
+"athletic deodorant",
+"aromatherapy products",
+"car fresheners",
+"laundry detergent",
+"massage oils",
+"moisturising lotion",
+"skincare products",
+"shampoo"
+}
+
+capmodif is a list of texts that varies. capmodif is {"supermarket own-brand", "mid-shelf", "chain-boutique", "top-shelf", "upmarket", "eco-chic"}.
 
 allstars is a list of texts that varies. allstars is {
 "[pop starjob]",
 "[pop starjob]",
 "[pop starjob]",
-"[noreppop starjob] and [noreppop starjob]",
-"[noreppop starjob], [noreppop starjob] and [noreppop starjob]"
+"[noreppop starjob] and [one of][noreppop starjob][or][downpop roles][purely at random]",
+"[noreppop starjob], [noreppop starjob] and [one of][noreppop starjob][or][downpop roles][purely at random]"
 }
 
-starjob is a list of texts that varies. starjob is {"actor", "[one of][pop artistkinds] [or][purely at random]artist", "comedian", "[one of][pop dancerkinds][or][purely at random]dancer", "[one of][or][pop modelkinds] [purely at random]model", "public intellectual", "musician", "singer", "[pop musicians]", "social media phenomenon", "chef", "reality TV star", "wrestler", "stuntman", "[one of][pop authorkinds] [or][purely at random][one of]novelist[or]author[or]writer[purely at random]", "[one of][movements] [or][purely at random]poet", "game developer", "athlete", "[one of]golf[or]tennis[or]soccer[or]cricket[or]baseball[or]rugby[or]roller derby[purely at random] player"}.
+starjob is a list of texts that varies. starjob is {"actor", "[one of][pop artistkinds] [or][purely at random]artist", "comedian", "[one of][pop dancerkinds][or][purely at random]dancer", "[one of][or][pop modelkinds] [purely at random]model", "public intellectual", "musician", "singer", "[pop musicians]", "social media phenomenon", "chef", "reality TV star", "wrestler", "stuntman", "[one of][pop authorkinds] [or][purely at random][one of]novelist[or]author[or]writer[purely at random]", "[one of][movements] [or][purely at random]poet", "game developer", "athlete", "[pop sportsball] player"}.
+
+sportsball is a list of texts that varies. sportsball is {"golf", "tennis", "soccer", "cricket", "baseball", "rugby", "roller derby", "lacrosse"}.
 
 To say tvseries:
 	sort the themelist in random order;
@@ -1613,7 +1898,6 @@ To say tvseries:
 	say "[pop Q]";
 	
 The tvlist of goth is {"reality TV series about the [one of]lifestyle-vampire[or]extreme body-mod[purely at random] community", "prestige TV drama about [one of]sexy[or]angsty[or]scheming[or]messy[or]unwise[purely at random] [one of]ghosts[or]vampires[or]werewolves[or]immortals[or]cryptids[purely at random] and [one of]the mortals who love them[or]their interminable feuds[or]their bad decisions[or]their tangled polycules[purely at random]"}.
-
 
 classpiece is a list of texts that varies. classpiece is {
 "You made this as a demonstration piece during a workshop",
@@ -1753,9 +2037,9 @@ the-ikonage is a list of texts that varies. the-ikonage is {
 "[*a][downpop beasts] [one of]rampant[or]passant[or]sejant[or]dormant[or]salient[or]statant[purely at random]"
 }.
 
-Beasts is a list of texts that varies. Beasts is {"Baboon", "bacchante", "Bat",  "Bee", "Bear", "Beaver", "Bird", "Boar", "Buck", "Buffalo", "Bull", "Buzzard", "Cat", "Chameleon", "Chicken", "Cobra", "Cock", "Cougar", "Cow", "Coyote", "Crocodile", "Crow", "Devil", "Dog", "Dove", "Donkey", "Dragon", "Eagle", "Elephant", "Falcon", "Flea", "Fox", "Frog","Ghost", "Goat", "Gorgon", "Griffin", "Grizzly", "Hare", "Hawk", "Hedgehog", "Hog", "Hornet", "Horse", "Hound","Hyena", "Impala", "Jackal", "Lion", "Locust", "Maenad", "Maggot", "Mamba", "Mantis", "Mare", "Mustang", "Octopus", "Owl", "Ox", "Panther", "Pig", "Pigeon", "Piranha", "Platypus", "Possum", "Raccoon",  "Rat", "Ram", "Raven", "Rhino", "Roach", "Salmon", "Scorpion", "Serpent", "Shark", "Sheep", "Slug", "Spider", "Skunk", "Squid", "Stag", "Stallion", "Tiger", "Toad", "Troll", "Unicorn", "Viper", "Vulture", "Wasp", "Warthog", "Weasel", "Worm", "Whale", "Wildcat", "Wolf"}.
+Beasts is a list of texts that varies. Beasts is {"Baboon", "Bacchante", "Bat",  "Bee", "Bear", "Beaver", "Bird", "Boar", "Buck", "Buffalo", "Bull", "Buzzard", "Cat", "Chameleon", "Chicken", "Cobra", "Cock", "Cougar", "Cow", "Coyote", "Crocodile", "Crow", "Devil", "Dog", "Dove", "Donkey", "Dragon", "Eagle", "Elephant", "Falcon", "Flea", "Fox", "Frog","Ghost", "Goat", "Gorgon", "Griffin", "Grizzly", "Hare", "Hawk", "Hedgehog", "Hog", "Hornet", "Horse", "Hound","Hyena", "Impala", "Jackal", "Lion", "Locust", "Maenad", "Maggot", "Mamba", "Mantis", "Mare", "Mustang", "Octopus", "Owl", "Ox", "Panther", "Pig", "Pigeon", "Piranha", "Platypus", "Possum", "Raccoon",  "Rat", "Ram", "Raven", "Rhino", "Roach", "Salmon", "Scorpion", "Serpent", "Shark", "Sheep", "Slug", "Spider", "Skunk", "Squid", "Stag", "Stallion", "Tiger", "Toad", "Troll", "Unicorn", "Viper", "Vulture", "Wasp", "Warthog", "Weasel", "Worm", "Whale", "Wildcat", "Wolf"}.
 
-designs is a list of texts that varies. designs is { "argyle",  "damask", "floral", "herringbone", "houndstooth", "ikat",  "matelassé", "moresque", "ogee", "paisley", "suzani", "toile", "[pop explaindesigns] [pop motifery]"}.
+designs is a list of texts that varies. designs is { "argyle",  "damask", "floral", "herringbone", "houndstooth", "ikat",  "matelassé", "moresque", "ogee", "paisley", "suzani", "toile", "[pop explaindesigns] [pop motifery]", "[pop explaindesigns] [pop motifery]", "[pop explaindesigns] [pop motifery]", "[pop explaindesigns] [pop motifery]"}.
 
 [Designs which are not self-explanatory as designs, and need to be called, e.g., 'a pair of socks in a moresque pattern' rather than 'a pair of argyle socks'.]
 
@@ -1926,18 +2210,68 @@ namedplace is a list of texts that varies. namedplace is {
 "[one of]at[or]near[purely at random] [assoc atplace]",
 "[one of]at[or]during[or]after[purely at random] [pop lecturenames][m academia]",
 "[one of]at[or]atop[or]below[or]beneath[or]by[or]in[or]near[or][pop nearish][purely at random] [assoc university][m academia]",
-"at [one of]the salon of [pop salontitles][or][pop salontitles]'s salon[purely at random]"}.
+"at [one of]the salon of [pop salontitles][or][pop salontitles]'s salon[purely at random]",
+"[pop cityvistas]"}.
 
 fakebuilds is a list of texts that varies. fakebuilds is {
-"the [uppop buildadjs] [pop basebuilds]",
-"[uppop buildadjs] [pop nothebuilds]"
+"[pop build-def-adjs] [one of][pop basebuilds][or][pop nothebuilds][purely at random]",
+"the [titlepop buildadjs] [pop basebuilds]",
+"[titlepop buildadjs] [pop nothebuilds]"
 }.
 
-buildadjs is a list of texts that varies. buildadjs is {"[pop simpcolors]", "[pop colors]", "[aproposnoun]", "[aproposadj]", "[pop allbasicscents]", "[pop regionals]", "[pop allsurnames]", "[one of]St.[or]Saint[purely at random] [pop saintnames]'s", "[pop littlegods]"}.
+buildadjs is a list of texts that varies. buildadjs is { "[aproposnoun]", "[aproposadj]", "[cutadj][pop allbasicscents][backadj]",  "[pop allsurnames]",  "[pop littlegods]"}.
 
-basebuilds is a list of texts that varies. basebuilds is {"Baths", "Castle", "Court", "Courts", "Fort", "Gallery", "Hotel", "Lodge", "Mews", "Palace", "Shrine", "Temple", "Theatre", "Tower", "Villa", "Wall", "[pop genmark]"}.
+build-def-adjs is a list of texts that varies. build-def-adjs is {"[one of]St.[or]Saint[purely at random] [pop saintnames]'s", "the [uppop simpcolors]", "the [uppop colors]", "the [uppop regionals]"}.
 
-nothebuilds is a list of texts that varies. nothebuilds is {"Castle", "Court", "Gallery", "House", "Hotel", "Palace", "Shrine", "Temple", "Theatre[m performance]", "Tower"}.
+basebuilds is a list of texts that varies. basebuilds is {"Baths", "Castle", "Court", "Courts", "Fort", "Gallery", "Hotel", "Lodge", "Mews", "Palace", "Shrine", "Steps", "Temple", "Theatre[m performance]", "Tower", "Villa", "Wall", "[pop genmark]"}.
+
+nothebuilds is a list of texts that varies. nothebuilds is {"Castle", "Court", "Gallery", "House", "Hotel", "Palace", "Shrine", "Temple", "Theatre[m performance]", "Station", "Steps", "Tower"}.
+
+[
+Red Tower
+the Red Tower
+
+Bleak Mews
+the Bleak Gallery
+
+the Fire Wall
+
+the Boudica Hotel
+Boudica Palace
+
+Ashwell Court
+the Ashwell Gallery
+Ashwell Villa
+the Ashwell Wall
+
+the Vermillion Palace
+
+St. Swithin's Baths
+St. Swithin's Temple
+St. Swithin's Shrine
+St. Swithin's Wall
+
+the French Baths
+the French Temple
+the French Shrine
+the French Wall
+
+
+-walls, galleries, baths usually take a 'the'
+-mews usually don't
+
++saints never take a 'the'
++colors, nationalities imply a 'the'
+
+usually noun determines it, but adjective can overrule?
+
+neutadjs
+defadjs
+
+thenoun
+nothenoun
+
+]
 
 [buildplace: real-world places, typically standard above-ground buildings, that can a wide variety of prepositions.]
 
@@ -2098,7 +2432,7 @@ themepilogues is a list of texts that varies. themepilogues is {
 "and never apologized for it",
 "for reasons still obscure to you",
 "which was honestly your own fault",
-"and commemorated the event in a poem[m beauty]",
+"and [one of]commemorated[or]obliquely referenced[purely at random] the event in a poem[m beauty]",
 "and dedicated a[one of] book[or] volume of poetry[or] line of scents[or]n opera[or] play[purely at random] to you[if a random chance of 1 in 2 succeeds] [pop timelater][end if]"
 }.
 
@@ -2293,7 +2627,7 @@ dramamids is a list of texts that varies. dramamids is {"an", "c", "ch", "d", "f
 
 dramafores is a list of texts that varies. dramafores is {"Al", "An", "Ar", "Aur", "Ben", "Ber", "Dar", "Del", "Dion", "Dol", "Dor", "El", "En", "Er", "Hy", "Ir", "Mal", "Mar", "Mer", "Mir", "Mar", "Mor", "Jun", "Ol", "On", "Or", "Phil", "Sol", "Sor", "Ur"}.
 
-dramaafts is a list of texts that varies. dramaafts is {"a", "acia", "alo","alia", "anda", "aria", "ado", "aro", "ato", "atia", "ie", "ea", "ecia", "edo", "eno", "eto", "enza", "enzo", "etza", "eo", "elo", "ela", "ero", "era", "eria", "elia", "elio", "eto", "eta", "ia", "ice", "icia", "io", "ike", "ine", "ita", "isia", "isio", "ite", "ito", "iete", "ona", "ono", "o", "olio", "utio"}.
+dramaafts is a list of texts that varies. dramaafts is {"a[fem]", "acia[fem]", "alo[masc]","alia[fem]", "anda[fem]", "aria[fem]", "ado[masc]", "aro[masc]", "ato[masc]", "atia[fem]", "ie[fem]", "ea[neut]", "ecia[fem]", "edo[masc]", "eno[masc]", "eto[masc]", "enza[fem]", "enzo[masc]", "etza[fem]", "eo[masc]", "elo[masc]", "ela", "ero[masc]", "era[fem]", "eria[fem]", "elia[fem]", "elio[masc]", "eto[masc]", "eta[fem]", "ia[fem]", "ice[fem]", "icia[fem]", "io[masc]", "ike[fem]", "ine[fem]", "ita[fem]", "isia[fem]", "isio[masc]", "ite[fem]", "ito[masc]", "iete[fem]", "ona[fem]", "ono[masc]", "o[masc]", "olio[masc]", "utio[masc]"}.
 
 
 Section - British
@@ -2818,7 +3152,7 @@ Book - Complex Memory
 
 complexmemory is a list of texts that varies. complexmemory is {
 "[uppop fromphrase] [*a][theseason][one of] [pop eraphrase],[or][purely at random] [pop situationmemory] and [pop memorytail]",
-"[uppop fromphrase] [*a][one of][assoc majorloc] [theseason][or][theseason] in [assoc majorloc][purely at random][one of] [pop eraphrase][or][or][purely at random], when you [pop memorytail]",
+"[uppop fromphrase] [*a][one of][assoc majorloc] [theseason][or][theseason] in [assoc majorloc][purely at random][one of] [pop eraphrase][or][or][purely at random], when you [pop memorytail][addfrag cityfrags]",
 "[uppop fromphrase] the [theseason][one of] [pop eraphrase],[or][purely at random] when you [pop memorytail]",
 "[pop onenightfore][pop onenightsitu] [if notalone is true][pop groupaction][otherwise][pop soloaction][end if]",
 "You first smelled this in passing, [one of]on[or]worn by[purely at random] [one of][*a][pop modelshapes] [pop thegenders][or][*a][pop thegenders][purely at random] [one of][pop namedplace][or][pop duringevent][purely at random], and [pop knowstory] before realizing that [pop knowconclusion]",
@@ -2853,7 +3187,7 @@ genpartytimes is a list of texts that varies. genpartytimes is {
 "[*a][one of][pop fullparties][or][pop partykinds][purely at random][one of] at [pop landmark][or][purely at random]"
 }
 
-partykinds is a list of texts that varies. partykinds is {"ball", "bash", "banquet", "dance[m performance]", "dinner", "entertainment", "fete", "gala", "masque[m adventure]", "party", "reception", "soiree"}.
+partykinds is a list of texts that varies. partykinds is {"bacchanal", "ball", "bash", "banquet", "dance[m performance]", "dinner", "entertainment", "fete", "gala", "masque[m adventure]", "party", "reception", "soiree"}.
 
 fullparties is a list of texts that varies. fullparties is {"cocktail party", "dance formal[m performance]", "formal dinner", "garden party", "house party"}.
 
@@ -3053,30 +3387,46 @@ simplegovphrase is a list of texts that varies. simplegovphrase is {"back in[one
 govphrase is a list of texts that varies. govphrase is {"back in[one of][or] the [pop govfelt]days of[purely at random] [pop eraname]",
 "[pop suberas] [pop eraname]"}
 
-eraname is a list of texts that varies. eraname is {"the [pop gubberments]"}.
+eraname is a list of texts that varies. eraname is {"the [pop gubberments]", "[pop generas]"}.
 
-gubberments is a list of texts that varies. gubberments is {"[noreppop histnames] administration", "[noreppop histnames] Cabinet", "[gubadj]Committee", "[gubadj]Commune", "[gubadj]Compromise", "[gubadj]Court", "[gubadj]Crisis", "[gubadj]Disgrace", "[gubadj]Emergency", "Interregnum", "[gubadj]Ministry", "[gubadj]Occupation", "[gubadj]Pretendership", "[gubadj]Realignment", "[gubadj]Regency", "[gubadj]Republic", "[gubadj]Restitution", "[gubadj]Revanche", "[gubadj]Satrapy", "[gubadj]System", "[gubadj]Turmoil", "[gubadj]Triumvirate", "[gubadj]Uprising", "[pop reigns] of [pop histnames]", "[pop reigns] of [pop kingname]"}.
+gubberments is a list of texts that varies. gubberments is {"[noreppop histnames] administration", "[noreppop histnames] Cabinet", "[gubadj]Committee", "[gubadj]Commune", "[gubadj]Compromise", "[gubadj]Court", "[gubadj]Crisis", "[gubadj]Disgrace", "[gubadj]Emergency", "Interregnum", "[gubadj]Ministry", "[gubadj]Occupation", "[gubadj]Pretendership", "[gubadj]Realignment", "[gubadj]Regency", "[gubadj]Republic", "[gubadj]Restitution", "[gubadj]Revanche", "[gubadj]Satrapy", "[gubadj]System", "[gubadj]Turmoil", "[gubadj]Triumvirate", "[gubadj]Uprising", "[gubadj]Union", "[pop reigns] of [pop histnames]", "[pop reigns] of [pop kingname]"}.
+
+[
+the Nine Days Panic
+the Winter of Rage
+Red January
+]
+
+countoff is a list of texts that varies. countoff is {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Twelve", "Twenty", "Thirty", "Forty", "Fifty", "Hundred", "Thousand"}.
+
+time-era is a list of texts that varies. time-era is {"Days", "Weeks", "Months", "Year"}.
+
+generas is a list of texts that varies. generas is {
+"[uppop colors] [aproposmonth]",
+"the [one of][upseason][or]Season[or]Year[or]Days[or]Time[purely at random] of [uppop base-res]",
+"the [one of][pop countoff] [pop time-era][or][pop gubberadjs][or][uppop ikons][purely at random] [pop era-nouns]"
+}.
+
+era-nouns is a list of texts that varies. era-nouns is {"Collapse", "Crisis", "Depression", "Error", "Harvest", "Hunger", "Mistake", "Panic", "Strike", "Rebellion", "Recession", "Terror", "Trouble", "War", "[upseason]"}.
 
 To say gubadj: say "[one of][pop histnames] [or][titlepop gubberadjs] [or][purely at random]".
 
-gubberadjs is a list of texts that varies. gubberadjs is {"Diamond", "Doomed", "Good", "Glorious", "Golden", "Grand", "Great", "Little", "New", "Old", "People's", "Silver", "Second", "Third", "Wicked", "[pop regionals]", "[pop months]", "[uppop simpcolors]", "[aproposnoun]", "[pop Roles]'s", "[pop titlepossessive]", "[pop kingadj]"}.
-
-months is a list of texts that varies. months is {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}.
+gubberadjs is a list of texts that varies. gubberadjs is {"Diamond", "Doomed", "Glass", "Good", "Glorious", "Golden", "Grand", "Great", "Little", "Iron", "New", "Old", "People's", "Silver", "Second", "Steel", "Sublime", "Third", "Wicked", "[pop countoff] [pop time-era]", "[pop regionals]", "[pop months]", "[uppop simpcolors]", "[aproposnoun]", "[pop Roles]'s", "[pop titlepossessive]", "[pop kingadj]", "[cancel-the][pop namedfests][restore-the]", "[uppop ikons]", "[pop beasts]"}.
 
 reigns is a list of texts that varies. reigns is {"ascendancy", "incumbency", "presidency", "reign", "tenure"}.
 
 govfelt is a list of texts that varies. govfelt is {"", "[noreppop govfeels] "}.
 
-govfeels is a list of texts that varies. govfeels is {"anxious", "apocalyptic", "banal", "cataclysmic", "confusing", "desperate", "doom-laden", "electrifying", "frantic", "golden", "[one of]in[or][purely at random]glorious", "heady", "mad", "miserable", "paranoid", "quiet", "terrible", "tragic", "transformative", "traumatic"}.
+govfeels is a list of texts that varies. govfeels is {"anxious", "apocalyptic", "banal", "cataclysmic", "confusing", "desperate", "doom-laden", "electrifying", "frantic", "golden", "[one of]in[or][purely at random]glorious", "heady", "inept", "mad", "miserable", "paranoid", "quiet", "terrible", "tragic", "transformative", "traumatic"}.
 
-suberas is a list of texts that varies. suberas is {"at the dawn of", "[one of]towards the[or]at the[purely at random] [pop govfelt]conclusion of", "[one of]during the[or]in the[purely at random] [pop govfelt]first months of", "[one of]during the[or]in the[purely at random] [pop govfelt]final days of", "[one of]deep[or]late[or]early[purely at random] in"}.
+suberas is a list of texts that varies. suberas is {"at the dawn of", "just before", "just after", "in the aftermath of", "in the days before", "[one of]towards the[or]at the[purely at random] [pop govfelt]conclusion of", "[one of]during the[or]in the[purely at random] [pop govfelt]first months of", "[one of]during the[or]in the[purely at random] [pop govfelt]final days of", "[one of]deep[or]late[or]early[purely at random] in"}.
 
-situationmemory is a list of texts that varies. situationmemory is {"when you [one of]were living in[or]rented[or]house-sat[or]found yourself living in[or]somehow wound up in[purely at random] [*a][pop houseadjs] [pop housetypes] in [assoc majorloc]",
-"when you were [one of]teaching[or]lecturing[or]mentoring[or]freelancing[or]on sabbatical[or]tutoring[or]doing research[or]showing a collection[or]developing a product line[m business][purely at random] in [one of][assoc majorloc][or][assoc university][purely at random]",
-"when you visited [assoc majorloc] for [one of]a few days[or]a week[or]a month[or]a weekend[purely at random]",
-"when you were in [assoc majorloc] for a [one of]conference[m academia][or]symposium[m academia][or]client meeting[m business][or]consultancy gig[m business][purely at random]"}.
+situationmemory is a list of texts that varies. situationmemory is {"when you [one of]were living in[or]rented[or]house-sat[or]found yourself living in[or]somehow wound up in[purely at random] [*a][pop houseadjs] [pop housetypes] in [assoc majorloc][addfrag cityfrags]",
+"when you were [one of]teaching[or]lecturing[or]mentoring[or]freelancing[or]on sabbatical[or]tutoring[or]doing research[or]showing a collection[or]developing a product line[m business][purely at random] in [one of][assoc majorloc][or][assoc university][addfrag cityfrags][purely at random]",
+"when you visited [assoc majorloc] for [one of]a few days[or]a week[or]a month[or]a weekend[purely at random][addfrag cityfrags]",
+"when you were in [assoc majorloc] for a [one of]conference[m academia][or]symposium[m academia][or]client meeting[m business][or]consultancy gig[m business][purely at random][addfrag cityfrags]"}.
 
-houseadjs is a list of texts that varies. houseadjs is {"[one of]adorable[or]weird[or]strange[or]quaint[purely at random] little", "awful", "bare", "charming", "claustrophobic", "cramped", "creepy", "damp", "[one of]ghastly[or]nasty[purely at random] little", "cozy", "comfortable", "decorated", "dilapidated", "elegant[m beauty]", "excessively [pop colors]", "grim", "gloomy", "haunted", "historic",  "light-filled", "modest", "moldy", "overpriced", "plain", "picturesque[m beauty]", "spacious", "sparse", "terrible", "unfurnished"}.
+houseadjs is a list of texts that varies. houseadjs is {"[one of]adorable[or]weird[or]strange[or]quaint[purely at random] little", "awful", "bare", "charming", "claustrophobic", "cramped", "creepy", "damp", "[one of]ghastly[or]nasty[purely at random] little", "cozy", "comfortable", "decorated", "dilapidated", "elegant[m beauty]", "excessively [pop colors]", "grim", "gloomy", "haunted", "historic",  "light-filled", "modest", "moldy", "overpriced", "plain", "picturesque[m beauty]", "spacious", "sparse", "terrible", "unfurnished", "weird"}.
 
 housetypes is a list of texts that varies. housetypes is {"flat", "apartment", "atelier", "basement", "bedsit", "studio", "room", "loft", "townhouse"}.
 
@@ -3097,13 +3447,13 @@ memimperfect is a list of texts that varies. memimperfect is {"had [pop patisser
 "[m learning][one of]learned[or]failed to learn[or][pop minorlearns][purely at random] [pop sidelines][m learning]",
 "[one of]subsisted on[or]lived on[or]mostly ate[purely at random] [pop cheapfoods]"}.
 
-cheapfoods is a list of texts that varies. cheapfoods is {"rice and soy-sauce", "rice and beans", "lentils", "ramen", "sardine sandwiches", "jerky and goldfish crackers", "bananas", "polenta", "toasted cheese", "toaster pastries", "street food", "remaindered MREs"}.
+cheapfoods is a list of texts that varies. cheapfoods is {"rice and soy-sauce", "rice and beans", "lentils", "ramen", "sardine sandwiches", "peanut butter", "jerky and goldfish crackers", "bananas", "polenta", "toasted cheese", "toaster pastries", "street food", "remaindered MREs"}.
 
 [divebar: places you definitely drink in]
 
 divebar is a list of texts that varies. divebar is {"dive bar", "all-night diner", "cafe", "gay bar", "nightclub", "pub", "tavern", "tourist bar", "speakeas[*ies]", "wine bar", "wine shop"}.
 
-oddbooze is a list of texts that varies. oddbooze is {"Abhainn Dearg", "aguardiente", "akvavit", "amaretto", "amari", "Aperol", "applejack", "anisette", "Ardbeg", "Armagnac", "arrack", "baijiu", "Bärenfang", "boukha", "Bowmore", "Bruichladdich", "Bunnahabhain", "Caol Ila", "cachaça", "Calvados", "Campari", "cédratine", "chartreuse", "cashew feni", "crème de cassis", "Drambuie", "fernet", "Galliano", "grappa", "Himbeergeist", "Jura", "Kilchoman", "kirsch", "Lagavulin", "Laphroaig", "Ledaig", "limoncello", "mead", "mescal", "moonshine", "okolehao", "orujo", "ouzo", "pastis", "raki", "retsina", "Sambuca", "Scapa", "shōchū", "slivovitz", "soju", "Strega", "Talisker", "tsikoudia", "zivania", "[pop redwines]", "[one of][pop fruits][or][pop allbasicscents][purely at random] [one of]vodka[or]liqueur[or]brandy[or]schnapps[purely at random]", "[pop fruits] cider"}.
+oddbooze is a list of texts that varies. oddbooze is {"Abhainn Dearg", "aguardiente", "akvavit", "amaretto", "amari", "Aperol", "applejack", "anisette", "Ardbeg", "Armagnac", "arrack", "baijiu", "Bärenfang", "boukha", "Bowmore", "Bruichladdich", "Bunnahabhain", "Caol Ila", "cachaça", "Calvados", "Campari", "cédratine", "chartreuse", "cashew feni", "crème de cassis", "Drambuie", "fernet", "Galliano", "grappa", "Himbeergeist", "Jura", "Kilchoman", "kirsch", "Lagavulin", "Laphroaig", "Ledaig", "limoncello", "mead", "mescal", "moonshine", "Oban", "okolehao", "orujo", "ouzo", "pastis", "raki", "retsina", "Sambuca", "Scapa", "shōchū", "slivovitz", "soju", "Strega", "Talisker", "tsikoudia", "zivania", "[pop redwines]", "[one of][pop fruits][or][pop allbasicscents][purely at random] [one of]vodka[or]liqueur[or]brandy[or]schnapps[purely at random]", "[pop fruits] cider"}.
 
 cocktails is a list of texts that varies. cocktails is {"Aviation", "gin and tonic", "gin fizz[*es]", "Grasshopper", "Dark and Stormy", "margarita", "mint julep", "Negroni", "Old Fashioned", "planter's punch[*es]", "Sidecar", "tequila sunrise", "[pop fruits] margarita"}.
 
@@ -3114,7 +3464,7 @@ longimperfect is a list of texts that varies. longimperfect is {
 
 romanceflavs is a list of texts that varies. romanceflavs is {"asymmetric[m regrets]", "emotionally complicated", "complicated", "convenient", "easy", "fraught", "gentle", "giddy", "hopeless[m regrets]", "ill-[one of]advised[or]considered[or]conceived[or]fated[purely at random]", "impractical", "[one of]oddly[or]weirdly[or]strangely[or]unexpectedly[purely at random] innocent", "long-distance", "lopsided", "passionate[m lust]", "problematic[m regrets]", "self-destructive[m regrets]", "self-indulgent", "silly", "surreal", "tentative", "[m lust][pop flavadverbs] [pop hotflavs]", "[m lust][pop flavadverbs] [pop hotflavs]"}.
 
-flavadverbs is a list of texts that varies. flavadverbs is {"astoundingly", "breathtakingly", "extremely", "incredibly", "improbably", "ridiculously", "surprisingly", "unsustainably"}.
+flavadverbs is a list of texts that varies. flavadverbs is {"astoundingly", "breathtakingly", "extremely", "incredibly", "improbably", "ridiculously", "surprisingly", "unsustainably", "thoroughly"}.
 
 hotflavs is a list of texts that varies. hotflavs is {"carnal", "hot", "kinky", "lewd", "obscene", "vigorous"}.
 
@@ -3145,6 +3495,19 @@ festival is a list of texts that varies. festival is {
 "the [one of]Celebration[or]Festival[purely at random] of [pop histnames]'s [one of]Eye[or]Nose[or]Finger[or]Tongue[or]Ear[or]Defeat[or]Demise[or]Despair[or]Delight[or]Mistake[or]Wonder[or]Victory[purely at random]",
 "[assoc majorloc] [pop subfest] Week"
 }.
+
+[Only patterns that don't specify location:]
+
+unlocfest is a list of texts that varies. unlocfest is {
+"the [one of]Celebration[or]Day[or]Feast[or]Festival[or]Night[or]Parade[or]Carnival[purely at random] of [pop oddfest]", 
+"the Festival of [pop festofsub]", 
+"the [pop subfest] Festival", 
+"the [pop festadj] Festival of [pop festofsub]",
+"the [pop festadj] [pop subfest] Festival", 
+"the [pop subexpo] [one of]Expo[or]Exposition[or]Showcase[at random]", 
+"the [one of]Celebration[or]Festival[purely at random] of [pop histnames]'s [one of]Eye[or]Nose[or]Finger[or]Tongue[or]Ear[or]Defeat[or]Demise[or]Despair[or]Delight[or]Mistake[or]Wonder[or]Victory[purely at random]",
+"[pop subfest] Week"
+}
 
 [
 
@@ -3183,7 +3546,7 @@ oddfest is a list of texts that varies. oddfest is {
 [Named festivals; not sure about these and might take them out later?]
 
 namedfests is a list of texts that varies. namedfests is {
-"Arbor Day", "Beltane", "Candlemas", "Caristia", "Christmas", "Diwali", "Easter", "Eid", "Epiphany", "Equinox", "Floralia", "Fors Fortuna", "Halloween", "Hannukah", "Hermea", "Holi", "Imbolc", "Koliada", "Kupala", "Lupercalia", "May Day", "Mardi Gras", "Megalesia", "Mercuralia", "New Year's", "Ostara", "Passover", "Pentecost", "Samhain", "Saturnalia", "Solstice", "[one of]St. [or][purely at random][pop saintnames]'s[one of] Day[or] Eve[or] Night[or][purely at random]", "the Feast of [one of]St. [pop saintnames][or][pop littlegods][purely at random]", "Walpurgisnacht", "Whitsun", "Yule", "Þorrablót", "[titlepop aproposes] [one of]Feast[or]Night[or]Day[or][pop weekdays][purely at random]"
+"Arbor Day", "Beltane", "Candlemas", "Caristia", "Christmas", "Diwali", "Easter", "Eid", "Epiphany", "Equinox", "Floralia", "Fors Fortuna", "Halloween", "Hannukah", "Hermea", "Holi", "Imbolc", "Koliada", "Kupala", "Lupercalia", "May Day", "Mardi Gras", "Megalesia", "Mercuralia", "New Year's", "Ostara", "Passover", "Pentecost", "Samhain", "Saturnalia", "Solstice", "[one of]St. [or][purely at random][pop saintnames]'s[one of] Day[or] Eve[or] Night[or][purely at random]", "[*the]Feast of [one of]St. [pop saintnames][or][pop littlegods][purely at random]", "Walpurgisnacht", "Whitsun", "Yule", "Þorrablót", "[titlepop aproposes] [one of]Feast[or]Night[or]Day[or][pop weekdays][purely at random]"
 }.
 
 weekdays is a list of texts that varies. weekdays is {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}.
@@ -3209,21 +3572,23 @@ engineerkinds is a list of texts that varies. engineerkinds is {"acoustical", "a
 writerkinds is a list of texts that varies. writerkinds is {"erotica[m lust]", "popular [downpop acasubj]", "romance[m romance]", "SFF", "technical"}.
 authorkinds is a list of texts that varies. authorkinds is {"fantasy", "historical", "SF", "SFF", "literary", "mystery", "thriller", "romance[m romance]", "YA"}.
 
-tutorkinds is a list of texts that varies. tutorkinds is {"dance", "fencing", "painting", "poetry", "rhetoric", "riding", "[pop acasubj]"}.
+tutorkinds is a list of texts that varies. tutorkinds is {"dance", "fencing", "painting", "poetry", "rhetoric", "riding", "[pop instruments]", "[pop acasubj]"}.
 columnistkinds is a list of texts that varies. columnistkinds is {"advice", "food", "gossip", "lifestyle", "literary", "op-ed[m debate]", "political", "[pop artkinds]"}.
 artistkinds is a list of texts that varies. artistkinds is {"conceptual", "figurative", "graffiti", "graphic", "installation", "land", "performance", "process", "street", "[movements]", "[pop sciencekinds]"}.
 dancerkinds is a list of texts that varies. dancerkinds is {"backup ", "ballet ", "break", "burlesque ", "exotic ", "folk ", "pole", "sword ", "tap"}.
 actorkinds is a list of texts that varies. actorkinds is {"action", "comedy","musical", "Shakespearian", "soap", "stage", "telenovela", "TV drama"}.
 
-movementprefixes is a list of texts that varies. movementprefixes is {"anarcho", "anthro", "archaeo", "astro", "auto", "bio", "chrono", "cyber", "eco", "epi", "ethno", "geo", "hyper", "meta", "neo", "necro", "paleo", "poly", "porno", "post", "proto", "psycho", "teleo", "trans", "socio", "zoo"}.
-movementsuffixes is a list of texts that varies. movementsuffixes is {"anarchist", "classicist", "feminist", "formalist", "graphic", "humanist", "impressionist", "localist", "ludologist", "materialist", "modernist", "narrativist", "pagan", "positivist", "realist", "romantic", "primitivist", "socialist", "surrealist", "structuralist", "symbolist", "textualist", "theist"}.
+movementprefixes is a list of texts that varies. movementprefixes is {"anarcho", "anthro", "archaeo", "astro", "auto", "bio", "chrono", "cyber", "eco", "epi", "ethno", "geo", "hyper", "meta", "neo", "necro", "paleo", "poly", "porno", "post", "pseudo", "proto", "psycho", "teleo", "trans", "socio", "synchro", "zoo"}.
+movementsuffixes is a list of texts that varies. movementsuffixes is {"anarchist", "classicist", "concrete", "feminist", "formalist", "graphic", "humanist", "impressionist", "localist", "ludologist", "materialist", "modernist", "narrativist", "pagan", "physical", "positivist", "realist", "romantic", "primitivist", "socialist", "surrealist", "structuralist", "symbolist", "textualist", "theist"}.
 To say movements: say "[pop movementprefixes][pop movementsuffixes]".
 
 rockmusicians is a list of texts that varies. rockmusicians is {"bassist", "drummer", "guitarist", "vocalist", "[pop musicians]"}.
 
 musicians is a list of texts that varies. musicians is {"accordionist", "banjo player", "bassist", "bassoonist", "beatboxer", "cellist", "chorister", "dulcimer player", "flautist", "glockenspiel player", "harpist", "harpsichordist", "horn player", "lute player", "oboist", "organist", "percussionist", "pianist", "taiko drummer", "theremin player", "throat-singer", "timpanist", "trombonist", "trumpet player", "tuba player", "turntablist", "violinist", "violist", "xylophonist"}.
 
-sidelines is a list of texts that varies. sidelines is {"[one of]knitting[or]crochet[or]needlepoint[or]embroidery[purely at random]", "[one of]go[or]chess[or]hnefatafl[purely at random]", "[one of]poker[or]whist[or]Canasta[purely at random]", "[one of]samba[or]waltz[purely at random]", "[one of]Tarot[or]kaballah[or]the I Ching[purely at random]", "bookbinding", "calligraphy", "[pop artadjs] [pop artkinds]"}.
+instruments is a list of texts that varies. instruments is {"accordion", "banjo", "bass", "bassoon", "cello", "dulcimer", "flute", "glockenspiel", "harp", "harpsichord", "French horn", "lute", "oboe", "piano", "taiko drums", "theremin", "timpani", "trombone", "tuba", "violin", "viol", "xylophone"}.
+
+sidelines is a list of texts that varies. sidelines is {"[one of]knitting[or]crochet[or]needlepoint[or]embroidery[purely at random]", "[one of]go[or]chess[or]hnefatafl[purely at random]", "[one of]poker[or]whist[or]Canasta[or][pop games][purely at random]", "[one of]samba[or]waltz[or][pop dancerkinds]dancing[purely at random]", "[one of]Tarot[or]kaballah[or]the I Ching[purely at random]", "bookbinding", "calligraphy", "rock climbing", "[pop artadjs] [pop artkinds]"}.
 
 patisserie is a list of texts that varies. patisserie is {"baklava", "beignets", "bougatsa", "canelé", "conejitos", "croissants", "crumpets", "flaons", "galettes de sarrasin", "gougères", "hamantash", "strudel", "macarons", "marillenknödel", "mille-feuilles", "moon cake", "pain au chocolat", "palmiers","pain au raisins", "qottab", "spanakopita",  "viennoiserie", "wife cake"}.
 
@@ -3252,6 +3617,9 @@ KINDS OF FRAGMENT:
 
 The fraglist is a list of lists of texts that varies.
 
+To say addfrag (N - a list of texts):
+	add N to the fraglist;
+
 To say frag:
 	let F be the number of entries in the fraglist;
 	if F > 0 begin;
@@ -3260,6 +3628,111 @@ To say frag:
 		say " ([pop N])";
 	end if;
 	
+Section - The City and its Moods
+
+cityfrags is a list of texts that varies. cityfrags is {
+"[pop citycats]",
+"[weathersnip] [pop cityvistas]",
+"[pop buskers]"
+}
+
+buskers is a list of texts that varies. buskers is 
+{
+"[*a][one of][pop modelshapes] [or][pop suitornats] [or][purely at random][pop musicians] busking [pop cityvistas]",
+"[*a][pop suitornats] folk group playing [pop cityvistas]",
+"a busker [pop cityvistas], covering [one of]popular [or]familiar [or]classic [or]well-known [or]locally popular [or][or][purely at random][one of][pop commonmusic] numbers[or][plure][pop specsongs][s][purely at random] on the [pop instruments]"
+}
+
+commonmusic is a list of texts that varies. commonmusic is {"bebop", "blues", "bluegrass", "calypso", "chanson",  "country", "dub", "dubstep", "EDM", "electronica", "folk", "hip-hop", "house", "jazz", "metal", "music-hall",  "pop", "reggae", "rap", "rock", "R&B", "salsa", "samba", "ska",  "soul", "soukous", "swing", "techno", "trance"}.
+
+specsongs is a list of texts that varies. specsongs is {"ballad", "hymn", "jig", "love song", "marching song", "murder ballad", "pastorale", "torch song"}.
+
+citycats is a list of texts that varies. citycats is {
+"[*a][pop catnoun] [one of]perched on[or]napping on[or]observing the world from[or]keeping watch from[purely at random] [*a][pop catperches]",
+"[*a][pop catnoun] [one of]presiding over a stall[or]asleep in a crate[or]tangling your ankles[purely at random] at the [pop marketkinds] market",
+"[*a][pop catnoun] darting along a balcony railing",
+"[*a][pop catnoun] begging for scraps at the [pop marketkinds] market",
+"[*a][pop catnoun] watching [one of]passers-by[or]pigeons[purely at random] [pop cityvistas]",
+"[*a][pop catnoun] scamming the tourists [pop cityvistas]"
+}
+
+catperches is a list of texts that varies. catperches is {
+"caryatid", "cast-iron bench", "fire escape", "parapet", "half-ruined wall", "war memorial", "wheelie-bin"}
+
+catnoun is a list of texts that varies. catnoun is {
+"[pop catcolors] cat",
+"[pop catcolors] [one of]kitten[or]tom[purely at random]",
+"[pop catforms] [pop catcolors] cat",
+"[pop catforms] cat",
+"[pop cataffects] [pop catcolors] cat"
+}
+
+catcolors is a list of texts that varies. catcolors is {"ancient", "black", "black-and-white", "black-tipped", "calico", "chocolate", "ginger", "grey", "orange", "tabby", "[one of]golden[or]silver[or]grey[purely at random] tabby", "ocelot-spotted", "speckled", "smoke-grey", "tortoiseshell", "tuxedo", "white"}.
+
+catforms is a list of texts that varies. catforms is {"battle-scarred", "covered", "delicate", "fat", "earless", "elegant", "enormous", "huge-pawed", "improbably fluffy", "long-haired","massive", "one-eyed", "plump", "skinny", "slender", "stub-tailed", "svelte", "three-legged", "tiny", "weatherbeaten"}.
+
+cataffects is a list of texts that varies. cataffects is {"anxious", "contemptuous", "irate", "furtive", "lazy", "leisurely", "lithe", "lordly", "luxuriant", "regal", "shameless", "shrewd", "solicitous", "startled-looking", "surly"}.
+
+marketkinds is a list of texts that varies. marketkinds is {"antiques", "book", "cloth", "clothes", "cheese", "craft", "dockside", "farmer's", "fish", "flea", "floating", "flower", "fruit", "imports", "meat", "produce", "punk", "silent", "spice", "underground", "[pop Regionals]"}.
+
+streetnames is a list of texts that varies. streetnames is {
+"[pop streetadj] [pop streetnouns]"
+}.
+
+streetadj is a list of texts that varies. streetadj is {"[uppop simpcolors]", "[pop titlepossessive]", "[pop allsurnames]", "[uppop ikons]", "[pop Roles]", "[one of]St. [pop saintnames]'s[or][pop littlegods][purely at random]", "[uppop woods]", "[uppop flowers]", "[pop nothebuilds]", "[uppop aproposes]", "[pop basebuilds]", "[pop noacamark]"}.
+
+streetnouns is a list of texts that varies. streetnouns is {"Alley", "Avenue", "Boulevard", "Court", "Close", "Place", "Lane", "Mews", "Street", "Street", "Street", "Road", "Row", "Walk", "Way"}.
+
+[Outdoor locations within a city.]
+cityvistas is a list of texts that varies. cityvistas is {
+"[one of]on[or]in[purely at random] [pop streetnames]",
+"at the [pop marketkinds] market",
+"on [pop fakebridges]",
+"[one of]in front of[or]by[or]behind[purely at random] [pop fakebuilds]",
+"[pop assortedvistas]",
+"in the [titlepop districtkinds]"
+}.
+
+districtkinds is a list of texts that varies. districtkinds is {
+"[pop Roles]'s [one of]District[or]Quarter[purely at random]",
+"[pop Regionals] [one of]District[or]Quarter[purely at random]",
+"[one of][uppop districtadjs][or][uppop colors][purely at random] [one of]District[or]Quarter[or]Town[or]City[purely at random]"
+}
+
+districtadjs is a list of texts that varies. districtadjs is {"High", "Inner", "Low", "Lower", "New", "Old", "Outer", "Sacred", "Upper", "Water", "[aproposnoun]"
+}
+
+assortedvistas is a list of texts that varies. assortedvistas is {
+"in the park",
+"at a bus shelter",
+"by the river",
+"downtown",
+"uptown"
+}
+
+Section - Weather by Hour and Season
+
+To say weathersnip:
+	if the current season is "none" begin;
+		let N be a random number between 1 and 4;
+		if N is 1, now the current season is "winter";
+		if N is 2, now the current season is "autumn";
+		if N is 3, now the current season is "spring";
+		if N is 4, now the current season is "summer";
+	end if;
+	if the current season is "spring", say "[pop springweather]";
+	if the current season is "summer", say "[pop summerweather]";
+	if the current season is "autumn", say "[pop fallweather]";
+	if the current season is "winter", say "[pop winterweather]";
+	
+springweather is a list of texts that varies. springweather is {
+"a sudden downpour", "sunshine through showers", "[one of]orange[or]lime[or]cherry[or]plum[or]peach[or]apple[purely at random] trees in blossom"}.
+
+summerweather is a list of texts that varies. summerweather is {"balmy sunshine", "unseasonal showers", "a muggy swelter", "a heatwave"}.
+
+fallweather is a list of texts that varies. fallweather is {"gusts of wind", "a blustery day", "falling leaves", "soft fog", "drifts of fallen leaves", "leaves blowing on the wind", "a sharp cold in the air", "the year's first snowflake"}.
+
+winterweather is a list of texts that varies. winterweather is {"a brief snowstorm", "ominously dark clouds", "a hard frost", "snow", "a blizzard", "ice underfoot", "icy mist", "rotten old snow piled up"}.
 
 Section - Lover Fragments
 
@@ -3279,7 +3752,7 @@ eyeadj is a list of texts that varies. eyeadj is {"[pop eyecolor]", "[pop eyeaff
 eyecolor is a list of texts that varies. eyecolor is {"amber", "blue", "brown","brown","brown","brown", "dark", "grey", "green", "hazel",
 "[one of]coppery [or]russet [purely at random]amber", "[one of]sky-[or]pale [or]sapphire [or]deep [or]sea [purely at random]blue", "[one of]light [or]rich [or]deep [purely at random]brown","dark brown","dark brown","dark brown", "[one of]night-[purely at random]dark", "[one of]silver-[or]steel-[or]pale [or]dark [or]iron-[purely at random]grey", "[one of]dark [or]light [or]pale [or]vivid [or]emerald-[or]sea-[or]grey-[or]jade-[purely at random]green"}.
 
-eyeaffect is a list of texts that varies. eyeaffect is {"appraising", "big", "bright", "clear", "cold", "curious", "distant", "dreamy", "drowsy", "eager", "fierce", "frank", "guileless", "heavy-lidded", "huge", "intense", "joyful", "keen", "kind", "knowing", "lascivious", "laughing", "liquid", "mournful", "patrician", "sad", "sharp", "shrewd", "sleepy", "soft", "sparkling", "startling", "steady", "stern", "tender", "tired", "troubled", "warm", "wicked", "wide", "wistful", "yearning"}.
+eyeaffect is a list of texts that varies. eyeaffect is {"appraising", "big", "bright", "clear", "cold", "curious", "distant", "dreamy", "drowsy", "eager", "fierce", "frank", "guileless", "heavy-lidded", "huge", "intense", "joyful", "keen", "kind", "knowing", "lascivious", "laughing", "liquid", "mournful", "patrician", "sad", "sharp", "shrewd", "sleepy", "soft", "sparkling", "startling", "steady", "stern", "tender", "tired", "troubled", "warm", "wicked", "wide", "wistful", "yearning", "[pop mod-res]"}.
 
 eyeaffectlong is a list of texts that varies. eyeaffectlong is {"crow-footed", "kohl-rimmed", "panda-shadowed"}.
 
@@ -3342,20 +3815,11 @@ bookcontents is a list of texts that varies. bookcontents is {
 "biography", "erotica", "essays", "fairy tales", "folklore", "history", "illustrations", "maps", "poetry", "recipes", "rhetoric", "romance", "travelogues", "woodblock prints"
 }.
 
-bookcontadj is a list of texts that varies. bookcontadj is {"avant-garde", "Bloomsbury", "Byzantine", "baroque", "early modern", "erotic[m lust]", "fin-du-siecle", "Heian", "magical-realist", "medieval", "Ming", "modernist", "Mughal", "neoclassical", "outsider", "postmodern", "post-industrial", "proletarian", "Renaissance", "Rococo", "Romantic", "ukiyo", "Victorian", "Volcano School", "[pop regionals]"}.
+bookcontadj is a list of texts that varies. bookcontadj is {"avant-garde", "Arts & Crafts", "Bloomsbury", "Byzantine", "baroque", "early modern", "erotic[m lust]", "fin-du-siecle", "Heian", "magical-realist", "medieval", "Ming", "modernist", "Mughal", "neoclassical", "outsider", "postmodern", "post-industrial", "proletarian", "Renaissance", "Rococo", "Romantic", "ukiyo", "Victorian", "Volcano School", "[pop regionals]"}.
 
 bookadj is a list of texts that varies. bookadj is {"battered", "brand-new", "familiar", "leather-bound", "massive", "slender", "weathered"}.
 
-Section - Weather by Hour and Season
 
-springweather is a list of texts that varies. springweather is {
-"a sudden downpour", "sunshine through showers", "[one of]orange[or]lime[or]cherry[or]plum[or]peach[or]apple[purely at random] trees in blossom"}.
-
-summerweather is a list of texts that varies. summerweather is {"balmy sunshine", "unseasonal showers", "a muggy swelter", "a heatwave"}.
-
-fallweather is a list of texts that varies. fallweather is {"gusts of wind", "a blustery day", "falling leaves", "soft fog"}.
-
-winterweather is a list of texts that varies. winterweather is {"ominously dark clouds", "a hard frost", "snow", "a blizzard", "icy mist"}.
 
 
 Book - Unique Memories
@@ -3409,9 +3873,10 @@ uniquelist is a list of texts that varies.]
 uniquelist is a list of texts that varies. uniquelist is {
 "This was the first perfume you ever wore",
 "The first perfume you bought yourself",
-"This is the first scent you made (that wasn't rubbish, etc)",
+"[pop perfume-made]",
 "[pop derringdo]",
-"[pop lost]"
+"[pop lost]",
+"[pop deathmem]"
 }
 
 Part 1 - Lost
@@ -3419,7 +3884,7 @@ Part 1 - Lost
 [a unique memory in which the protagonist gets lost on a trip and something pleasant and memorable happens]
 
 lost is a list of texts that varies. lost is {
-"[pop youwerelost] [pop majorloc] [pop tripreason]; [pop lostoccasion]. [pop lostreason] [one of]and that's how[or]and that's when[or]at which point[purely at random] you [one of]discovered[or]happened upon[or]came across[or]stumbled upon[or]found[purely at random] [a*][pop discoveryadj] [pop lostdiscovery]. [pop perfumelost]"
+"[pop youwerelost] [assoc majorloc] [pop tripreason]; [pop lostoccasion]. [pop lostreason] [one of]and that's how[or]and that's when[or]at which point[purely at random] you [one of]discovered[or]happened upon[or]came across[or]stumbled upon[or]found[purely at random] [a*][pop discoveryadj] [pop lostdiscovery]. [pop perfumelost]"
 }.
 
 youwerelost is a list of texts that varies. youwerelost is {
@@ -3438,7 +3903,8 @@ tripreason is a list of texts that varies. tripreason is {
 "for complicated reasons",
 "on vacation",
 "on a layover",
-"on the way home from somewhere else entirely"
+"on the way home from somewhere else entirely",
+"for [one of][pop unlocfest][or][pop namedfests][purely at random]"
 }.
 
 lostoccasion is a list of texts that varies. lostoccasion is {
@@ -3476,6 +3942,9 @@ lostdueto is a list of texts that varies. lostdueto is {
 "[one of]a bad[or]an outdated[or]an incomplete[or]a misplaced[purely at random] map",
 "street construction",
 "a moment of distraction",
+"a vaguely-worded recommendation from a friend who hadn't been there in a decade",
+"a twice-translated guidebook",
+"a perfectly reasonable shortcut",
 "a moment of inattention",
 "a confusing layout of streets",
 "two streets with similar names",
@@ -3622,10 +4091,12 @@ Part 2 Derring-Do
 1. Having become suspected, an escape across the border.
 2. Passing messages for a resistance cell.
 3. Providing a meeting-space and lookout.
-4. Sheltering an escaped political prisoner.]
+4. Sheltering an escaped political prisoner.
+
+THIS IS BUGGED SOMEHOW. Find it.]
 
 derringdo is a list of texts that varies. derringdo is {
-"[pop youwerein] [one of][pop majorloc][or][pop nations][purely at random] during [pop eraname]; [pop escapemotive] [pop derringfinal][if scented-trouble is false]. [pop perfumederring][end if][m strength][m adventure][m trouble]"
+"[pop youwerein] [one of][pop majorloc][or][pop nations][purely at random] during [pop eraname][one of]; [pop escapemotive][or]. [uppop escapemotive][or], and [pop escapemotive][purely at random] [pop derringfinal][if scented-trouble is false]. [pop perfumederring][end if][m strength][m adventure][m trouble]"
 }.
 
 perfumederring is a list of texts that varies. perfumederring is {
@@ -3644,7 +4115,7 @@ derringfinal is a list of texts that varies. derringfinal is {
 "[pop obligedto] [pop bordercross] [pop bordermethod]"}.
 
 bordercross is a list of texts that varies. bordercross is {
-"escape", "flee the country", "cross the border", "make it across the border"}.
+"escape", "flee the country", "cross the border", "make it across the border", "get out of the country"}.
 
 bordermethod is a list of texts that varies. bordermethod is {
 "disguised as [*a][one of][pop Regionals][or][pop suitornats][or][pop modelshapes][purely at random] [downpop disguises]",
@@ -3762,6 +4233,21 @@ To say athe:
 	
 To say thetoa:
 	now a-to-the is false;
+	
+the-allowed is a truth state that varies. the-allowed is true.
+
+To say cancel-the:
+	now the-allowed is false;
+	
+To say restore-the:
+	now the-allowed is true;
+
+To say *the:
+	if the-allowed is true begin;
+		say "the ";
+	otherwise;
+		now the-allowed is true;
+	end if;
 
 To say prob-dd:
 		say "[pop probsynonyms] ";
@@ -3802,17 +4288,80 @@ A unique memory in which someone close to the protagonist dies,
 ]
 
 deathmem is a list of texts that varies. deathmem is {"You [one of]gave this to[or]made this for[purely at random] [pop deathrel] [one of]on [*their] deathbed[or]a few days before [*they] died[or]when you knew [*they] didn't have long left[or]the last time you saw [*them], not knowing it would be the last[purely at random]",
-"Made in remembrance of [pop deathrel], [one of]once the funeral and the estate and everything had been dealt with and you had time to mourn[or]when you should have been at [*their] funeral[or]instead of going to a funeral that you couldn't face[purely at random]",
-"This was [pop deathrel]'s favorite scent [pop relfave] and you last wore it at [*their] [one of]funeral[or]wake[or]memorial service[or]interment[purely at random]"}.
+"[uppop madeit] [one of]in remembrance of[or]to remember[or]in memory of[or]to commemorate the life of[purely at random] [pop deathrel], [one of]once the [pop funeralkinds] and [one of]the estate[or][*their] papers[or]the house[or]the cats[or]the will[purely at random] and everything had been dealt with and you had time to mourn[or]at a time when you should have been at [*their] [pop funeralkinds][or]instead of going to a [pop funeralkinds] that you couldn't face[or]and slightly in guilt at not attending the [pop funeralkinds][purely at random]",
+"This was [pop deathrel]'s favorite scent [pop relfave] and you last wore it at [*their] [pop funeralkinds]"}.
+
+funeralkinds is a list of texts that varies. funeralkinds is {"[one of]burial[or]interment[or]cremation[purely at random]", "funeral", "funeral", "memorial service", "wake", "funeral [one of]dinner[or]ceremony[or]rites[or]procession[or][pop partykinds][purely at random]"}.
 
 deathrel is a list of texts that varies. deathrel is {"your mother[hardfem]", "your mom[hardfem]", "your father[hardmasc]", "your dad[hardmasc]", "your brother[hardmasc]", "your sister[hardfem]", "your grandmother[hardfem]", "your grandfather[hardmasc]", "[pop allforenames]"}.
 
 relfave is a list of texts that varies. relfave is {"(you designed it [one of]with [*their] skin in mind[or]to fit [*them] like a glove[purely at random])",
 "- proof of [*their] consummately terrible nose -",
-"- you always considered it [one of]a failed composition[or]one of your weakest efforts[or]the worst scent you ever made money from[purely at random], but [*they] adored it -",
+"- you always [one of]considered it[or]felt it was[or]said it was[or]thought it was[or]saw it as[or]thought it[purely at random] [one of]a failed composition[or]one of your weakest efforts[or]indicative of your worst flaws[or]unwearable[or]a learning experience[or]formulaic glurge[or]the worst scent you ever made money from[purely at random], but [*they] adored it -",
 "- at any special occasion [*they][']d slather on approximately a bucket of the stuff -",
 "- your memory of the scent is bone-deep, older than any mental image -"}.
 
+Part 4 - First Creations
+
+perfume-made is a list of texts that varies. perfume-made is {
+"This was the first perfume you [pop madeit] yourself[one of][or][pop creative-qualifier][or][pop creative-qualifier][purely at random]. [pop creative-sting]."
+}.
+
+creative-qualifier is a list of texts that varies. creative-qualifier is {
+" that you felt you could wear in public",
+", without help from anyone",
+" that was really yours, not just an imitation",
+" that you didn't throw out immediately",
+", not counting the most [one of]embarrassing[or]saccharine[or]noisome[or]cringeworthy[or]horrible[or]awful[or]dreadful[purely at random] juvenilia",
+". (Well, a reproduction. [pop reproduce-perfume])"
+}.
+
+reproduce-perfume is a list of texts that varies. reproduce-perfume is {
+"You used the original batch up within a year",
+"The original batch was tiny and quickly used up",
+"Scents don't last forever, and it's been a while",
+"You may have tidied up a couple of small errors when you remixed it",
+"You kept the original long after the scent had denatured, until [one of]it got lost in a move[or]ants got into it somehow[or]it got stolen along with a beloved bag[or]you threw it out in an ill-considered fit of decluttering[purely at random]"
+}.
+
+creative-sting is a list of texts that varies. creative-sting is {
+"[pop non-perfume-excuses], and [one of]didn't make anything else[or]forgot about perfume[or]abandoned perfumery[or]put it on the back burner[or]enjoyed but didn't compose perfume[or]thought about pretty much anything else[or]wrote off the whole thing[purely at random] [one of]for several years[or]until college[or]until after undergrad[purely at random]",
+"[one of]Your mother[or]Your father[or]Your boyfriend at the time[or]Your girlfriend at the time[purely at random] [one of]said it was '[pop faintpraise]', which was kinder than it deserved[or]endured it with great forbearance[or]voluntarily wore it, which was above and beyond the call of duty[purely at random]",
+"It was a lucky fluke, and despite intense efforts you didn't make anything nearly this good again for almost two years"
+}.
+
+faintpraise is a list of texts that varies. faintpraise is {"delightful", "evocative", "interesting", "lovely", "nice", "very you"}.
+
+non-perfume-excuses is a list of texts that varies. non-perfume-excuses is {
+"[pop shortlyafter], [one of]you[or]you and your friends all[purely at random] [one of]discovered[or]got into[or]turned your attentions to[or]diverted your energies to[or]developed an obsession with[or]dedicated all your time to[purely at random] [pop extra-curriculars]",
+"[pop shortlyafter], you [one of]decided[or]declared[or]realized[purely at random] that [one of]your true calling was[or]it was your destiny[or]you really wanted[or]you were going[purely at random] to become [*a][one of][pop starjob][purely at random]",
+"You absolutely couldn't afford the materials",
+"[one of][pop shortlyafter] you were distracted by a horrible crush on[or]At the time you were only doing it as an excuse to hang out with[purely at random] [one of][pop NPCnames][or]a certain [pop suitorstyles] [pop Roles][or]your [pop tutorkinds] tutor[purely at random]"
+}
+
+shortlyafter is a list of texts that varies. shortlyafter is {
+"Shortly [one of]thereafter[or]afterwards[or]after[purely at random]",
+"The next [one of]week[or]month[purely at random]",
+"[one of]That same[or]Later that[purely at random] [theseason]"
+}.
+
+extra-curriculars is a list of texts that varies. extra-curriculars is {"boys", "girls", "dating", "weed", "urban exploration", "cosplay", "[pop suitornats] [one of]cinema[or]literature[or]dance[purely at random]", "[pop sidelines]", "[movements] [one of]poetry[or]fashion[or]clubs[or]discourse[or]literature[or]theatre[or]film[or]music[or]jazz[or]art[or]design[purely at random]"}.
+
+[
+that you felt good about wearing
+	that you were willing to wear in public
+
+well, a recreation. You used the original batch up within a year.
+	You may have fixed a couple of embarrassing errors when you remixed it.
+	Scents don't survive that long, alas.
+	You kept the original long after the scent had denatured, until it got lost in a move.
+	
+Your mother said it was delightful, but that may have been a kindness.
+
+It was a total fluke and you didn't make anything as good again for over a year.
+
+Then you forgot about perfume for N years because you discovered [boys|girls|formal poetry|lacrosse]
+]
 
 Book - Bottles
 
@@ -3821,13 +4370,13 @@ bottlepats is a list of texts that varies. bottlepats is {"[*a][randbottle] [pop
 A theme has a list of texts called bottlemats. 
 
 The bottlemats of goth is {"black glass", "red glass", "black glass", "vintage glass", "red lacquered", "black lacquered", "black jade", "red jade"}.
-The bottlemats of mystic is {"smoky glass", "obsidian", "enameled glass", "ground glass", "cameo glass"}.
+The bottlemats of mystic is {"smoky glass", "obsidian", "enameled glass", "ground glass", "cameo glass", "sea-glass", "volcanic glass", "crystalline"}.
 The bottlemats of woodland is {"brown glass", "green glass", "moss agate glass", "green jade", "lavender jade"}.
 The bottlemats of glam is {"fine crystal", "obsidian", "lab-grade steel", "blue glass", "silver", "gold", "black jade", "[pop colors] glass"}.
 The bottlemats of lewd is {"scarlet glass", "pink glass", "purple glass", "carnival glass", "lavender jade"}.
 The bottlemats of ancient is {"ceramic", "vintage glass", "amber glass", "age-distorted glass", "hand-blown glass", "enameled glass", "porcelain", "cameo glass"}.
 The bottlemats of spring is {"green glass", "blue-green glass", "milky-green jade"}.
-The bottlemats of summer is {"green glass", "amber glass", "sea-green glass", "rose quartz"}.
+The bottlemats of summer is {"green glass", "amber glass", "sea-green glass", "rose quartz", "beach-glass"}.
 The bottlemats of fall is {"amber glass", "brown glass", "copper"}.
 The bottlemats of winter is {"black glass", "steel", "frosted glass", "blue glass", "smoked glass", "crystal", "white jade"}.
 
@@ -3838,12 +4387,16 @@ bottlelist is a list of texts that varies. bottlelist is {
 bottledescs is a list of texts that varies. bottledescs is {
 "",
 ", unpleasantly [one of]sticky[or]gummy[purely at random] to the touch",
+", slightly oleaginous to the touch",
+" marred by many small abrasions",
+" of slightly distorted manufacture",
 " with a wax seal",
 ", [one of]slightly[or]somewhat[or]a little[or]rather[or]extremely[or]very[purely at random] [one of]battered[or]age-worn[or]dusty[or]weathered[purely at random]",
 " with a [one of]flip-top closure[or]swing-top closure[or]Quillfeldt closure[or]pipette stopper[or]threaded closure[or]Lightning closure[or]ball-finial stopper[or]screw cap[purely at random]",
 ", [one of][or][or][or]intricately carved [or]roughly molded [or]carved [or]vaguely [purely at random]in the shape of [*a][pop ikons]",
 " with a lab batch number",
 " with a professionally printed label",
+" with a tacky wine-charm around the neck",
 " with a masking-tape label, scrawled on with marker",
 " with a hand-drawn label", 
 " with a label handwritten in [one of]faded ink[or]scratchy biro[or]calligrapher's pen[or]architect's pen[or]brush-pen[or]smudged pencil[purely at random]",
@@ -3864,10 +4417,7 @@ bottledescs is a list of texts that varies. bottledescs is {
 Volume - The Frame Story
 
 
-When play begins:
-say "There are other cases, other lists, lean and purpose-built and packaged for travel. You allow yourself a degree of sentiment in their selection, but that too serves a public purpose. This collection - sprawling, messy, incoherently themed and completely private - is a private matter. A giant's secret heart.
 
-Every scent brings back memories that once meant something important. They might still. But scents change their character as they slowly break down, and history moulders if repeated by rote. Once in a while you clear an evening, unlock the chest, and unstopper your old selves to see what they are to you now.";
 
 Instead of looking: do nothing.
 
@@ -3876,7 +4426,11 @@ Volume - Testing Verbs
 Understand "j" as jumping.
 
 Kyping is an action applying to nothing. Understand "k" as kyping. Carry out kyping: 
+	if Vorple is supported begin;
+		clear the element called "maintext";
+	end if;
 	stock possibility;
+	bottle-preamble;
 	offer bottle-choice;
 	[follow the full-scent rule;]
 [	sort bumf;]
@@ -3898,10 +4452,11 @@ This is the full-scent rule:
 		let Q be a random number between 1 and X;
 		let Z be entry Q in the uniquelist;
 		remove Z from the uniquelist;
-		say "[pop structures]. [Z].";
+		say "[uppop structures]. [Z]. ";
 	otherwise;
-	say "[pop structures]. [pop memories][frag].[p]";
+	say "[uppop structures]. [pop memories][frag]. ";
 	end if;
+	if Vorple is not supported, say "[p]";
 	[say "[notelist][p]";
 	say "[socdirect].";]
 	suggest semantics;
@@ -3920,9 +4475,10 @@ Instead of jumping:
 	test-themepick;
 		[say "[*a][pop testypop][br]";]
 		[say "[pop brandnames][br]";]
-		[say "[pop structures]. [pop derringdo].[p]";]
+		[say "[pop structures]. Made to accompany the [drama-scene] [one of]scene[or]sequence[purely at random][one of]s[or][purely at random] in [one of]the movie[or][a*][pop dramatica] production of[or]the interactive theatre piece[purely at random] [pop narrative-titles][p]";]
+		say "[pop perfume-made][br]";
 		[say "[pop kingname][br]";]
-		say "[pop bigbucks][br]";
+		[say "in the [titlepop districtkinds][br]";]
 		[say "[randbottle][br]";]
 		[say "It recalls [friendpop NPCnames][lover], [pop attractiveadjs] in [a*][pop color][pop garment] at [pop festival]";]
 		[say "[pop onenightfore][pop onenightsitu] [if notalone is true][pop groupaction][otherwise][pop soloaction][end if][br]";]
@@ -3950,6 +4506,7 @@ Instead of jumping:
 
 To run cleanup:
 	now the themelist is {};
+	now the current season is "none";
 	now a-to-the is false;
 	now scented-trouble is false;
 	now notalone is false;
@@ -3965,6 +4522,7 @@ To run cleanup:
 		now commacetic is false;
 		now depthgauge is 0;
 		now a-depths is {};
+		now the-allowed is true;
 		if the number of entries in uniquelist < 1 begin;
 			remove "[pop uniquelist]" from memories, if present;
 		end if;
