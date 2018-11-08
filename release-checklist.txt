@@ -1,0 +1,112 @@
+
+
+	HIGH PRIORITY
+Areas which are a little underpopulated, come up reasonably often, and don't require very complicated new patterns to be added.
+
+* Reflective Choice/.../Big Mood/Targeted Resonance: words associated with thematic meaning
+* Reflective Choice/.../Big Mood/Weirdly Specific Mood: very specific random feels
+* Reflective Choice/Basic Choice Menus/Connecting Phrases: all lists, but especially nextbottle
+* Memory/A Little Context/Seasons: springthings, etc.: associations of seasons
+* Memory/Gifts/.../Corsetry:
+	* for some reason ikons and t-ikons ended up here: they are visual motifs that might appear in various contexts, such as on perfume bottles and in cloth patterns
+* Memory/Named Characters:
+	* nations, a list of predominantly-Europea-and-neighbours nations (including historical ones)
+* Memory/Complex Memory:
+	* knowconclusion, realisations about perfume that at first you couldn't identify
+		* also something about magazine names other than just 'Hers', which is all wrong
+	* memimperfect, longimperfect: details from an entire period in one's life
+	* groupmainact: doing stupid things together with a friend
+		* groupdetails: details of doing stupid things, etc.
+	* soloaction: a memorable evening doing things alone
+* Memory/Unique Memory/First Perfume - this is the only unique that definitely needs to be fleshed out before release
+* Memory/Bottles:
+	* ornate-bottledescs, patterns for more ornate or specific bottles. The balance isn't ideal here, but this might be a matter of weighting rather than More Content
+	
+
+
+	MEDIUM PRIORITY
+Lists which are OK as they stand, but which would benefit from being deeper.
+
+* Scent/Scent Styles: more adjectives and nouns for Themes
+* Scent/Scent Notes/Hints: strange/bad smells that you wouldn't normally expect in perfume
+* Scent/Scent Notes/Multikinds: more aromatic woods, flowers, fungi
+* Scent/Scent Notes/Adjectives: Regions
+* Reflective Choice/.../Big Mood/Random Resonance: micro-res, structures for random meanings
+* Memory/Gifts: just a whole lot of stuff, but especially:
+	* narrative-titles: patterns for titles of plays and potentially other Literary Works
+	* buckscoda: take-away stories from commercial projects
+	* starjob: kinds of celebrity who might have celebrity-branded perfume
+		* sportsball: sports they might play
+	* brandnames: perfume lines the protag released
+	* fortunatetail: conclusions to memories of fortuitously-crafted scents
+	* genericadjectives: characteristic qualities of unnamed gift-givers/recipients
+* Memory/Named Characters/.../Namelists:
+	* more names for the thinner existing name-lists
+* Memory/Complex Memory/
+	* partytimes: add more intimate, less huge-official-ball kinds of party
+	* modelshapes: physical adjectives describing unnamed NPCs
+	* convtopics: subjects of memorable conversations
+		* gentopics, just a list of topics without complex generation involved
+	* artefforts: an NPC's artistic projects
+	* eranames, gubberments, etc: names of periods in recent history
+	* cocktails: cocktail names
+	* suitoradjs: characteristic adjectives of (unnamed?) lovers
+	* suitornats: nationality/ethnicity of lovers
+	* Roles, and adjectives breaking out of that
+	* sidelines: hobbies or crafts that the protagonist might have taken up incidentally
+* Memory/Unique Memory/Death: relfave, connecting the scent to a dead relative
+* Memory/Bottles:
+	* bottlemats of N, colours of glass corresponding with themes
+	* bottledescs, details of bottles
+	* bottle-styles, eras or schools of jewelry style
+	* classical-subjs of N: answering the very important question 'which Greek gods were the most goth'
+
+	
+
+
+	QUESTIONABLE PRIORITY
+Would be useful, but would involve more complex patterns.
+
+* Scent/Assembler: more variations on how perfume descriptions are constructed
+* Memory/Gifts: selfreasons, snapshots of the protagonist's profession and craft
+* Memory/Gifts: gifts/antigifts, which may be too simple at this point?
+* Memory/Gifts/Scented Things:
+	* scentedgifts, context structures for gift-giving events
+	* gaveparen: more detailed context of/reasons for why an NPC gave a gift
+* Memory/Gifts/.../Leatherwork, Clothing: more patterns for fancy scent-imbued things
+* Memory/Fashions: this section is underdeveloped and could use more simple patterns
+* Memory/Named Characters:
+	* didpara: identifying memories about a named NPC
+	* npcissues: flaws of otherwise competent colleagues
+	* ididstuff, theydidstuff: simple but powerful incidents
+* Memory/Complex Memory: complexmemory, patterns of fairly detailed but not-unique events
+* Memory/Fragments of Memory: new fragment patterns, e.g.
+	* concerning lovers,
+	* concerning the four seasons - "Window-panes rimed with frost."
+	* details seen in a city,
+	* details of a room, including
+		* well-known inhabited space; one's own home: "The three-hundred-year-old door, iron-banded and whisper-smooth." "The neighbour [with the escapologist parrot | with the fondness for power metal at 2 AM | who was always cooking distractingly aromatic Somalian delicacies]".
+	* details without context:
+		* things owned, or worn, or read at about that time?
+	* things related to work: "Hand-cramp from scribbled notes. Frustratingly illegible marginalia."
+	* social details of a party, conference etc.
+* Memory/Unique Memories
+	* entirely new uniques
+	* more variations on Part 2: Derring-Do, other than escapes
+	
+
+
+	YAK-SHAVING PRIORITY
+Would be cool, but the cost/benefit is low; only spend time on them if it's fun.
+
+* Memory/Gifts: tvseries, a pattern which generates movies or TV shows dependent on theme (so: Goth produces trashy vampire shows, etc.)
+* Memory/Named Characters: the entire named-location section is already huge, but could potentially take new patterns?
+* Memory/Named Characters/.../Namelists: more naming patterns for more cultures
+* locations tied to scent-notes - so apple-blossom might occasionally place a memory in an apple orchard
+
+	SAVE IT FOR 2.0
+	
+* Patterns wherein NPCs can recur across multiple memories, possibly telling the story of a relationship
+* Tag locations according to local climate, resulting in different descriptions of seasons
+* Tag time-of-day of memories, as above
+* Take another pass at procgen phonology-based naming (ha ha ha sob)
